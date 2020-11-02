@@ -11,6 +11,7 @@
 	</ul>
 </div>
 <div class="wrap">
+    <div class="menu">
 
     <ul>
         <li><a href="SProfile.html">Profile</a></li>
@@ -23,3 +24,37 @@
    
     
 </div>
+</div>
+
+
+<script>
+
+	var menu = document.getElementById("drop");
+	var menu2 = document.getElementById("drop2");
+	var submenu = document.getElementById("submenu");
+	var submenu2 = document.getElementById("submenu2");
+	
+	
+		submenu.style.display = "none";
+		submenu2.style.display = "none";
+	
+	
+	menu.onclick = function(event) {
+		if (submenu.style.display === "none") {
+			submenu.style.display = "block";
+		} else {
+			submenu.style.display = "none";
+		}
+	}
+	menu2.onclick = function(event) {
+		if (submenu2.style.display === "none") {
+			submenu2.style.display = "block";
+		} else {
+			submenu2.style.display = "none";
+		}
+	}
+	
+	
+	</script>
+	
+	
