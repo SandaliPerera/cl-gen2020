@@ -92,6 +92,7 @@ if (isset($_POST['userid'])){
     $pwd = $_POST["pwd"];
     $userid = $_POST['userid'];
     $userType = $_POST['userType'];
+    $email = $_POST['email'];
 
     $read = $sql = "SELECT * from user WHERE userID = '$userid' OR username = '$username'" ;
     $result1 = mysqli_query($conn,$read);
@@ -99,8 +100,23 @@ if (isset($_POST['userid'])){
 
     if($rows > 0){
         $error = "User ID already existing";
-        header('Location: ../admin/register_user.php?error='.$error);
+        header('Location: ../public/admin/users.php?error='.$error);
     }else{
+        
+        if($userType == 'admin'){
+            $pwd = md5($userid);
+            $sql = "INSERT INTO user(username,password,userID,userType,isActivated)VALUES ('".$username."','".$pwd."','".$userid."','".$userType."','1')";
+            $sql1 = "INSERT INTO admin(userID,email) VALUES ('".$userid."','".$email."')";
+
+            if ($conn->query($sql) == TRUE && $conn->query($sql1) == TRUE) {
+                header('Location: ../public/admin/users.php');
+            } else {
+            header('Location: ../public/admin/add_admin.php?error');
+            }
+
+            exit();
+        
+        }else{
     
         $pwd = md5($userid);
         $sql = "INSERT INTO user(username,password,userID,userType)VALUES ('".$username."','".$pwd."','".$userid."','".$userType."')";
@@ -115,17 +131,17 @@ if (isset($_POST['userid'])){
                 $sql1 = "INSERT INTO user(username,password,userID,userType)VALUES ('".$username."','".$pwd."','".$userid."','".$userType."')";
 
                 if ($conn->query($sql) == TRUE && $conn->query($sql1) == TRUE) {
-                    header('Location: ../admin/register_user.php');
+                    header('Location: ../public/admin/users.php');
                 } else {
-                    header('Location: ../admin/create_multiple_user.php?error');
+                    header('Location: ../public/admin/users.php?error');
                 }
             }
-
+        }
 
             if ($conn->query($sql) == TRUE) {
-                header('Location: ../admin/register_user.php');
+                header('Location: ../public/admin/users.php');
             } else {
-            header('Location: ../admin/register_user.php?error');
+            header('Location: ../public/admin/register_user.php?error');
             }
     }
 

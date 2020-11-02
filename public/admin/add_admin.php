@@ -24,25 +24,14 @@
 
 				<form action= "../../src/add_user.php" method="POST">
 
-				<label for="userType" ><b>User Type</b></label>
-				<br>
-				<label class="radio"> <input type="radio" name="userType" value="student" onclick = "getData('student')" required> Student
-				<span class="checkmark"></span></label>
-				<label class="radio"> <input type="radio" name="userType" value="teacher" onclick = "getData('teacher')" required> Teacher
-				<span class="checkmark"></span></label>
-				<label class="radio"><input type="radio" name="userType" value="officer" onclick = "getData('officer')" required> Officer
-				<span class="checkmark"></span></label>
-				<label class="radio"><input type="radio" name="userType" value="admin" onclick = "getData('admin')" required> Admin
-				<span class="checkmark"></span></label>
-			
-				<br>
-				<br>
-				<br>
-				<hr>
-
-
+		
+				<input type="hidden" id="userType"  name="userType" value="admin" required >
+		
 				<label for="userid"><b>User ID</b></label>
-				<input type="text" id="userid"  name="userid" required >
+                <input type="text" id="userid"  name="userid" required >
+                
+                <label for="email"><b>Email</b></label>
+				<input type="text" id="email"  name="email" required >
 				
 				<label for="username"><b>Username</b></label>
 				<input type="text"  id="username" name="username" required>

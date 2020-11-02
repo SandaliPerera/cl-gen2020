@@ -5,7 +5,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Students User List</title>
+<title> User List</title>
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/nav.js"></script>
 <link rel="stylesheet" href="../css/view.css " type="text/css">
@@ -19,8 +19,8 @@
 
 				require_once '../../config/conn.php';
 
-				$sql1 = "SELECT * FROM user WHERE isActivated = 0";
-				$sql2 = "SELECT * FROM user WHERE isActivated = 1";
+				$sql1 = "SELECT * FROM user WHERE isActivated = 0 AND userType != 'admin'";
+				$sql2 = "SELECT * FROM user WHERE isActivated = 1 AND userType != 'admin'";
 
 				$res1= mysqli_query($conn,$sql1);
 				$res2= mysqli_query($conn,$sql2);

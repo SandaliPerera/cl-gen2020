@@ -17,7 +17,7 @@
 		
 		<div class="content">
 		
-		<h1>USERS</h1>
+		<h1>ADD USERS</h1>
 			
 		<div class="view">
 			<br>
@@ -29,7 +29,7 @@
 				  <div class="container">
 
 				<br>
-				<img src = "../../images/student.png" width="110" height="100">
+				<img src = "../../images/user.png" width="110" height="100">
 					<h2><b>Add User</b></h2>
 				
 					
@@ -40,14 +40,22 @@
 				  <div class="container">
 	
 				<br>
-				<img src = "../../images/teacher.png" width="110" height="100">
+				<img src = "../../images/users.png" width="110" height="100">
 					<h2><b>Add Multiple Users</b></h2>
 				
 				  </div>
 				  </a>
-				 
-			
-			  
+
+				  <a href="add_admin.php">
+				  <div class="container" id="b-con">
+	
+				<br>
+				<img src = "../../images/admin.png" width="110" height="100">
+					<h2><b>Add Admin</b></h2>
+				
+				  </div>
+				  </a>
+	
 			</div>
 			<br>
 			<hr>
