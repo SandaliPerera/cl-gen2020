@@ -1,0 +1,43 @@
+.card {
+	padding-bottom:10px;
+	padding-top:10px;
+	background-color:#fff;
+	box-shadow: 0 8px 16px 0 rgba(1,1,1,0.2);
+	margin-bottom:30px;
+  
+}
+
+
+
+.container {
+ 
+  margin-bottom:20px;
+}
+.search{
+	float:right;
+}
+
+input[type=text] {
+  width: 250px;
+  padding: 7px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+h2{
+	text-align: center;
+}
+h1{
+	padding-top:20px;
+}
+button{
+	float:right;
+}
+
+
+img{
+	float: center;
+	margin-left: 90px;
+}

@@ -1,0 +1,45 @@
+.content ul {
+	margin: 50px 10px 0px -25px;
+	margin-left: -25px;
+}
+.content ul li{
+	
+	padding: 20px 10px 10px 0px;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+	border-top: 1px solid rgba(0,0,0,0.05);
+	list-style: none;
+	overflow:hidden;
+	cursor: pointer;
+	display:block;
+}
+.content ul li a{
+	color: #bdb8d7;
+	display: block;
+	text-decoration: none;
+
+}
+.content ul li:hover{
+	background: #554c54	
+}
+
+.content ul li:hover a{
+	color: #fff;
+}
+.content ul ul li:hover{
+	background: #333333	
+}
+.content ul ul li:hover a{
+	color: #fff;
+}
+.content ul ul{
+	display:none;
+}
+.content ul ul li{
+	padding: 10px 10px 10px 0px;
+}
+
+.content ul li:hover ul{
+	display:block;
+	cursor: pointer;
+	
+}

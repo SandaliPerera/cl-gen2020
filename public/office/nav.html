@@ -1,0 +1,75 @@
+<link type="text/css" rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../../images/font-awesome-4.7.0/css/font-awesome.min.css">
+<div class="navbar"> 
+	<h1>CL-GEN</h1> 
+	<ul>
+		<li>
+			<form name="logout" action="../../src/logout.php" method="POST">
+				<input type="submit" value="LOGOUT" name="logout">
+			</form>
+		</li>
+	</ul>
+</div>
+<div class="wrap">
+<div class="menu">
+    <ul>
+        <li><a href="dashboard.php">Dashboard</a></li>
+        
+       
+        <li class="drop"><div  class="drop" id="drop"> Users<i class="fa fa-angle-down"></i></div></li>
+        <!-- <li class="drop"><a href="userlist.php">System Users </a> <i class="fa fa-angle-right"></i> -->
+            <div class="submenu" id="submenu">
+            <ul>
+                <li><a href="userlist.php">System Users </a></li>
+                <li><a href="users.php">Add Users</a></li>
+                <li><a href="student.php">Students</a></li>
+                <li><a href="teachers.php"> Teachers</a></li>
+                <li><a href="staff.php">Office staff </a></li>
+            </ul>
+        </div>
+        
+        <li class="drop"><div class="drop" id="drop2"> News Feed<i class="fa fa-angle-down" aria-hidden="true"></i> </div></li>
+            <div class="submenu2" id="submenu2">
+            <ul>
+                <li><a href="newsfeed.php">News Feed</a></li>
+                <li><a href="edit_newsfeed.php">Add News</a></li>
+                <li><a href="news_list.php"> News List</a></li>
+            </ul>
+           </div>
+        
+
+    </ul>
+   
+</div> 
+</div>
+
+<script>
+
+var menu = document.getElementById("drop");
+var menu2 = document.getElementById("drop2");
+var submenu = document.getElementById("submenu");
+var submenu2 = document.getElementById("submenu2");
+
+
+    submenu.style.display = "none";
+    submenu2.style.display = "none";
+
+
+menu.onclick = function(event) {
+    if (submenu.style.display === "none") {
+        submenu.style.display = "block";
+    } else {
+        submenu.style.display = "none";
+    }
+}
+menu2.onclick = function(event) {
+    if (submenu2.style.display === "none") {
+        submenu2.style.display = "block";
+    } else {
+        submenu2.style.display = "none";
+    }
+}
+
+
+</script>
+

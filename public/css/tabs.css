@@ -1,0 +1,93 @@
+
+
+.content{
+	margin: 100px 0px 0px 180px;
+	z-index: -1;
+	
+}
+.front{
+	background-image:url("../../images/frontt.jpg");
+	width: 80%;
+	height: 350px;
+	background-size: cover;
+	background-position: center top ;
+	background-repeat:no-repeat;
+	text-align:center;
+	opacity:.9;
+	font: italic;
+	color:#fff;
+	font-size: larger;
+	line-height: 350px;
+	margin: 0 auto;
+	
+}
+
+
+.container {
+	padding:10px 5px 10px 5px;
+	background-color:#fff;
+	margin:0 15px 30px 15px;
+	width:95%;
+	text-align:center ;
+	align-items:center ;
+	justify-content: center;
+	margin: 5% auto;
+	border-radius: 15px;
+}
+.container p{
+	font-size: 15px;
+	padding: 30px 0;
+}
+
+h1{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+h2{
+	text-align:left;
+	margin:10px 50px 0 50px; 
+	color: rgb(5, 26, 87);
+	font-size: 25px;
+}
+p{
+	text-align:center;
+	margin:10px 50px 0 50px; 
+}
+
+.feed{
+	width : 80%;
+	height: 100%;
+	margin: 10px auto;
+
+}
+
+.page{
+	display: flex;
+	text-align: center;
+	margin-right: 45px;
+	
+}
+
+
+.btn-box{
+	display: flex;
+	padding: 5px;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	
+}
+
+.btn-box button{
+	background-color: #fff;
+	border-radius:5px;
+	border: none;
+	box-shadow: 2px 2px 2px 2px rgb(172, 172, 172); 
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	margin-right: 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
