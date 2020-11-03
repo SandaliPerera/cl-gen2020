@@ -35,7 +35,7 @@
 		
 		<div class="content">
 		<div class="view">
-		<h1> User List</h1>
+		<h1> News List</h1>
 		<hr>
 		<br>
 		<form class="search" action="register_stu.html">
