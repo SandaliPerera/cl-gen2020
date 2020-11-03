@@ -5,6 +5,7 @@
 <title>Add Student Details</title>
 <link rel="stylesheet" href="../css/register.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
+<link type="text/css" rel="stylesheet" href="../css/register.css">
 <script src="../js/jquery-1.9.1.min.js"></script>
         <script src="../js/nav.js"></script>
 </head>
@@ -17,7 +18,7 @@
                 <h1>Add Student Details</h1>
                 <hr>
 
-				<label for="stuID"><b>ID</b></label>
+				<label for="stuID"><b>Admission Number</b></label>
 				<input type="text" placeholder="Enter ID" value = "<?php if (isset ($_GET['userID'])){echo $_GET['userID'];}?>" name="stuID" required>
 				
 				<label for="stufName"><b>First Name</b></label>
