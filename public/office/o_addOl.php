@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 32ff7568b642eba659dd775c379addfa6fb22eed
 
 <!DOCTYPE html>
 <html>
@@ -6,6 +10,19 @@
 <link type="text/css" rel="stylesheet" href="../css/pop.css">
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/pop.js"></script>
+<<<<<<< HEAD
+=======
+
+<!DOCTYPE html>
+<html>
+<head><title>Add O/L Results</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="../css/pop.css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+
+<script src="../js/pop.js"></script>
+
+>>>>>>> 32ff7568b642eba659dd775c379addfa6fb22eed
 <script src="../js/nav.js"></script>
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/register.css">
