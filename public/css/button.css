@@ -1,0 +1,35 @@
+.content-area{
+    margin-top:120px;
+    margin-left:300px;
+	 margin-right:120px;
+	 margin-bottom:120px;
+}
+
+
+.content-area .button-area{
+    
+    margin-top:10%;
+   
+}
+
+.content-area .button-area h3{
+    margin-top:5%;
+}
+
+.content-area .button-area .btn{
+
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 100PX;
+    height:100PX;
+    background-color: aqua;
+    border-radius: 20px;
+    background-color: aliceblue;
+    border: 5px solid #A2D9CE;
+
+}
+
+.content-area .button-area .btn:hover{
+    background-color: #85e4d1;
+
+}
