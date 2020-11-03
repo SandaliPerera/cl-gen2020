@@ -45,3 +45,7 @@ button{
 img{
 	float: center;
 }
+
+.view{
+	margin: 0 35px;
+}

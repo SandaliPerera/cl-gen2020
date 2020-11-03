@@ -62,6 +62,7 @@ p{
 	width : 98%;
 	height: 100%;
 	margin: 10px auto;
+	margin-top: 50px;
 
 }
 
@@ -77,7 +78,8 @@ p{
 	display: flex;
 	padding: 5px;
 	margin-left: 15px;
-	margin-top: 50px;
+	margin-top: 100px;
+	margin-bottom: 20px;
 }
 
 .btn-box button{
@@ -94,7 +96,7 @@ p{
 }
 
 .card {
-	padding: 5px!important;
+	padding: 10px!important;
 	overflow: auto;
 	border-radius: 0px;
   }
@@ -120,6 +122,7 @@ p{
 
  .news .card{
 	background-image: url(../../images/bg.png);
+	padding: 5px 0;
 }
 #page1 .news .container{
 	width: 75%;
