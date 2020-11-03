@@ -12,42 +12,46 @@ html body{
 
 
 .navbar{
-	margin: 0 ;
+	margin-left: 195px ;
 	padding: 0;
-	background:rgb(13, 7, 61);
+	background:#333333;
 	text-align:center;
-	width: 100%;
+	width: 90%;
 	height:60px;
 	position: fixed;
 	z-index: 10;
+	box-shadow:0 2px 0px 0px #9da0a4;
 	
 	
 }
-.navbar h1{
+.wrap img{
 	display:inline-flex;
 	font-weight: bold;
 	color:#fff;
 	float:left;
-	margin: -5px 10px 5px 35px;
+	margin: 50px 10px 5px 45px;
+	border-bottom:solid 1px #60666b;
 }
 
 
 .wrap{
-	margin-top: 45px;
+	
 	position: fixed;
-	width:175px;
+	width:195px;
 	height: 100%;
-	background:#333333 ;
+	background:#404040 ;
 	padding: 0px;
 	font-size:15px;
+	box-shadow:0 10px 5px 0 #60666b;
 
 }
 
 
 .menu{
-	margin: 50px 2px 0px -40px;
+	margin: 200px 2px 0px -25px;
 }
 .wrap ul li{
+	text-align: left;
 	margin-top: 0;
 	padding: 5px 0;
 	list-style: none;
@@ -55,19 +59,21 @@ html body{
 	cursor: pointer;
 	display:block;
 	margin-bottom: 30px;
-	border-bottom:.5px solid rgb(138, 134, 134) ;
 	color: #cfd7b8;	
 }
 .wrap ul li a{
-	color: #cfd7b8;
+	color: #bdb8d7;
 	display: block;
 	text-decoration: none;
 
 }
 
+.wrap ul li:hover a{
+	color: rgb(241, 237, 230);	
+}
 
 .wrap ul ul li:hover{
-	background: #333333	
+	background: #404040;	
 }
 .wrap ul ul li:hover a{
 	color: #fff;
@@ -83,7 +89,7 @@ html body{
 	margin-top: 0;
 	margin-bottom: 15px;
 	padding: 5px 10px 5px 0px;
-	border-bottom: 1px solid oldlace;
+	border-bottom: 1px solid #bdb8d7;
 	color: #fff;
 }
 /* .wrap ul li:focus ul{
@@ -100,7 +106,7 @@ html body{
 	width : 100px;
 	font-weight: 500;
     background: transparent;
-    color: white;
+    color: rgb(193, 187, 187);
     font-size: 20px;
 	margin-left: auto;
     margin-right: 30px;
@@ -173,10 +179,10 @@ a{
 
 
   .drop{
-	background-color: #333333;
+	background-color: #404040;
 	border: none;
 	color: #bdb8d7;
-	text-align: center;
+	text-align: left;
 	text-decoration: none;
 	display: inline-block;
 	width: 100%;
@@ -186,7 +192,8 @@ a{
 }
 
 .drop:hover{
-	background-color: #333333;
+	background-color: #404040;
+	color: rgb(241, 237, 230);
 }
 
 .drop:focus{
@@ -196,4 +203,8 @@ a{
 
 .fa-angle-down{
 	margin-left: 3px;
+}
+
+ul{
+	list-style: none;
 }

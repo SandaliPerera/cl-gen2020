@@ -3,8 +3,8 @@
         <head>
         <title>Login</title>
         
-        <link rel="stylesheet" href="../../css/login.css " type="text/css">
-        <link rel="stylesheet" href="../../css/messages.css " type="text/css">
+        <link rel="stylesheet" href="../css/login.css " type="text/css">
+        <link rel="stylesheet" href="../css/messages.css " type="text/css">
         <script defer src="../../js/errors.js"></script>
         
         </head>
@@ -23,7 +23,7 @@
                 <h1>Login </h1>
                 
                 
-                <form id="login" action="../includes/login.php" method="post">
+                <form id="login" action="../../src/login.php" method="post">
                     <p>Username</p>
                     <input type="text" id="username" name="username" placeholder="Enter Username" required  >
                     <p>Password</p>
