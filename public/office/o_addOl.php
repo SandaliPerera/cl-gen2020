@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html>
@@ -7,15 +6,6 @@
 <link type="text/css" rel="stylesheet" href="../css/pop.css">
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/pop.js"></script>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard</title>
-<script src="../js/jquery-1.9.1.min.js"></script>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 <script src="../js/nav.js"></script>
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/register.css">

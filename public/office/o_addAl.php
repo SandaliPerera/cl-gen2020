@@ -1,11 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head><title>Add A/L Results</title>
-=======
-<head>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link type="text/css" rel="stylesheet" href="../css/pop.css">
 <script src="../js/jquery-1.9.1.min.js"></script>
@@ -15,10 +11,6 @@
 <link type="text/css" rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-<<<<<<< HEAD
-=======
-<body>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 
 <div id="nav"></div>
 

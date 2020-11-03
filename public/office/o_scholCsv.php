@@ -5,9 +5,6 @@
 <title>Add Scholarship Results</title>
 <link rel="stylesheet" href="../css/register.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
-<script src="../js/jquery-1.9.1.min.js"></script>
-<script src="../js/pop.js"></script>
-<script src="../js/nav.js"></script>
 </head>
 <body>
     <div id="nav"></div>

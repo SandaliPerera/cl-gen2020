@@ -22,7 +22,8 @@
     
         <div class="content">
         
-        <div class="card"><h1>Teachers List</h1>
+       <h1>Teachers List</h1>
+       <hr>
 
                 <?php
                 //echo "test";
@@ -54,7 +55,7 @@
           ?>
           
 
-        </div>
+       
         <div class="view">
         <div class="btn-box">
 
