@@ -10,28 +10,16 @@
   
 }
 
+
+
 .container {
-	width : 43%;
+	width : 100%;
 	float: left;
 	margin-bottom:20px;
 	margin-top:20px;
 }
-#b-con {
-	width : 90%!important; 
-	margin-bottom:20px;
-	margin-top:20px;
-}
-
 .search{
 	float:right;
-}
-
-
-.view{
-	width : 90%;
-	height: 100%;
-	margin: 10px auto;
-
 }
 
 input[type=text] {

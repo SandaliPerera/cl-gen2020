@@ -1,0 +1,58 @@
+<link type="text/css" rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../../images/font-awesome-4.7.0/css/font-awesome.min.css">
+<div class="navbar"> 
+	<h1>CL-GEN</h1> 
+	<ul>
+		<li>
+			<form name="logout" action="../../src/logout.php" method="POST">
+				<input type="submit" value="LOGOUT" name="logout">
+			</form>
+		</li>
+	</ul>
+</div>
+<div class="wrap">
+<div class="menu">
+    <ul>
+        <li><a href="Tcr_dashboard1.php">Dashboard</a></li>
+
+                <li><a href="Tcr_RequestEdits.php">Request Edits</a></li>
+                <li><a href="newsfeed.php"> News Feed</a></li>
+            </ul>
+           </div>
+        
+
+    </ul>
+   
+</div> 
+</div>
+
+<script>
+
+var menu = document.getElementById("drop");
+var menu2 = document.getElementById("drop2");
+var submenu = document.getElementById("submenu");
+var submenu2 = document.getElementById("submenu2");
+
+
+    submenu.style.display = "none";
+    submenu2.style.display = "none";
+
+
+menu.onclick = function(event) {
+    if (submenu.style.display === "none") {
+        submenu.style.display = "block";
+    } else {
+        submenu.style.display = "none";
+    }
+}
+menu2.onclick = function(event) {
+    if (submenu2.style.display === "none") {
+        submenu2.style.display = "block";
+    } else {
+        submenu2.style.display = "none";
+    }
+}
+
+
+</script>
+

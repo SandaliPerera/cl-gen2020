@@ -5,7 +5,7 @@ html body{
 	background-image: url(../images/gray.jpg);
 	height:100%;
 	background-size:100%;
-	background-position:right;
+	background-position:center;
 	text-align:center;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -144,28 +144,28 @@ html body{
     color: #ffc107;
 }
 .content{
-	margin-top: 120px;
+	margin-top: 150px;
 	margin-left: 220px;
 	margin-right:20px;
 	height: 100%;
 }
 
 .card {
+  margin-left: 10%;
   box-shadow: 0 8px 5px 0 rgb(172, 172, 172); 
-  width: 95%;
-  background-color:#fdfcfc;
-  margin: 20px;
+  width: 50%;
+  background-color:#941515;
+  margin-top: 10%;
   padding: 10px;
-  align:right;
+  
 }
 
 
 .container {
   padding: 5px 16px 5px 5px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
- 
   background-color: white;
-  margin-left:8px;
+  margin-left:0px;
   
 }
 
@@ -181,5 +181,5 @@ a{
 	text-align: left;
 	list-style-type: none;
 	padding : 10px;
-	padding-left: 30px;
+	padding-left: 10px;
 }
