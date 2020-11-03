@@ -38,3 +38,39 @@ button , .button{
     color: #000;
 }
 
+
+.btn {
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: unset;
+  }
+
+.editbtn {
+	background-color: #1c87c9;	
+  }
+.editbtn:hover{
+    background-color: #39a2e4c7;
+}
+
+.dltbtn {
+	background-color: #f11a1a;
+  }
+.dltbtn:hover {
+    background-color: #f82121de;
+}
+
+.viewbtn{
+    background-color: #25af02;
+  }
+.viewbtn:hover{
+    background-color: #2eca06dc;
+}
+
+

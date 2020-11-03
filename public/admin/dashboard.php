@@ -41,22 +41,18 @@
 		
 			<div class="card">
 			
-			  <div class="r-container">
+			  <div class="l-container">
 			  <img src = "../../images/sport.png" width="110" height="100">
 				<h3><b>Sports</b></h3>
 				<p>Students NO:</p>
 			  </div>
-			  <div class="r-container">
+			  <div class="l-container">
 			  <img src = "../../images/society.png" width="110" height="100">
 				<h3><b>Societies</b></h3>
 				<p>Students NO:</p>
 			  </div>
-			  <div class="r-container">
-			  <img src = "../../images/aesthetic.png" width="110" height="100">
-				<h3><b>Aesthetics</b></h3>
-				<p>Students NO:</p>
-			  </div>
-			  <div class="r-container">
+			 
+			  <div class="l-container">
 			  <img src = "../../images/education.png" width="110" height="100">
 				<h3><b>Educational</b></h3>
 				<p>Students NO:</p>

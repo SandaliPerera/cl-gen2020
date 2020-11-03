@@ -41,26 +41,31 @@
 						<th>Sport ID</th>
 						<th>Sport </th>
 						<th>Teacher In Charge ID</th>
+						<th>Number of Students </th>
 						
 					</tr>
 					<tr>
 						<td>AAA</td>
 						<td>BBB</td><td>BBB</td>
+						<td>BBB</td>
 						
 					</tr>
 					<tr>
 						<td>AAA</td>
 						<td>BBB</td><td>BBB</td>
+						<td>BBB</td>
 						
 					</tr>
 					<tr>
 						<td>AAA</td>
 						<td>BBB</td><td>BBB</td>
+						<td>BBB</td>
 						
 					</tr>
 					<tr>
 						<td>AAA</td>
 						<td>BBB</td><td>BBB</td>
+						<td>BBB</td>
 						
 					</tr>
 				</table>

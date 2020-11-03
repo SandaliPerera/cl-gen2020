@@ -11,7 +11,7 @@ if (isset($_POST['login'])){
     if(empty($username) == true || empty($pwd)== true){
         
          $error = "Fill all the fields";
-         header('Location: ../../php/common/loginFile.php?error='.$error);
+         header('Location: ../public/common/loginFile.php?error='.$error);
 
     }else{
         $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password '";
@@ -22,9 +22,9 @@ if (isset($_POST['login'])){
             $row = mysqli_fetch_assoc($result);
             
             if($pwd == $row['userID'] ){
-                $message = "<a href='../common/resetPass.php'>First time login in? Click here to Change your Password to Login</a> "  ;
+                $message = "<a href='../public/common/resetPass.php'>First time login in? Click here to Change your Password to Login</a> "  ;
 
-                header('Location: ../../php/common/loginFile.php?message='.$message);
+                header('Location: ../public/common/loginFile.php?message='.$message);
             }else{
 
                 if($row['userType'] == "student"){
