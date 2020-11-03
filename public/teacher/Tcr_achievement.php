@@ -63,7 +63,11 @@
 							
 					</form>
 				<hr>
+<<<<<<< HEAD
 				<h2 align="center" ><a href="Tcr_dashboard2.php">Cancel</a></h2>
+=======
+				<h2 align="center" ><a href="../admin/main_admin.php">Cancel</a></h2>
+>>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 				<hr>
 			</div>
 		</div>

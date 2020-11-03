@@ -12,7 +12,11 @@
 <body>
 
 
+<<<<<<< HEAD
 <div id="nav1"></div>
+=======
+<div id="nav"></div>
+>>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 		
 		<div class="content">
 			<div class="container">
@@ -29,7 +33,11 @@
 				<button type="submit" class="searchbtn" formaction="Tcr_fees2.php">Search</button>
 				</form>
 					<hr>
+<<<<<<< HEAD
 				<h2 align="center" ><a href="Tcr_dashboard1.php">Cancel</a></h2>
+=======
+				<h2 align="center" ><a href="../admin/main_admin.php">Cancel</a></h2>
+>>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 					<hr>
 			</div>
 		</div>

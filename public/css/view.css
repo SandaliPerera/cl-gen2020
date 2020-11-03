@@ -5,17 +5,16 @@ table{
 	margin-top:10px;
 	text-align:center;
 }
-
+tr:first-child{
+	background:#a9a9a9;
+}
 
 tr:nth-child(even){
-	background:#f3f3f3;
+	background:#ebecf0;
 }
 th, td {
 	height:35px;
 	border: 1px solid white;
-}
-th{
-    background:rgb(115, 151, 151);
 }
 
 button , .button{
@@ -36,6 +35,7 @@ button , .button{
     cursor: pointer;
     background: #fff;
     color: #000;
+<<<<<<< HEAD
 }
 
 
@@ -74,3 +74,6 @@ button , .button{
 }
 
 
+=======
+}
+>>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
