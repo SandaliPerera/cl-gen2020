@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Add Student Details</title>
@@ -11,7 +11,27 @@
 </head>
 <body>
 <div id="nav"></div>
+<?php
 
+				require_once '../../config/conn.php';
+
+				$sql = "SELECT * FROM user where userID='".$_GET['userID']."'";
+
+                $res= mysqli_query($conn,$sql);
+                $row=mysqli_fetch_array($res);
+                
+                $stuID = $row['userID'];
+                $charID = substr($stuID,2);
+                $pID = "PR" . $charID;
+
+				if($res){
+				//echo "Sucessfull";
+				}
+				else{
+				echo"failed";	
+				}
+
+?>
     <div class="content">
         <div class="container">
             <form action="../../src/o_addStudentDetails.php" method="POST">
@@ -57,12 +77,35 @@
 				<input type="text" placeholder="Enter Email" name="stuEmail" required>
 
 				<label for="stuContactNo"><b>Contact Number</b></label>
-				<input type="text" placeholder="Enter Contact Number" name="stuContactNo" required>
+                <input type="text" placeholder="Enter Contact Number" name="stuContactNo" required>
 
-				<label><b>Gender:</b></label>
+                <label><b>Gender:</b></label>
 			    <label> <input type="radio" name="stuGender" value="male"> Male</label>
 			    <label> <input type="radio" name="stuGender" value="female"> Female</label>
-			    <label><input type="radio" name="stuGender" value="other"> Other</label>
+                <label><input type="radio" name="stuGender" value="other"> Other</label>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <h2>Parent's Details</h1>
+
+				<label for="pID"><b>User ID</b></label>
+				<input type="text" placeholder="Enter ID" value = "<?php echo $pID; ?>" name="pID" >
+				
+				<label for="parentName"><b> Name</b></label>
+				<input type="text" placeholder="Enter  Name" name="parentName" >
+
+                <label for="pNIC"><b>NIC</b></label>
+				<input type="text" placeholder="Enter NIC" name="pNIC" >
+
+                <label for="occ"><b>Occupation</b></label>
+				<input type="text" placeholder="Enter Occupation" name="occ" >
+
+                <label for="Pcontact"><b>Contact Number</b></label> <br>
+                <input type="text" placeholder="Enter Contact Number" name="Pcontact" >
+
+                <label for="pEmail"><b>Email</b></label> <br>
+                <input type="text" placeholder="Enter Email" name="pEmail" >
 
 				<br>
 				</br><br>

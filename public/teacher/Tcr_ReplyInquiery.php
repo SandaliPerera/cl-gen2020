@@ -11,11 +11,7 @@
 <link type="text/css" rel="stylesheet" href="../css/inquiry.css">
 </head>
 <body>
-<<<<<<< HEAD
 <div id="nav1"></div>
-=======
-<div id="nav"></div>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 		
 		<div class="content">
 		
@@ -44,11 +40,7 @@
 						<td>Medani</td>
 						<td>02/03/2020</td>
 						<td><form class="search" action="">
-<<<<<<< HEAD
                                     <button type="submit" formaction="Tcr_Reply.php"  align="center">Reply</button>
-=======
-                                    <button type="submit" formaction="Tcr_AddInquiery.php"  align="center">Reply</button>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 						</form>
 						</td>
 					</tr>

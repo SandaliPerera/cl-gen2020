@@ -3,7 +3,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teachers User List</title>
+<title>Parents User List</title>
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/nav.js"></script>
 <link rel="stylesheet" href="../css/view.css " type="text/css">
@@ -15,7 +15,7 @@
 		
 		<div class="content">
 		
-		<h1>Teachers User List</h1>
+		<h1>Parents User List</h1>
 		<form class="search" action="register_stu.html">
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>
@@ -30,7 +30,7 @@
 			
 			  <div class="card">
 			  <form>
-					<button type="submit" formaction="register_user.php">Add Teacher</button>
+					<button type="submit" formaction="register_user.php">Add Student</button>
 				</form>
 				<br>
 				<br>
@@ -38,7 +38,7 @@
 				<hr>
 				<table>
 					<tr>
-						<th>Teacher number</th>
+						<th>User ID</th>
 						<th>Student name</th>
 						<th>Click to edit</th>
 						
@@ -46,7 +46,7 @@
 					<tr>
 						<td>AAA</td>
 						<td>BBB</td>
-						<td><a class='btn editbtn' href = Tcr_profile.php > update </a> </td>
+						<td><a class='btn editbtn' href = SProfile.html > update </a> </td>
 						
 					</tr>
 				</table>

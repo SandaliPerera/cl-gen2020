@@ -1,6 +1,6 @@
 <?php
 //require_once('cl_gen.php');
-include_once '../../php/includes/conn.php';
+require_once '../config/conn.php';
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -24,18 +24,29 @@ if (isset($_POST['regbtn'])) {
     $contactNo = $_POST['stuContactNo'];
     $gender = $_POST['stuGender'];
 
+    $pID = $_POST['pID'];
+    $pName = $_POST['parentName'];
+    $pNIC = $_POST['pNIC'];
+    $pOcc = $_POST['occ'];
+    $pContact = $_POST['Pcontact'];
+    $pEmail = $_POST['pEmail'];
+
 $sql = "INSERT INTO student (admissionNo, fName, mName, lName, dob, adStreet, adCity, adDistrict, religion, enteredDate, enteredGrade, email, contactNo, gender) VALUES
- ($admissionNo, '$fName', '$mName', '$lName', '$dob', '$adStreet', '$adCity', '$adDistrict', '$religion', '$enteredDate', '$enteredGrade' '$email', '$contactNo', '$gender');";
-echo $admissionNo;
-echo $sql;
-$sql2="INSERT INTO `student` (`admissionNo`, `fName`, `mName`, `lName`, `dob`, `adStreet`, `adCity`, `adDistrict`, `religion`, `enteredDate`, `enteredGrade`, `email`, `contactNo`, `gender`) 
-VALUES ('ST2000002', 'a', 'aa', 'a', '2020-10-13', 'ddddddddddd', 'daaaaaaaaaaaaaaaaaas', 'aaaaaaaaaa', 'aaaaaaaaaa', '2020-10-13', 'www', 'wwwwww', 'sssssss', 'cccc')";
-if ($conn->query($sql) === TRUE) {
+ ('$admissionNo', '$fName', '$mName', '$lName', '$dob', '$adStreet', '$adCity', '$adDistrict', '$religion', '$enteredDate', '$enteredGrade', '$email', '$contactNo', '$gender')";
+
+ $sql1 = "INSERT INTO parent (parentID, name,  nic, occupation, contactNo, admissionNo, email) VALUES
+ ('$pID', '$pName', '$pNIC', '$pOcc', '$pContact', '$admissionNo', '$pEmail')";
+
+ $update_query1 = "UPDATE user SET isActivated = '1' WHERE userID = '$admissionNo'";
+ $update_query2 = "UPDATE user SET isActivated = '1' WHERE userID = '$pID'";
+ 
+
+if ($conn->query($sql) === TRUE && $conn->query($sql1) === TRUE && $conn->query($update_query1) && $conn->query($update_query2) ) {
     echo '<script language="javascript">';
-	echo 'alert("Details Added");';
-	//echo 'window.location.href="../driver.php";';
+    echo 'alert("Details Added");';
     echo '</script>';
-    echo "dd";
+	header('Location: ../public/office/o_studentsList.php');
+
 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

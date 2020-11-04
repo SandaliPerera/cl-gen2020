@@ -30,7 +30,7 @@
 	align-items:center ;
 	justify-content: center;
 	margin: 1% auto;
-	border-radius: 1px!important;
+	
 }
 .container p{
 	font-size: 15px;
@@ -98,7 +98,7 @@ p{
 .card {
 	padding: 10px!important;
 	overflow: auto;
-	border-radius: 0px;
+	
   }
 
 .image{
@@ -123,6 +123,7 @@ p{
  .news .card{
 	background-image: url(../../images/bg.png);
 	padding: 5px 0;
+	border-radius: 0px;
 }
 #page1 .news .container{
 	width: 75%;

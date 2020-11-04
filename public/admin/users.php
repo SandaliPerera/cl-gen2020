@@ -46,15 +46,6 @@
 				  </div>
 				  </a>
 
-				  <a href="add_admin.php">
-				  <div class="container" id="b-con">
-	
-				<br>
-				<img src = "../../images/admin.png" width="110" height="100">
-					<h2><b>Add Admin</b></h2>
-				
-				  </div>
-				  </a>
 	
 			</div>
 			<br>

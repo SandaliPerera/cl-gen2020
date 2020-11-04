@@ -45,7 +45,8 @@
 					</tr>
 					<tr>
 						<td>AAA</td>
-						<td>BBB</td><td>BBB</td>
+						<td>BBB</td>
+						<td><a class='btn editbtn' href = SProfile.html > update </a> </td>
 						
 					</tr>
 				</table>
