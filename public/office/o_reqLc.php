@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="../css/register.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/tabs.css">
+<link type="text/css" rel="stylesheet" href="../css/profile.css">
+<link type="text/css" rel="stylesheet" href="../css/news.css">
 <link type="text/css" rel="stylesheet" href="../css/view.css">
 <link type="text/css" rel="stylesheet" href="../css/pop.css">
 

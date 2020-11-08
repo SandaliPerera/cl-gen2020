@@ -22,10 +22,10 @@
                 <hr>
 
 				<label for="noOfClasses"><b>Number Of Classes</b></label>
-				<input type="text" placeholder="Enter Exam ID" name="noOfClasses" required>
+				<input type="text" placeholder="Enter Class Number" name="noOfClasses" required>
                 
 				<label for="noOfStu"><b>Maximum Number of students</b></label>
-				<input type="text" placeholder="Enter Exam Year" name="noOfStu" required>
+				<input type="text" placeholder="Enter Maximum Number" name="noOfStu" required>
 
 				<br>
 		

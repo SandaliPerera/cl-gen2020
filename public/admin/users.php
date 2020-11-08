@@ -26,7 +26,7 @@
 			<div class="card">
 			
 				  <a href="register_user.php">
-				  <div class="container">
+				  <div class="container user">
 
 				<br>
 				<img src = "../../images/user.png" width="110" height="100">
@@ -37,7 +37,7 @@
 				  </div>
 				  </a>
 				<a href="create_multiple_user.php">
-				  <div class="container">
+				  <div class="container user">
 	
 				<br>
 				<img src = "../../images/users.png" width="110" height="100">

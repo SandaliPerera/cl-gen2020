@@ -26,6 +26,7 @@
   <div id="nav"></div>
 		
   <div class="content">
+    <div class="card">
       <h1>Edit Request Form</h1>
 
 
@@ -52,7 +53,8 @@
     
     </div>
     
- 
+     
+</div>
 
 
 </body>

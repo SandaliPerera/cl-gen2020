@@ -4,7 +4,7 @@
       include_once '../../config/conn.php';
       ?>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Students User List</title>
+   <title>Parents User List</title>
    <link rel="stylesheet" href="../css/view.css " type="text/css">
    <link type="text/css" rel="stylesheet" href="../css/main.css">
    <link type="text/css" rel="stylesheet" href="../css/tabs.css">
@@ -18,14 +18,14 @@
       <div class="content">
          
       <div class="container count">
-      <h1>Students List</h1>
+      <h1>Parents List</h1>
       <?php
             //echo "test";
             
             
-            $sql = "SELECT COUNT(isActivated) FROM user where userType='student'"; 
-            $sql1 = "SELECT * FROM user where isActivated=0 and userType='student' ";
-            $sql2 = "SELECT * FROM user where isActivated=1 and userType='student' ";
+            $sql = "SELECT COUNT(isActivated) FROM user where userType='parent'"; 
+            $sql1 = "SELECT * FROM user where isActivated=0 and userType='parent' ";
+            $sql2 = "SELECT * FROM user where isActivated=1 and userType='parent' ";
             
             $result = $conn->query($sql);
             $result1 = $conn->query($sql1);
@@ -35,7 +35,7 @@
             // output data of each row
             
             while($row = $result->fetch_assoc()) {
-            echo "Student Count: " . $row["COUNT(isActivated)"]. "<br>";
+            echo "Parent Count: " . $row["COUNT(isActivated)"]. "<br>";
             
             }
             
@@ -115,7 +115,7 @@
          var button2 = document.getElementById("button2");
          
          let url = window.location.href;
-         if(url == "http://localhost/CL-GEN/public/office/o_studentsList.php"){
+         if(url == "http://localhost/CL-GEN/public/office/o_parentsList.php"){
          	page1.style.display = "block";
          	page2.style.display = "none";
          	button1.style.color= "#008080";

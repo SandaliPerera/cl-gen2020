@@ -19,6 +19,9 @@ hr{
 	margin-bottom:20px;
 	margin-top:20px;
 }
+.user{
+	margin-left: -10px!important;
+}
 .search{
 	float:right;
 }

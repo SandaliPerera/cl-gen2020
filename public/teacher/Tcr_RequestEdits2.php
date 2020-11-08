@@ -19,7 +19,7 @@
   <link type="text/css" rel="stylesheet" href="../css/main.css">
   
   <link rel="stylesheet" href="../css/register2.css " type="text/css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body name = top>
 <body>

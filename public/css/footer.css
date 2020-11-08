@@ -6,15 +6,17 @@
 }
 
 footer{
-  margin-top: 20px;
   margin-bottom: 0;
   z-index: -22;
-  position: relative;
   color: #fbfbfb;
-  bottom: 0px;
   width: 100%;
-  background: #0e0e0e;
+  background: #264490;
   font-family: 'Poppins';
+  bottom: 0;
+  width: 100%;
+  clear: both;
+  position: relative;
+    margin-top: 80%;
 }
 
 
