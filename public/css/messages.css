@@ -1,13 +1,15 @@
 #error{
-    font-size: 17px;
-    padding: 10px;
-    height: 20px;
-    margin: 5px 0 10px;
-    text-align: center;
-    width: 100%;
-    color: rgb(194, 19, 54, 1, 33);
-    background-color: rgb(247, 170, 186);
-    height: auto;
+  font-size: 20px;
+  padding: 15px;
+  height: 20px;
+  margin: 5px auto;
+  text-align: center;
+  width: 96%;
+  color: white;
+  background-color: #e60000;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
 }
 
 #error a:link {
@@ -25,15 +27,28 @@
   }
 
   #message{
+    color: #000;
     font-size: 17px;
     padding: 10px;
     height: 20px;
-    margin: 5px 0 10px;
+    margin: 5px 5px 15px 5px;
     text-align: center;
-    width: 100%;
+    width: 97.5%;
     color: rgb(194, 19, 54, 1, 33);
-    background-color: rgb(150, 216, 157);
+    background-color: rgb(48, 208, 64);
     height: auto;
+
+    font-size: 20px;
+    padding: 15px;
+    height: 20px;
+    margin: 5px auto;
+    text-align: center;
+    width: 96%;
+    color: white;
+    background-color: rgb(48, 208, 64);
+    text-align: center;
+    line-height: 20px;
+    border-radius: 10px;
 }
 
 #message a:link {
@@ -50,14 +65,20 @@
     color: rgb(60, 154, 71);
   }
   
+
+
 #msg{
-    font-size: 17px;
-    padding: 10px;
-    height: 20px;
-    margin: 5px 0 10px;
-    text-align: center;
-    width: 100%;
-    color: rgb(194, 19, 54, 1, 33);
-    background-color: rgb(150, 216, 157);
-    height: auto;
+  font-size: 18px;
+  padding: 15px;
+  height: 15px;
+  margin: 5px auto;
+  text-align: center;
+  width: 96%;
+  color: white;
+  background-color: #e60000;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  z-index: 1000;
 }
+

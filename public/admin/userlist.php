@@ -35,17 +35,20 @@
 	<div id="nav"></div>
 		
 		<div class="content">
-		<div class="view">
 		<h1> User List</h1>
-		<hr>
-		<br>
+		<div class="view">
+		
+		
+		
 		<form class="search" action="register_stu.html">
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>
 		</form>
-		
-		
 		<br>
+		<br>
+		<br>
+		<hr>
+		
 		<div class="btn-box">
 
 			
@@ -53,8 +56,6 @@
 			<button id="button1" onclick="notActivated()">Activated Users</button>
 		</div>
 		
-		<br>
-			<br>
 		<div id="page1" class="page">
 			
 			

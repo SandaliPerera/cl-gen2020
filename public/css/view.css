@@ -5,13 +5,15 @@ table{
 	margin-top:10px;
 	text-align:center;
 }
+
+
+tr:nth-child(odd){
+	background:#ebecf0;
+}
 tr:first-child{
 	background:#a9a9a9;
 }
 
-tr:nth-child(even){
-	background:#ebecf0;
-}
 th, td {
 	height:35px;
 	border: 1px solid white;

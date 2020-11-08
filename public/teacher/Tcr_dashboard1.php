@@ -1,22 +1,32 @@
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'teacher'){
+
+        $userID = $_SESSION['userID'];
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
-	<script src="../js/jquery-1.9.1.min.js"></script>
+  <title>Inquieries 1</title>
+  	<script src="../js/jquery-1.9.1.min.js"></script>
 	<script src="../js/nav.js"></script>
-    <link type="text/css" rel="stylesheet" href="../css/main.css">
+	<link type="text/css" rel="stylesheet" href="../css/main.css">
 	<link type="text/css" rel="stylesheet" href="../css/register2.css">
 	<link type="text/css" rel="stylesheet" href="../css/teacher.css">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
-<body name = top>
 <body>
 
 
-<<<<<<< HEAD
 <div id="nav1"></div>
-=======
-<div id="nav"></div>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
-  
 		
 		<div class="content">
 			<h2>CLASS TEACHER</h2>
@@ -67,3 +77,5 @@
 		</div>
 </body>
 </html>	
+
+<?php } ?>

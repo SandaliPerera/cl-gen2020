@@ -1,13 +1,25 @@
 $(function(){
-		$("#nav").load(newFunction());
-		$("#nav1").load(newFunction2());
+		$("#nav").load(navFunction());
+		$("#nav1").load(navFunction2());
+		$("#footer").load(footFunction3());
 });
 
-function newFunction() {
+function navFunction() {
 	return "nav.html";
 }
 
-function newFunction2() {
+function navFunction2() {
 	return "nav1.html";
 }
 
+function footFunction3() {
+	return "../common/footer.html";
+}
+
+function openNav() {
+	document.getElementById("mySidenav").style.width = "250px";
+}
+  
+function closeNav() {
+	document.getElementById("mySidenav").style.width = "0";
+}

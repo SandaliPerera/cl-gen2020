@@ -1,0 +1,83 @@
+.image{
+    width: 100%;
+}
+.image img{
+    width: 80%;
+}
+
+.container{
+	height: 100%;
+	margin-top: 40px;
+	border-radius: 10px;
+    letter-spacing: .5px;
+    margin-left: 10px;
+}
+
+td{
+    width: 20%;
+    background-color: white;
+	height: 50px!important;
+  }
+
+  tr{
+	  
+	  background-color: white;
+  }
+
+.inner {
+	
+	background-color: white;
+	border-spacing: 24px 25px;
+	height: 100px;
+	width:100%;
+	margin: 5px 0!important;
+}
+p{
+    text-align: left;
+    white-space:pre-wrap;
+}
+
+table{
+    width:100%;
+    margin:auto;
+	border-spacing: 24px 25px;
+	
+  }
+
+.banner{
+	background-image: url(../../images/event.jpg);
+	height: 450px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom;
+}
+
+.btn-box{
+	margin-top: 80px!important;
+	margin-bottom: 20px!important;
+}
+
+.view-btn{
+	height: 43px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: .5px solid transparent;
+    border-radius: 15px;
+    background-color: #abd4fd;
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+}
+.view-btn span{
+    display: block;
+    padding: 8px 20px;
+}
+
+.view-btn span a:link{
+    text-decoration: none;
+    color: black;
+}
+.view-btn span a:visited{
+    text-decoration: none;
+    color: black;
+}

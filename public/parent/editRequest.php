@@ -1,3 +1,15 @@
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'parent'){
+
+        $userID = $_SESSION['userID'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +26,6 @@
   <div id="nav"></div>
 		
   <div class="content">
-    <div class="card">
       <h1>Edit Request Form</h1>
 
 
@@ -41,10 +52,11 @@
     
     </div>
     
-     
-</div>
+ 
 
 
 </body>
 </html>
+
+<?php } ?>
 

@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'teacher'){
+
+        $userID = $_SESSION['userID'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,7 +97,7 @@ require_once '../../config/conn.php';
 		var button2 = document.getElementById("button2");
 		
 		let url = window.location.href;
-		if(url == "http://localhost/CL-GEN/public/user/newsfeed.php"){
+		if(url == "http://localhost/CL-GEN/public/teacher/newsfeed2.php"){
 			page1.style.display = "none";
 			page2.style.display = "block";
 			button1.style.color= "#000";
@@ -121,3 +132,5 @@ require_once '../../config/conn.php';
 		
 </body>
 </html>
+
+<?php } ?>

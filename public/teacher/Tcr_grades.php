@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'teacher'){
+
+        $userID = $_SESSION['userID'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,18 +24,10 @@
 <body>
 
 
-<<<<<<< HEAD
 <div id="nav1"></div>
 
 
   
-=======
-<div id="nav"></div>
-
-
-
-        
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
      <div class="content-area">
         
         <div class="button-area">
@@ -60,15 +63,11 @@
             <button class="btn"><a href="Tcr_grades2.php">Grade 13-Arts</a></button>
             <button class="btn"><a href="Tcr_grades2.php">Grade 13-Com</a></button>
          </div>
-<<<<<<< HEAD
     
          
  </div>      
-=======
-    </div>
-         
-       
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
       
 </body>
 </html>
+
+<?php } ?>

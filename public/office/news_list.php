@@ -36,7 +36,6 @@
 		<div class="content">
 		<div class="view">
 		<h1> News List</h1>
-		<hr>
 		<br>
 		<form class="search" action="register_stu.html">
 		<input type="text" placeholder="Search.." name="search">
@@ -53,7 +52,7 @@
 			
 			  <div class="card">
 			  <form>
-					<button type="submit" formaction="register_user.php">Add User</button>
+					<button type="submit" formaction="register_user.php">Add News</button>
 				</form>
 				<br>
 				<br>

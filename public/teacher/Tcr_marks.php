@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'teacher'){
+
+        $userID = $_SESSION['userID'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +28,7 @@
 <body>
 
 
-<<<<<<< HEAD
 <div id="nav1"></div>	
-=======
-<div id="nav"></div>	
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 		<div class="content">
 			<h2>CLASS A-MARKS</h2>
 				<div class="card">
@@ -92,3 +99,5 @@
 
                         </body>
         </html>
+
+        <?php } ?>

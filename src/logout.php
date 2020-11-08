@@ -2,8 +2,9 @@
 if ( isset( $_POST['logout'] ) ){
     session_start();
     session_destroy();
-    unset($_SESSION["username"]);
+    unset($_SESSION["userID"]);
+    unset($_SESSION["userType"]);
 
-    header('Location: ../../html/common/login.html');
+    header('Location: ../public/common/loginFile.php');
 }
 ?>

@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>G.C.E. A/L Examination Results - 2016</title>
-<link rel="stylesheet" href="../css/view.css " type="text/css">
-<link type="text/css" rel="stylesheet" href="../css/main.css">
-<link type="text/css" rel="stylesheet" href="../css/users.css">
-<script src="../js/jquery-1.9.1.min.js"></script>
-<script src="../js/pop.js"></script>
-<script src="../js/nav.js"></script>
-</head>
-<body>
-  <div id="nav"></div>
-         <div class="content">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>G.C.E. A/L Examination Results - 2016</title>
+    <link rel="stylesheet" href="../css/view.css " type="text/css">
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/users.css">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/pop.js"></script>
+    <script src="../js/nav.js"></script>
+  </head>
+  <body>
+    <div id="nav"></div>
+      <div class="content">
 		
-            <h1>G.C.E. A/L Examination  Results - 2016</h1>
-            <form class="search" action="of_addStudentDetails.html">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit">Search</button>
-            </form>
-            
-            
+        <h1>G.C.E. A/L Examination  Results - 2016</h1>
+          <form class="search" action="of_addStudentDetails.html">
+          <input type="text" placeholder="Search.." name="search">
+           <button type="submit">Search</button>
+          </form>
             <br>
             <br>
             <br>
-             
-                
-                  <div class="card">
-            
-                    <br>
-                    
-                    <hr>
-
+                <div class="card">
+                  <br>
+                  <hr>
                     <table>
                         <thead><i><h3>Combined Maths Stream</h3></i></thead>
                         <hr>
@@ -61,14 +54,11 @@
                           <td>A</td>
                           <td>86</td>
                         </tr>
-                          
-                        
+   
                       </table>
                     
-                    </div>
-            
-				
-		</div>
+                    </div>      
+			</div>
 		
 </body>
 </html>

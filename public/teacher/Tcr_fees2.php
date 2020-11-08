@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'teacher'){
+
+        $userID = $_SESSION['userID'];
+?>
+
 <!DOCTYPEhtml>
 <html>
 <head>
@@ -18,11 +29,7 @@
 <body>
 
 
-<<<<<<< HEAD
 <div id="nav1"></div>
-=======
-<div id="nav"></div>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
   
 <div class="container">
 		<div class="content">
@@ -141,11 +148,7 @@
     <a href="#"><button type="submit" class="searchbtn" formaction="Tcr_fees3.php" >add</button>
     
 	<h1>     </h1>
-<<<<<<< HEAD
 	<h2 align="center" ><a href="Tcr_dashboard1.php">Cancel</a></h2>
-=======
-	<h2 align="center" ><a href="../admin/main_admin.php">Cancel</a></h2>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 
 </div>
                         
@@ -157,3 +160,5 @@
 			  <hr>
         </body>
         </html>
+
+        <?php } ?>

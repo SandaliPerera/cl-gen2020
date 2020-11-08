@@ -9,12 +9,13 @@
 	margin: auto;
   
 }
-
+hr{
+	border: .5px solid rgb(177, 212, 221);
+}
 
 
 .container {
 	width : 95%;
-	float: left;
 	margin-bottom:20px;
 	margin-top:20px;
 }
@@ -35,7 +36,7 @@ h2{
 	text-align: center;
 }
 h1{
-	padding-top:20px;
+	margin: 2px 0!important;
 }
 
 img{
@@ -43,5 +44,12 @@ img{
 }
 
 .view{
-	margin: 0 35px;
+	margin: 0 10px 0 50px;
+}
+
+ .count{
+	 margin-top: 15px;
+	 padding: 1px;
+	width: 99.6%;
+	box-shadow:0 .5px 0px 0px #9da0a4!important;
 }

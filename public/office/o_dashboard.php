@@ -13,52 +13,68 @@
 	<div id="nav"></div>
 		
 		<div class="content">
-		<h2>USERS</h2>
+		<h1> USERS</h1>
 		
 			<div class="card">
 				
-			
-			  <div class="l-container">
+			<table width="98%">
+				<tr>
+					<td  width="30%">
+					<div class="container">
 			  <img src = "../../images/student.png" width="110" height="100">
-				<h3><b>Students</b></h3>
+				<h2><b>Students</b></h2>
 				<p>Students NO:</p>
 			  </div>
-			  <div class="l-container">
+					</td>
+					<td width="30%">
+					<div class="container" >
 			  <img src = "../../images/teacher.png" width="110" height="100">
-				<h3><b>Teachers</b></h3>
+				<h2><b>Teachers</b></h2>
 				<p>Teachers NO:</p>
 			  </div>
-			  <div class="l-container">
+					</td>
+					<td width="30%">
+					<div class="container" >
 			  <img src = "../../images/office.png" width="110" height="100">
-				<h3><b>Office staff</b></h3>
+				<h2><b>Office staff</b></h2>
 				<p>Office staff NO:</p>
 			  </div>
+					</td>
+				</tr>
+			</table>
+			  
 			  
 			</div>
 			
 			</br>
-		<h2> PERFORMANCE</h2>	
-		
-			<div class="card">
-			
-			  <div class="l-container">
+		<h1> PERFORMANCE</h1>	
+		<div class="card">
+		<table width="100%">
+				<tr>
+					<td  width="30%">
+					<div class="container">
 			  <img src = "../../images/sport.png" width="110" height="100">
-				<h3><b>Sports</b></h3>
+				<h2><b>Sports</b></h2>
 				<p>Students NO:</p>
 			  </div>
-			  <div class="l-container">
+					</td>
+					<td width="30%">
+					<div class="container" >
 			  <img src = "../../images/society.png" width="110" height="100">
-				<h3><b>Societies</b></h3>
-				<p>Students NO:</p>
+				<h2><b>Societies</b></h2>
+				<p>Teachers NO:</p>
 			  </div>
-			
-			  <div class="l-container">
+					</td>
+					<td width="30%">
+					<div class="container" >
 			  <img src = "../../images/education.png" width="110" height="100">
-				<h3><b>Educational</b></h3>
-				<p>Students NO:</p>
+				<h2><b>Educational </b></h2>
+				<p>Office staff NO:</p>
 			  </div>
-			  
-			</div>
+					</td>
+				</tr>
+		</table>
+		</div>
 
 		</div>
 </body>

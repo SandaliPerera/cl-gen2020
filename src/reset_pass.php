@@ -7,22 +7,18 @@ if (isset($_POST['reset_pass'])){
     $username = $_POST['username'];
     $emailEntered = $_POST['email'];
 
-    if(!filter_var($emailEntered,FILTER_VALIDATE_EMAIL)){
-        $error = "Invalid Email Format!";
-        header('Location: ../../php/common/resetPass.php?error='.$error);
-    }else{
-
     $query = "SELECT * FROM user WHERE username ='$username'";
 
     $result = mysqli_query($conn,$query);
 
          if(mysqli_num_rows($result) > 1){
             $error = "ERROR";
-            header('Location: ../../php/common/resetPass.php?error='.$error);
+            header('Location: ../public/common/resetPass.php?error='.$error);
 
          }else if(mysqli_num_rows($result) == 0){
             $error = "Incorrect Username!";
-            header('Location: ../../php/common/resetPass.php?error='.$error);
+            header('Location: ../public/common/resetPass.php?error='.$error);
+           
 
          }else if (mysqli_num_rows($result) == 1){
 
@@ -39,7 +35,8 @@ if (isset($_POST['reset_pass'])){
 
                 if($emailEntered != $email){
                     $error = "Incorrect Email!";
-                    header('Location: ../../php/common/resetPass.php?error='.$error);
+                    header('Location: ../public/common/resetPass.php?error='.$error);
+                    exit();
 
                 }else if($emailEntered == $email){
                     $token = uniqid(md5(time()));
@@ -54,7 +51,8 @@ if (isset($_POST['reset_pass'])){
 
                 if($emailEntered != $email){
                     $error = "Incorrect Email!";
-                    header('Location: ../../php/common/resetPass.php?error='.$error);
+                    header('Location: ../public/common/resetPass.php?error='.$error);
+                    exit();
                 }else{
                     $token = uniqid(md5(time()));
                 }
@@ -68,7 +66,8 @@ if (isset($_POST['reset_pass'])){
 
                 if($emailEntered != $email){
                     $error = "Incorrect Email!";
-                    header('Location: ../../php/common/resetPass.php?error='.$error);
+                    header('Location: ../public/common/resetPass.php?error='.$error);
+                    exit();
                 }else{
                     $token = uniqid(md5(time()));
                 }
@@ -81,7 +80,8 @@ if (isset($_POST['reset_pass'])){
 
                 if($emailEntered != $email){
                     $error = "Incorrect Email!";
-                    header('Location: ../../php/common/resetPass.php?error='.$error);
+                    header('Location: ../public/common/resetPass.php?error='.$error);
+                    exit();
                 }else{
                     $token = uniqid(md5(time()));
                 }
@@ -95,7 +95,9 @@ if (isset($_POST['reset_pass'])){
                     Password Reset
 
                     Follow the following link to reset your password
-                    'http://localhost/CL-GEN1/php/common/password_change.php?token=$token";
+                    http://localhost/CL-GEN/public/common/password_change.php?token=$token
+                    
+                    Thank You.";
 
 
                 $to = $email;
@@ -108,19 +110,18 @@ if (isset($_POST['reset_pass'])){
 
                 if($sendResult){
                     $message = "Email has sent to your email address with the Reset link";
-                    header('Location: ../../php/common/resetPass.php?message='.$message);
+                    header('Location: ../public/common/resetPass.php?message='.$message);
                 }else{
                     $error = "Email Sending Fail";
-                    header('Location: ../../php/common/resetPass.php?error='.$error);
+                    header('Location: ../public/common/resetPass.php?error='.$error);
                 }
             }else{
                 $error = "Failed to send the Email";
-                //sheader('Location: ../../php/common/resetPass.php?error='.$error);
+                header('Location: ../../php/common/resetPass.php?error='.$error);
             }
 
         }
 
-    }
 
 
 

@@ -9,12 +9,14 @@
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/view.css">
 <link type="text/css" rel="stylesheet" href="../css/register.css">
+<link type="text/css" rel="stylesheet" href="../css/messages.css">
 </head>
 <body>
   <div id="nav"></div>
 		
   <div class="content">
-    <div class="card">
+
+  
       <h1>Add News</h1>
 
 
@@ -22,22 +24,35 @@
     <br>
 
 
-    <form action= "../../src/newsfeed_edit.php" method="POST">
+    <form action= "../../src/newsfeed_edit.php" method="POST" enctype="multipart/form-data">
           <hr>
                         
-                        <label for="title"><b>Title</b></label>
-                        <input type="text"  name="title" placeholder="Title" required>
+              <label for="title"><b>Title</b></label>
+              <input type="text"  name="title" placeholder="Title" required>
 			
-						<label for="news"><b>News</b></label>
-						<textarea id="news" name="news" rows="4" placeholder="News" cols="50"></textarea>
-                        <br>
+              <label for="news"><b>News</b></label>
+              <textarea id="news" name="news" rows="4" placeholder="News" cols="50"></textarea>
+
+              <label for="image"><b>Upload Images</b></label>
+              <input type="hidden"  name="size" value="1000000" required>
+              <div>
+                <input type="file"  name="image" id="image"/>
+              </div>
+              <br>
 						
             
-            <button type="submit" class="registerbtn" id="add_news" name="add_news">Request</button>
+            <button type="submit" class="registerbtn" id="add_news" name="add_news">Submit</button>
 						<hr>
         </form>
-      </div>
-    
+     
+      <?php if (isset($_GET['message'])){?>
+        <div id="message"><?php echo $_GET['message']; ?></div>
+        <?php } ?>
+
+        <?php if (isset($_GET['error'])){?>
+        <div id="error"><?php echo $_GET['error']; ?></div>
+        <?php } ?>
+        </div>
     </div>
     
      

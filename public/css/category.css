@@ -7,14 +7,17 @@
   
 }
 
+.add{
+margin-left: 25px;
+float: left!important;
+}
 
 
 .container {
- 
+ margin-left: 20px!important;
   margin-bottom:20px;
-}
-.search{
-	float:right;
+  height: 220px!important;
+  padding: 20px 0;
 }
 
 input[type=text] {
@@ -32,12 +35,19 @@ h2{
 h1{
 	padding-top:20px;
 }
-button{
-	float:right;
-}
 
 
-img{
-	float: center;
-	margin-left: 90px;
+
+.container img{
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin-left: 150px;
+	margin-top: 30px;
 }
+
+table{
+	margin: 50px 2%;
+	width: 90%;
+}
+  

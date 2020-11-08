@@ -3,9 +3,9 @@
         <head>
         <title>Reset Password</title>
         
-        <link rel="stylesheet" href="../../css/login.css " type="text/css">
-        <link rel="stylesheet" href="../../css/messages.css " type="text/css">
-        <script defer src="../../js/errors.js"></script>
+        <link rel="stylesheet" href="../css/login.css " type="text/css">
+        <link rel="stylesheet" href="../css/messages.css " type="text/css">
+        <script defer src="../js/errors.js"></script>
         
         </head>
         
@@ -17,14 +17,16 @@
         <?php if (isset($_GET['message'])){?>
         <div id="message"><?php echo $_GET['message']; ?></div>
         <?php } ?>
-        
+        <div id="msg"></div>
    
         <div class="login">
+            <br>
+            <br>
         
                 <h2>Please enter your Username and Email </h2>
                 
                 
-                <form id="login" action="../../php/includes/reset_pass.php" method="post">
+                <form id="login" action="../../src/reset_pass.php" method="post" onsubmit="return validateReset(username.value,email.value)">
                     <p>Username</p>
                     <input type="text" id="username" name="username" placeholder="Enter Username" required  >
                     <p>Email</p>
@@ -37,4 +39,4 @@
             </div>
         </body>
         </html>
-        <!-- ../../php/includes/login.php -->
+        

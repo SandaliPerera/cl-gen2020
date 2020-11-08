@@ -14,7 +14,7 @@
     
     <div class="content">
         <div class="container">
-            <form action="../php/register.php" method="POST">
+            <form action="../../src/o_addschol.php" method="POST">
                 <h1>Add Grade 5 Scholarship Exam Results</h1>
                 <hr>
 
@@ -27,8 +27,6 @@
 				<label for="examName"><b>Exam Name</b></label>
 				<input type="text" placeholder="Enter Exam Name" name="examName" required>
 
-
-				
 				<br>
                 
                 <hr>

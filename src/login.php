@@ -22,16 +22,18 @@ if (isset($_POST['login'])){
             $row = mysqli_fetch_assoc($result);
             
             if($pwd == $row['userID'] ){
-                $message = "<a href='../public/common/resetPass.php'>First time login in? Click here to Change your Password to Login</a> "  ;
+                $message = "<a href='resetPass.php'>First time login in? Click here to Change your Password to Login</a> "  ;
 
                 header('Location: ../public/common/loginFile.php?message='.$message);
             }else{
+
+                session_start();
 
                 if($row['userType'] == "student"){
                     $_SESSION['userID'] = $row['userID'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['userType'] = $row['userType'];
-                    header('Location: ../../php/admin/dashboard.php');
+                    header('Location: ../public/student/SProfile.php');
 
                 }else if($row['userType'] == "parent"){
                     $_SESSION['userID'] = $row['userID'];
@@ -62,7 +64,7 @@ if (isset($_POST['login'])){
 
     }else{
         $error="Invalid Username or Password";
-        header('Location: ../../php/common/loginFile.php?error='.$error);
+        header('Location: ../public/common/loginFile.php?error='.$error);
     }
 
 

@@ -58,7 +58,7 @@ if (isset($_GET['newsID'])){
                         <br>
 						
             
-            <button type="submit" class="registerbtn" id="add_news" name="add_news">Request</button>
+            <button type="submit" class="registerbtn" id="add_news" name="add_news">Update</button>
 						<hr>
         </form>
       </div>

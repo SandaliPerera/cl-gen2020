@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'teacher'){
+
+        $userID = $_SESSION['userID'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +18,13 @@
 	<script src="../js/nav.js"></script>
 <link rel="stylesheet" href="../css/register2.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
+<link type="text/css" rel="stylesheet" href="../css/view.css">
 </head>
 <body name = top>
 <body>
 
 
-<<<<<<< HEAD
 <div id="nav1"></div>
-=======
-<div id="nav"></div>
->>>>>>> a6df9a5c933a0a427d1e001f0a1acff0eeb20be8
 		
 		<div class="content">
 			<div class="container">
@@ -39,3 +47,6 @@
 		</div>
 </body>
 </html>
+
+
+<?php } ?>

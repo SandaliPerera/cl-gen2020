@@ -1,4 +1,5 @@
-
+body{
+}
 h2,h3,h4{
     
     padding-top: 10px;
@@ -41,6 +42,7 @@ h4{
     padding-right: 15px;
     padding-left: 15px;
 }
+
 
 .form-group{
     margin-bottom: 5px;
@@ -92,3 +94,14 @@ textarea.inputs {
     height: auto;
   }
 
+.first .card .row{
+    width: 99%;
+}
+
+#page4{
+    width: 95%;
+}
+
+.btn-box{
+	margin-top: 80px;
+}

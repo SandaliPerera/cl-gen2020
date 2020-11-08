@@ -5,7 +5,8 @@
         
         <link rel="stylesheet" href="../css/login.css " type="text/css">
         <link rel="stylesheet" href="../css/messages.css " type="text/css">
-        <script defer src="../../js/errors.js"></script>
+        <script  src="../js/errors.js"></script>
+
         
         </head>
         
@@ -17,24 +18,32 @@
         <?php if (isset($_GET['message'])){?>
         <div id="message"><?php echo $_GET['message']; ?></div>
         <?php } ?>
+
+        <div id="msg"></div>
    
         <div class="login">
-        
-                <h1>Login </h1>
-                
-                
-                <form id="login" action="../../src/login.php" method="post">
-                    <p>Username</p>
-                    <input type="text" id="username" name="username" placeholder="Enter Username" required  >
-                    <p>Password</p>
-                    <input type="text" id="password" name="password" placeholder="Enter Password" required>
-                    <br><br><br>
-                    <input type="submit" value="LOGIN" name="login" >
-                
-                </form>
-        
-                <a href="forgotPass.html"><h3>Forgot password?</h3></a>
-                
+            <div class="logo"></div>
+            <div class="login-box">
+            
+                    <h1>Login </h1>
+                    
+                    
+                    <form id="login" action="../../src/login.php" method="post" onsubmit="return validate(username.value,password.value)">
+                        <p>Username</p>
+                        <input type="text" id="username" name="username" placeholder="Enter Username"  required  >
+                        <p>Password</p>
+                        <input type="text" id="password" name="password" placeholder="Enter Password" required>
+                        <br><br><br>
+                        <input type="submit" value="LOGIN" name="login" >
+                    
+                    </form>
+            
+                    <a href="resetPass.php"><h3>Forgot password?</h3></a>
+                    
             </div>
+        </div>
         </body>
+
+
+    
         </html>

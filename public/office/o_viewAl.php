@@ -25,14 +25,11 @@ include_once '../../config/conn.php';
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>
 		</form>
-		
-		
-		<br>
-		<br>
-		<br>
-		
 
-			
+		<br>
+		<br>
+		<br>
+
 			  <div class="card">
                 <form>
 					<button type="submit" formaction="o_addAl.php">Add Year</button>
@@ -62,8 +59,8 @@ include_once '../../config/conn.php';
                         <td><?php echo $row['examID']?></td>
 						<td><?php echo $row['examYear']?></td>
                         <td><?php echo $row['examName']?></td>
-                        <td><form><button class="btn editbtn" type="submit" formaction="o_alCsv.html">Add Results</button></form></td>
-                        <td><form><button class="btn viewbtn" type="submit" formaction="o_al.html">View Results</button></form></td>
+                        <td><form><button class="btn editbtn" type="submit" formaction="o_alCsv.php">Add Results</button></form></td>
+                        <td><form><button class="btn viewbtn" type="submit" formaction="o_al.php">View Results</button></form></td>
 						
 					</tr>
                     <?php

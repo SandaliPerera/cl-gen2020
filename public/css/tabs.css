@@ -30,7 +30,7 @@
 	align-items:center ;
 	justify-content: center;
 	margin: 1% auto;
-	
+	border-radius: 1px!important;
 }
 .container p{
 	font-size: 15px;
@@ -41,7 +41,7 @@
 h1{
 	color: #6a7480;
 	padding-top:20px;
-	padding-bottom:20px;
+	padding-bottom:8px;
 }
 .container h2{
 	color:#004e7c;
@@ -77,9 +77,9 @@ p{
 .btn-box{
 	display: flex;
 	padding: 5px;
-	margin-left: 15px;
-	margin-top: 100px;
-	margin-bottom: 20px;
+	margin-left: 105px;
+	margin-top: 10px;
+	margin-bottom: 5px;
 }
 
 .btn-box button{
@@ -98,7 +98,7 @@ p{
 .card {
 	padding: 10px!important;
 	overflow: auto;
-	
+	border-radius: 0px;
   }
 
 .image{
@@ -123,7 +123,6 @@ p{
  .news .card{
 	background-image: url(../../images/bg.png);
 	padding: 5px 0;
-	border-radius: 0px;
 }
 #page1 .news .container{
 	width: 75%;

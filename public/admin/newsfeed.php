@@ -8,6 +8,7 @@
 <script src="../js/nav.js"></script>
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/tabs.css">
+<link type="text/css" rel="stylesheet" href="../css/newsfeed.css">
 </head>
 <body>
 
@@ -16,12 +17,6 @@
 
 
 		<div class="content">
-		
-		<!-- <div class="front">
-		<h1>WELCOME!</h1>
-	
-		</div> -->
-		
 
 	<div class="feed">
 		

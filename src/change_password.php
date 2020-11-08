@@ -15,9 +15,9 @@ if (isset($_POST['change_password'])){
     $userID = $row['userID'];
     $email = $row['email'];
 
-    if($token != $row['token']){
+    if(mysqli_fetch_assoc($result) == FALSE){
         $error = "Invalid change of password, Re-enter details to send another email";
-        header('Location: ../../php/common/resetPass.php?error='.$error);
+        header('Location: ../public/common/resetPass.php?error='.$error);
     }else{
         $sql ="SELECT * FROM user WHERE userID ='$userID'";
         $result1 = mysqli_query($conn,$sql);
@@ -27,7 +27,7 @@ if (isset($_POST['change_password'])){
 
         if($userID != $userid){
             $error = "Invalid change of password ";
-            header('Location: ../../php/common/password_change.php?error='.$error);
+            header('Location: ../public/common/password_change.php?error='.$error);
         }else{
 
             $pass = md5($password);
@@ -41,10 +41,10 @@ if (isset($_POST['change_password'])){
 
             if($resultInsert == TRUE){
                 $message = "Password Updated. Login to Continue";
-                header('Location: ../../php/common/loginFile.php?message='.$message);
+                header('Location: ../public/common/loginFile.php?message='.$message);
             }else{
                 $error = "Invalid change of password";
-                header('Location: ../../php/common/password_change.php?error='.$error);
+                header('Location: ../public/common/password_change.php?error='.$error);
             }
 
         }

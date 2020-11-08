@@ -18,11 +18,12 @@
 
    
         <div class="login">
-        
-                <h1>Change your Password </h1>
+        <br>
+        <br>
+                <h2>Change your Password </h2>
                 
                 
-                <form id="login" action="../includes/change_password.php" method="post" onsubmit="return CheckPassword(password.value,confirm_password.value)">
+                <form id="login" action="../../src/change_password.php" method="post" onsubmit="return CheckPassword(password.value,confirm_password.value)">
                     <p>Password</p>
                     <input type="text" id="password" name="password" placeholder="Enter Password" required>
                     <p>Confirm Password</p>
@@ -35,4 +36,6 @@
                 
             </div>
         </body>
+
+
     </html>

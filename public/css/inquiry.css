@@ -1,5 +1,5 @@
 tr:first-child{
-	background:#bebebe;
+	background:#6f6b6b;
 }
 
 tr:nth-child(even){
@@ -57,4 +57,15 @@ input[type=Submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+td{
+  justify-content: center;
+  align-items: center;
+}
+
+.search{
+  margin: 0 50%;
+}
+.search a{
+  color: white;
 }
