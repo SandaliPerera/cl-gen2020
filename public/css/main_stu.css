@@ -25,6 +25,11 @@ html body{
 	
 	
 }
+
+button:focus {outline:0;}
+button{
+	cursor: pointer;
+}
 .navbar ul{
     display: inline-flex;
 	margin: 0px 50px 5px 10px;
@@ -303,3 +308,48 @@ ul{
     background-color: #2eca06dc;
 }
 
+
+.d span{
+    float: right;
+    
+}
+
+.d{
+    color: steelblue;
+}
+.da{
+	margin-left: -900px;
+	color: steelblue;
+	margin-bottom: 10px;
+}
+
+
+.news{
+	margin: 10px 150px!important;
+	padding: 2px 35px;
+	
+}
+
+.time{
+	color: steelblue;
+}
+.time .d span{
+	float: right;
+	
+}
+
+.da span{
+	float: right;
+	
+	
+}
+
+.image{
+    width:100%;
+    height: 200px;
+}
+
+.image img{
+    width:auto;
+    height: 100%;
+}

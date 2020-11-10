@@ -7,18 +7,19 @@
 <title>News Feed</title>
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/nav.js"></script>
+<link rel="stylesheet" href="../../images/font-awesome-4.7.0/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="../css/main_stu.css">
 <link type="text/css" rel="stylesheet" href="../css/news.css">
-<link type="text/css" rel="stylesheet" href="../css/newsfeed.css">
 </head>
 <?php
 require_once '../../config/conn.php';
 
 
+	$count = "SELECT COUNT(*)  FROM newsfeed";
     $sql = "SELECT * FROM newsfeed ORDER BY newsID DESC";
 
 	$res= mysqli_query($conn,$sql);
-	$res1= mysqli_query($conn,$sql);
+	$res1= mysqli_query($conn,$count);
 
     if($res){
     //echo "Sucessfull";
@@ -49,171 +50,210 @@ require_once '../../config/conn.php';
 		<div class="banner">
 			</div>
 
-	
-		<?php
-		while($row=mysqli_fetch_assoc($res)){
-			?>
-			<div class="container">
-				<table>
-					<tr>
-						<th>
-			<h2><b><?php echo  $row['title'] ?></b></h2>
-			<hr>
-		</th></tr>
-				<tr>
-		<td width="70%">
-			<p> <?php echo $row['news'] ?></p>
-		</td>
-		<?php if($row['image']==TRUE){ ?>
-		<td>	
-			<div class="image">
-				<?php echo "<img src='../../images/".$row['image']."'>"; ?>
-			
-			</div>
-		</td>
-		<?php } ?>
-		</tr>
-		</table>
-		</div>
-		<?php
-		}
-		?>
-	
+	       
+			<table>
+
+<?php
+$size = mysqli_fetch_assoc($res1);
+$c = $size['COUNT(*)'];
+$i = 1;
+$n=1;
+
+
+
+for($i;$i <= $c;$i++){
+    ?>
+        <tr>
+            <?php
+    for($j=1;$j<4 && $j < $c;$j++){
+        ?>
+        <td>	
+            <?php
+            $n++;
+                    $row=mysqli_fetch_array($res);?>
+                    
+                                        <table class="inner">
+                                            <tr>
+                                                <th>
+                                    <h2><b><?php echo $row['title'] ?></b></h2>
+                                    <hr>
+                                </th></tr>
+                                        <tr>
+                                <td>
+                                    <p> <?php echo substr($row['news'], 0, 200) . "..."?></p>
+                                </td>
+                                    </tr>
+									<tr>
+                                <td>
+								<form method="POST" action="news.php">
+									<input type="hidden" name="newsID" value="<?php echo $row['newsID']; ?>" />
+									<button class="view-btn" style="width:100px;" type="submit"  id="view_news" name="view_news"><b>View More</b></button>
+								</form>
+                                </td>
+                            </tr>
+                                </table>
+                                </td>
+                                
+                            <?php if($n>$c ){
+                                break;
+                            } } ?>
+                                </tr>
+            <?php
+            if($n>$c ){
+            break;
+        }			
+
+    } ?>
+
+</table>
+
+
+
+
 		
 	</div>
 
 
 		<div id="page1" class="page">
-		<table>
+		
+		<a name="new"></a>
+		<table class="none" >
+			<tr class="none">
+				<td class="none" >
+				</td>
+				<td  class="none">
+					<button class="view-btn old"><span><a href= "#old"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></span></button>
+				</td>
+			</tr>
+		</table>
+		
+		<table >
+			<h2>New Notifications</h2>
+			<hr>
 			<tr>
-				<td>
-				<table class="inner">
-					<tr>
-						<th>
-							<h2>FIRST NOTIFICATION</h2>
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
-						</td>
-					</tr>
-
-				</table>
-				</td>
-				<td>
-				<table class="inner">
-					<tr>
-						<th>
-							<h2>FIRST NOTIFICATION</h2>
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
-						</td>
-					</tr>
-
-				</table>
-				</td>
-				<td>
+			
+				<td class="message">
 					
-				<table class="inner">
-				<tr>
-						<th>
-							<h2>FIRST NOTIFICATION</h2>
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
 						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
-						</td>
-					</tr>
-
-				</table>
+				
 				</td>
-	</tr>
-	<tr>
-				<td>
-				<table class="inner">
-					<tr>
-						<th>
-							<h2>FIRST NOTIFICATION</h2>
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
 						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
-						</td>
-					</tr>
-
-
-				</table>
+				
 				</td>
-				<td>
-				<table class="inner">
-					<tr>
-						<th>
-							<h2>FOURTH NOTIFICATION</h2>
-						</th>
-						</tr>
-					<tr>
-						<td>
-							<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
 						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
-						</td>
-					</tr>
-
-				</table>
+				
 				</td>
-				<td>
-				<table class="inner">
-					<tr>
-						<th>
-							<h2>FOURTH NOTIFICATION</h2>
-						</th>
-						</tr>
-					<tr>
-						<td>
-							<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
 						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
-						</td>
-					</tr>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
+						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+				
+				</td>
+			</tr>
 
-				</table>
+		</table>
+		<a name="old"></a>
+		<table class="none" >
+			<tr class="none">
+				<td class="none" >
+				</td>
+				<td  class="none">
+					<button class="view-btn old"><span><a href= "#new"><i class="fa fa-arrow-up" aria-hidden="true"></i></a></span></button>
+				</td>
+			</tr>
+		</table>
+		
+		<table >
+			<h2>Old Notifications</h2>
+			<hr>
+			<tr>
+			
+				<td class="message">
+					
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
+						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
+						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
+						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
+						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class="message">
+						<h2>FIRST NOTIFICATION</h2>
+					
+						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
+					
+						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+				
 				</td>
 			</tr>
 
 		</table>
 	</div>
+</div>
 </div>
 		 
 	
@@ -225,17 +265,29 @@ require_once '../../config/conn.php';
 		var button2 = document.getElementById("button2");
 		
 		let url = window.location.href;
-		if(url == "http://localhost/CL-GEN/public/student/newsfeed.php"){
+		if(url == "http://localhost/CL-GEN/public/parent/newsfeed.php"){
 			page1.style.display = "none";
 			page2.style.display = "block";
 			button1.style.color= "#008080";
 			button2.style.color= "#000";
 			
-		}else if(url == "http://localhost/CL-GEN/public/admin/newsfeed.php?loggedin"){
+		}else if(url == "http://localhost/CL-GEN/public/parent/newsfeed.php?loggedin"){
 			page1.style.display = "none";
 			page2.style.display = "block";
 			button1.style.color= "#008080";
 			button2.style.color= "#000";
+		}else if(url == "http://localhost/CL-GEN/public/parent/newsfeed.php#old"){
+			page1.style.display = "none";
+			page2.style.display = "block";
+			button1.style.color= "#008080";
+			button2.style.color= "#000";
+			
+		}else if(url == "http://localhost/CL-GEN/public/parent/newsfeed.php#new"){
+			page1.style.display = "none";
+			page2.style.display = "block";
+			button1.style.color= "#008080";
+			button2.style.color= "#000";
+			
 		}
 
 		function ABOUT(){

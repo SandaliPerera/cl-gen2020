@@ -1,15 +1,4 @@
 
-<?php
-    session_start();
-
-    if(!isset($_SESSION['userType'])){
-        $error = "Please Login!";
-        header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'parent'){
-
-        $userID = $_SESSION['userID'];
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +7,7 @@
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/nav.js"></script>
 <link rel="stylesheet" href="../css/view.css " type="text/css">
-<link type="text/css" rel="stylesheet" href="../css/main.css">
+<link type="text/css" rel="stylesheet" href="../css/main_stu.css">
 <link type="text/css" rel="stylesheet" href="../css/inquiry.css">
 </head>
 <body>
@@ -26,17 +15,17 @@
 		
 		<div class="content">
 		
-			<h1>Reply Inquieries</h1>
+			<h1>Inquiery List</h1>
 			
 		
 			<div class="card">
 				<form>
-					<button type="submit" formaction="Tcr_AddInquiery.php">Add Inquiery</button>
+					<button type="submit" formaction="AddInquiery.php">Add Inquiery</button>
 				</form>
 				<br>
 				<br>
 			</div>
-			  <div class="card">
+			  <div class="card stu">
 				<hr>
 				<table>
 					<tr>
@@ -47,12 +36,30 @@
 						
 					</tr>
 					<tr>
-						<td>Regarding para 2</td>
-						<td>Medani</td>
+						<td>ABC</td>
+						<td>Perera</td>
 						<td>02/03/2020</td>
-						<td><form class="search" action="">
-                                    <button type="submit" formaction="AddInquiery.php"  align="center">Reply</button>
-						</form>
+						<td>
+                         <button type="submit" class="search"><a href=AddInquiery.php>Reply</a></button>
+
+						</td>
+					</tr>
+					<tr>
+						<td>ABC</td>
+						<td>Perera</td>
+						<td>02/03/2020</td>
+						<td>
+                         <button type="submit" class="search"><a href=AddInquiery.php>Reply</a></button>
+
+						</td>
+					</tr>
+					<tr>
+						<td>ABC</td>
+						<td>Perera</td>
+						<td>02/03/2020</td>
+						<td>
+                         <button type="submit" class="search"><a href=AddInquiery.php>Reply</a></button>
+
 						</td>
 					</tr>
 				</table>
@@ -60,7 +67,6 @@
 				
 				
 		</div>
-		
 </body>
 </html>
-<?php } ?>
+

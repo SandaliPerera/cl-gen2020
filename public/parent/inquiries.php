@@ -1,15 +1,4 @@
 
-<?php
-    session_start();
-
-    if(!isset($_SESSION['userType'])){
-        $error = "Please Login!";
-        header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'parent'){
-
-        $userID = $_SESSION['userID'];
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -19,16 +8,16 @@
 <title>News Feed</title>
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/nav.js"></script>
-<link type="text/css" rel="stylesheet" href="../css/main.css">
-<link type="text/css" rel="stylesheet" href="../css/tabs.css">
+<link type="text/css" rel="stylesheet" href="../css/main_stu.css">
+<link type="text/css" rel="stylesheet" href="../css/news.css">
 </head>
 <body>
 <?php
 
 require_once '../../config/conn.php';
 
-$count = "SELECT COUNT(*) FROM inquiry";
-    $sql = "SELECT * FROM inquiry ORDER BY inquiryID DESC";
+$count = "SELECT COUNT(*) FROM inquiry WHERE sender= '$userID'";
+    $sql = "SELECT * FROM inquiry WHERE sender='$userID' ORDER BY inquiryID DESC";
    
 
     $res= mysqli_query($conn,$sql);
@@ -49,43 +38,16 @@ $count = "SELECT COUNT(*) FROM inquiry";
 
 		<div class="content">
 
+
 	<div class="feed">
 		
 		<div class="btn-box">
 
-		<button id="button1" onclick="RECIEVED()">Recieved Inquiries</button>
 		<button id="button2" onclick="SENT()">Sent Inquiries</button>
-		</div>
-		<div id="page4" class="page">
-	
-
-	<div class="card">
-    <?php
-    if(mysqli_num_rows($res) == 0){ 
-         ?>
-					 <h2><b>No Recieved Inquiries</b></h2>
-					 <img src="../../images/message.png">
-        <?php
-           } else{
-		while($row=mysqli_fetch_assoc($res)){
-			?>
-			<div class="container">
-				
-            <h2><b><?php echo "From :" .$row['sender']?></b></h2>
-            <h2><b><?php echo "Title :" . $row['title'] ?></b></h2>
-            <p> <?php echo $row['message'] ?></p>
-        </div>
-        <?php }}
-        ?>
-        
-           
-        </div>
-
-		</div>
-
+		<button id="button1" onclick="RECIEVED()">Recieved Inquiries</button>
 		
 		</div>
-		<div id="page2" class="page">
+		<div id="page4" class="page">
 		<div class="card">
             <div class="container">
                 <h2><b>To Reciever : Inquiry 1</b></h2>
@@ -114,6 +76,36 @@ $count = "SELECT COUNT(*) FROM inquiry";
             </div>
 		
 	</div>
+
+
+
+		
+		</div>
+		<div id="page2" class="page">
+		<div class="card">
+    <?php
+    if(mysqli_num_rows($res) == 0){ 
+         ?>
+					 <h2><b>No Recieved Inquiries</b></h2>
+					 <img src="../../images/message.png">
+        <?php
+           } else{
+		while($row=mysqli_fetch_assoc($res)){
+			?>
+			<div class="container">
+				
+			<h2><b><?php echo "To :" .$row['reciever']?></b></h2>
+			<hr>
+            <h2><b><?php echo "Title :" . $row['title'] ?></b></h2>
+            <p> <?php echo $row['message'] ?></p>
+        </div>
+        <?php }}
+        ?>
+        
+           
+        </div>
+
+		</div>
 	</div>
 			
 		</div>
@@ -132,10 +124,10 @@ $count = "SELECT COUNT(*) FROM inquiry";
 		
 		let url = window.location.href;
 		if(url == "http://localhost/CL-GEN/public/parent/inquiries.php"){
-			page1.style.display = "block";
-			page2.style.display = "none";
-			button1.style.color= "#008080";
-			button2.style.color= "#000";
+			page1.style.display = "none";
+			page2.style.display = "block";
+			button1.style.color= "#000";
+			button2.style.color= "#008080";
 			
 		}else if(url == "http://localhost/CL-GEN/public/admin/newsfeed.php?loggedin"){
 			page1.style.display = "block";
@@ -161,10 +153,7 @@ $count = "SELECT COUNT(*) FROM inquiry";
 	</script>	
 			
 
-			
 
 		
 </body>
 </html>
-
-<?php } ?>

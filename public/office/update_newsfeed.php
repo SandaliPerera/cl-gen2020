@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/view.css">
 <link type="text/css" rel="stylesheet" href="../css/register.css">
+<link type="text/css" rel="stylesheet" href="../css/tabs.css">
 </head>
 <body>
     
@@ -44,20 +45,36 @@ if (isset($_GET['newsID'])){
     <br>
 
 
-    <form action= "../../src/newsfeed_update.php" method="POST">
+    <form action= "../../src/newsfeed_update.php" method="POST" enctype="multipart/form-data">
           <hr>
 
 						<label for="NID"><b>News ID</b></label>
-                        <input type="text" name="NID" placeholder="News ID" value="<?php echo $row['newsID']?>" readonly>
+            <input type="text" name="NID" placeholder="News ID" value="<?php echo $row['newsID']?>" readonly>
                         
-                        <label for="title"><b>Title</b></label>
-                        <input type="text"  name="title" placeholder="Title" value="<?php echo $row['title']?>" required>
+            <label for="title"><b>Title</b></label>
+            <input type="text"  name="title" placeholder="Title" value="<?php echo $row['title']?>" required>
 			
-						<label for="news"><b>News</b></label>
-						<?php echo "<textarea  name=\"news\" rows=\"4\" cols=\"50\"  required>" .$row['news']." </textarea> "?>
-                        <br>
-						
+            <label for="news"><b>News</b></label>
+            <?php echo "<textarea  name=\"news\" rows=\"4\" cols=\"50\"  required>" .$row['news']." </textarea> "?>
+            <br>
             
+            <?php 
+            if($row['image']==TRUE){ ?>
+            <label class="radio"> <input type="checkbox" name="delete" value="delete"> <b>Delete Image</b>
+            <span class="checkmark"></span></label>
+            <br>
+            <br>
+                <div class="image">
+                  <?php echo "<img src='../../images/".$row['image']."'>"; ?>
+                </div>
+            <?php } 
+                        ?>
+            <label for="image"><b>Update Images</b></label>
+            <br>
+            <input type="hidden"  name="size" value="1000000" required>
+            <div>
+              <input type="file"  name="image" id="image"/>
+            </div>
             <button type="submit" class="registerbtn" id="add_news" name="add_news">Update</button>
 						<hr>
         </form>

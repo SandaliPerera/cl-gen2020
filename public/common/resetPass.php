@@ -30,7 +30,7 @@
                     <p>Username</p>
                     <input type="text" id="username" name="username" placeholder="Enter Username" required  >
                     <p>Email</p>
-                    <input type="text" id="email" name="email" placeholder="Enter Email" required  >
+                    <input type="email" id="email" name="email" placeholder="Enter Email" required  >
                     <br><br><br>
                     <input type="submit" value="Send Reset Link" name="reset_pass" >
                 

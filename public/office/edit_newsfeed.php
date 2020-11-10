@@ -15,15 +15,20 @@
   <div id="nav"></div>
 		
   <div class="content">
+  <?php if (isset($_GET['message'])){?>
+        <div id="message"><?php echo $_GET['message']; ?></div>
+        <?php } ?>
 
-  
+        <?php if (isset($_GET['error'])){?>
+        <div id="error"><?php echo $_GET['error']; ?></div>
+        <?php } ?>
       <h1>Add News</h1>
 
-
+      
       <div class="container">
-    <br>
 
-
+      
+        
     <form action= "../../src/newsfeed_edit.php" method="POST" enctype="multipart/form-data">
           <hr>
                         
@@ -35,24 +40,17 @@
 
               <label for="image"><b>Upload Images</b></label>
               <input type="hidden"  name="size" value="1000000" required>
+              
               <div>
                 <input type="file"  name="image" id="image"/>
               </div>
               <br>
-						
             
             <button type="submit" class="registerbtn" id="add_news" name="add_news">Submit</button>
 						<hr>
         </form>
      
-      <?php if (isset($_GET['message'])){?>
-        <div id="message"><?php echo $_GET['message']; ?></div>
-        <?php } ?>
-
-        <?php if (isset($_GET['error'])){?>
-        <div id="error"><?php echo $_GET['error']; ?></div>
-        <?php } ?>
-        </div>
+      
     </div>
     
      

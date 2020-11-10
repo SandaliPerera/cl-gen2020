@@ -12,6 +12,7 @@
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/users.css">
 <link type="text/css" rel="stylesheet" href="../css/tabs.css">
+<link type="text/css" rel="stylesheet" href="../css/messages.css">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
 
 				require_once '../../config/conn.php';
 
-				$sql = "SELECT * FROM newsfeed";
+				$sql = "SELECT * FROM newsfeed ORDER BY newsID DESC";
 
 				$res= mysqli_query($conn,$sql);
 
@@ -34,7 +35,15 @@
 	<div id="nav"></div>
 		
 		<div class="content">
-		<div class="view">
+			<br>
+		<?php if (isset($_GET['message'])){?>
+        <div id="message"><?php echo $_GET['message']; ?></div>
+        <?php } ?>
+
+        <?php if (isset($_GET['error'])){?>
+        <div id="error"><?php echo $_GET['error']; ?></div>
+		<?php } ?>
+		
 		<h1> News List</h1>
 		<br>
 		<form class="search" action="register_stu.html">
@@ -52,7 +61,7 @@
 			
 			  <div class="card">
 			  <form>
-					<button type="submit" formaction="register_user.php">Add News</button>
+					<button type="submit" formaction="edit_newsfeed.php">Add News</button>
 				</form>
 				<br>
 				<br>
@@ -64,7 +73,10 @@
                 <tr>
                     <th>News ID</th>
                     <th>News Title</th>
-                    <th>News</th>
+					<th>News</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Image</th>
                     
                 </tr>
                 <?php
@@ -74,9 +86,19 @@
                     <td><?php echo $row['newsID'] ?></td>
                     <td><?php echo $row['title'] ?></td>
 					<td><?php echo $row['news'] ?></td>
-					<?php echo "<td><a href = update_newsfeed.php?newsID='".$row['newsID']."' > Update </a> </td>"?>
+					<td><?php echo $row['date'] ?></td>
+					<td><?php echo $row['time'] ?></td>
+					<td>
+					<?php 
+						if($row['image']==TRUE){ ?>
+							<div class="news-image"><?php echo "<img src='../../images/".$row['image']."' >"; ?></div>
+						<?php }else{
+							echo "No Image..";
+						} ?>
+					</td>
+                 	<?php echo "<td><a href = update_newsfeed.php?newsID='".$row['newsID']."' > Update </a> </td>"?>
 					<?php echo "<td><a href = ../../src/delete_news.php?newsID='".$row['newsID']."' > Delete </a> </td>"?>
-                
+    
                 </tr>
                 <?php
 			}
@@ -86,7 +108,6 @@
 	
 
 				
-		</div>
 		</div>
 
 	

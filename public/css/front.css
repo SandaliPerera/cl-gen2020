@@ -8,7 +8,7 @@ body{
     background-image: url(../../images/white.png);
 }
 .menu{
-    background-color: #264490;
+    background-color: #01213c;
 }
 .menu ul{
     display: inline-flex;
@@ -145,10 +145,13 @@ table{
   .view-btn{
       border-radius: 100px;
       background-color:#264490 ;
+      cursor: pointer;
   }
+  .view-btn:focus {outline:0;}
 
   .news{
       margin: 10px 150px!important;
+      
   }
 
   .contact{
@@ -203,5 +206,69 @@ h1{
 .view{
     padding: 20px;
     background-color: #9b9ba068;
-    margin: 20px 100px;
+    margin: 20px -30px;
+    width: 100%;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+  }
+  
+.image{
+    width:100%;
+    height: 200px;
+}
+
+.image img{
+    width:auto;
+    height: 100%;
+}
+
+.slideshow-container {
+    max-width: 1300px;
+    position: relative;
+    margin: auto;
+    margin-left: -90px;
+  }
+  
+  .slideshow-container img{
+      height: 450px;
+  }
+  
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 10px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fade;
+    animation-duration: 0.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }

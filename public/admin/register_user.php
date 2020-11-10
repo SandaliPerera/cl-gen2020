@@ -21,10 +21,10 @@
 
 			  <h1>Register</h1>
 				<hr>
-
 				<form action= "../../src/add_user.php" method="POST">
 
 				<label for="userType" ><b>User Type</b></label>
+				<br>
 				<br>
 				<label class="radio"> <input type="radio" name="userType" value="student" onclick = "getData('student')" required> Student
 				<span class="checkmark"></span></label>

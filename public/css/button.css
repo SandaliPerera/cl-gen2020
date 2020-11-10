@@ -73,3 +73,11 @@ button a{
     text-decoration: none;
     color: white;
 }
+
+.view-btn{
+    border-radius: 100px;
+    background-color:#264490 ;
+    cursor: pointer;
+    margin: 7px;
+}
+.view-btn:focus {outline:0;}

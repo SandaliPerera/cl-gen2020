@@ -10,23 +10,29 @@ if (isset($_POST['add_news'])){
         $image = $_FILES['image']['name'];
         $target = "../images/" . basename($image);
         
- 
-        $sql = "INSERT INTO newsfeed(title,news,image)VALUES ('$title','$news','$image')";
+        $date = date('Y-m-d');
+        $time = date('H:i:s');
 
-        mysqli_query($conn,$sql);
+        $sql = "INSERT INTO newsfeed(title,news,image,date,time)VALUES ('$title','$news','$image','$date','$time')";
 
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-            $message = "Image uploaded successfully";
-            header('Location: ../public/office/edit_newsfeed.php?message='.$message);
+        if(mysqli_query($conn,$sql)){
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+                $message = "Image uploaded successfully";
+                header('Location: ../public/office/news_list.php?message='.$message);
+            }else{
+                header('Location: ../public/office/news_list.php');
+            }
         }else{
-            header('Location: ../public/office/edit_newsfeed.php');
+            $error = "News no added.";
+            header('Location: ../public/office/edit_newsfeed.php?error='.$error);
         }
+
+        
             
     }else{
         header('Location: ../public/office/edit_newsfeed.php?error='.$error);
     }
 
 $conn->close();
-
 
 ?>

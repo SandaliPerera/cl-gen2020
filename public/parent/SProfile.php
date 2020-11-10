@@ -1,14 +1,4 @@
 
-<?php
-    session_start();
-
-    if(!isset($_SESSION['userType']) || $_SESSION['userType'] != 'teacher'){
-        $error = "Please Login!";
-        header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'teacher'){
-
-        $userID = $_SESSION['userID'];
-?>
 <!DOCTYPE html>
 
 <head>
@@ -17,9 +7,10 @@
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/nav.js"></script>
 <link rel="stylesheet" href="../css/register.css " type="text/css">
-<link type="text/css" rel="stylesheet" href="../css/main.css">
-<link type="text/css" rel="stylesheet" href="../css/tabs.css">
+
+<link type="text/css" rel="stylesheet" href="../css/news.css">
 <link type="text/css" rel="stylesheet" href="../css/profile.css">
+<link type="text/css" rel="stylesheet" href="../css/main_stu.css">
 </head>
 <body>
 
@@ -631,7 +622,7 @@
 		var button4 = document.getElementById("button4");
 
 		let url = window.location.href;
-		if(url == "http://localhost/CL-GEN/public/parent/SProfile.html"){
+		if(url == "http://localhost/CL-GEN/public/parent/SProfile.php"){
 			page1.style.display = "block";
 			page2.style.display = "none";
 			page3.style.display = "none";
@@ -710,4 +701,3 @@
 </body>
 </html>
 
-    <?php } ?>

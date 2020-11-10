@@ -234,3 +234,71 @@ a{
 ul{
 	list-style: none;
 }
+
+.radio{
+	margin-left: 20px;
+	padding-left: 10px;
+}
+
+label{
+	margin-left: 20px;
+	font-size: 20px;
+	
+}
+form{
+	padding: 0 20px;
+}
+
+
+.radio {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 17px;
+	user-select: none;
+  }
+  
+  .radio input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+  }
+  
+  .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 30%;
+  }
+  
+  .radio:hover input ~ .checkmark {
+	background-color: #ccc;
+  }
+  
+  .radio input:checked ~ .checkmark {
+	background-color: #01213c;
+  }
+  
+  .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  .container input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  .container .checkmark:after {
+	   top: 7px;
+	  left: 7.5px;
+	  width: 10px;
+	  height: 10px;
+	  border-radius: 30%;
+	  background: white;
+  }

@@ -134,3 +134,11 @@ p{
 	color:#454c54 ;
 }
 
+
+.news-image img{
+		width: 100px!important; 
+		height:100%!important;
+		
+	float: left;
+	display: block;
+}
