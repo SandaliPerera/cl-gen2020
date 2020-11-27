@@ -85,6 +85,20 @@ if (isset($_POST['reset_pass'])){
                 }else{
                     $token = uniqid(md5(time()));
                 }
+            }elseif($userType == 'admin'){
+                $sql = 'SELECT * FROM admin WHERE userID = "'.$row['userID'].'" ';
+                $result = mysqli_query($conn,$sql);
+                $row = mysqli_fetch_assoc($result);
+
+                $email = $row['email'];
+
+                if($emailEntered != $email){
+                    $error = "Incorrect Email!";
+                    header('Location: ../public/common/resetPass.php?error='.$error);
+                    exit();
+                }else{
+                    $token = uniqid(md5(time()));
+                }
             }
 
             if(isset($token)){
@@ -126,6 +140,3 @@ if (isset($_POST['reset_pass'])){
 
 
 }
-
-
-?>

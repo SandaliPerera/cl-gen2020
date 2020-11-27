@@ -1,3 +1,13 @@
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +20,9 @@
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/register.css " type="text/css">
 <script  src="../js/user.js"></script>
-
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 	
@@ -56,7 +65,7 @@
 			</form>
 			  <hr>
 			  <div class="cancel">
-				<h2 align="center" ><a href="users.php" >Cancel</a></h2>
+				<h2  ><a href="users.php" >Cancel</a></h2>
 			</div>
 			  <hr>
 			</div>
@@ -65,3 +74,4 @@
 </body>
 
 </html>
+	 <?php } ?>

@@ -22,7 +22,6 @@
                     <li class="logo"><img src="../../images/logo.png"></li>
                     <li class="logo">News and Events</li>
                     <li class="logo">ABC School</li>
-                    <li class="login-btn"><span><a href=loginFile.php>Login</a></span></li>
                 </ul>
             </div>
 

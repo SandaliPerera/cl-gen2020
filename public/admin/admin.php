@@ -1,3 +1,16 @@
+
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +23,10 @@
 <link rel="stylesheet" href="../css/view.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/users.css">
+<link type="text/css" rel="stylesheet" href="../css/button.css">
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 		
@@ -31,7 +45,7 @@
 			
 			  <div class="card">
 			  <form>
-					<button type="submit" formaction="register_user.php">Add Office Staff</button>
+					<button type="submit" formaction="register_user.php">Add Admin</button>
 				</form>
 				<br>
 				<br>
@@ -39,15 +53,17 @@
 				<hr>
 				<table>
 					<tr>
-						<th>Admin number</th>
-						<th> name</th>
+						<th>User ID</th>
+						<th>User name</th>
+						<th>Update Profile</th>
+						<th>Delete Profile</th>
 						
 					</tr>
 					<tr>
 						<td>AAA</td>
                         <td>BBB</td>
-                        <td>Update</td>
-                        <td>Delete</td>
+                        <td><a class='btn editbtn' href = SProfile.php > Update </a> </td>
+						<td><a class='btn dltbtn' href = # > Delete </a> </td
 						
 					</tr>
 				</table>
@@ -57,3 +73,5 @@
 		
 </body>
 </html>
+
+	 <?php } ?>

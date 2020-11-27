@@ -1,4 +1,17 @@
 
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'parent'){
+
+		$userID = $_SESSION['userID'];
+		
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,3 +83,4 @@
 </body>
 </html>
 
+	<?php } ?>

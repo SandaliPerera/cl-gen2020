@@ -54,6 +54,9 @@ button , .button{
 .editbtn:hover{
     background-color: #39a2e4c7;
 }
+.left{
+    float:right;
+}
 
 .dltbtn {
 	background-color: #f11a1a;
@@ -80,4 +83,12 @@ button a{
     cursor: pointer;
     margin: 7px;
 }
+.view-btn{
+    background-color:#39a2e4c7 ;
+   
+}
 .view-btn:focus {outline:0;}
+
+.btn{
+	color: black;
+}

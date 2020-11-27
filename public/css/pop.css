@@ -12,13 +12,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
   }
   .modal-content {
     background-color: #fefefe;
-    margin: 10% 10px 5% 200px; 
+    margin: 7% 10px 5% 200px; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
     border-radius: 10px;
   }
-  
+
   .close1 {
     color: rgb(96, 85, 85);
     float: right;
@@ -46,19 +46,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
     cursor: pointer;
   }
 
-  td{
+  .cert-td{
     width: 30%;
     background-color: white;
     border-radius: 10px;
   }
 
-  td .container{
+  .cert-td .container{
     height: 200px!important;
     margin-left: 0;
     border-radius: 10px;
   }
 
-  table{
+  .cert-table{
     width:65%;
     margin:auto;
     margin-top: 40px;
@@ -66,3 +66,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
     border: 20px solid transparent;
     border-spacing: 40px 50px;
   }
+  

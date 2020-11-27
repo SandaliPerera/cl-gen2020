@@ -9,7 +9,8 @@ body {
 .container {
   padding: 10px;
   background-color: white;
-  margin-left:20px;
+  margin-left:25%;
+  width:50%;
   
 }
 
@@ -24,17 +25,50 @@ label{
   padding: 7px;
   margin: 5px 0 20px 0;
   display: inline-block;
-  border: none;
+  border: 1px solid transparent;
   background: #f1f1f1;
 }
-input[type=text], input[type=password], input[type="date"],textarea {
+input[type=text], input[type=password], input[type="date"],textarea,input[type="file"],input[type="email"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  border: 1px solid transparent;
+  background: #f1f1f1; 
 }
+input[type=text]:focus{
+ 
+  border: 1px solid green;
+  background: #fff!important;
+}
+input[type=password]:focus{
+ 
+  border: 1px solid green;
+  background: #fff!important;
+}
+
+input[type=date]:focus {
+ 
+  border: 1px solid green;
+  background: #fff!important;
+}
+
+input[type=file]:focus{
+ 
+  border: 1px solid green;
+  background: #fff!important;
+}
+input[type="email"]:focus{
+ outline: none;
+  border: 1px solid green!important;
+  background: #fff!important;
+}
+textarea:focus{
+ 
+  border: 1px solid green;
+  background: #fff!important;
+}
+
 input[type=radio] {
   width: 100%;
   
@@ -79,3 +113,4 @@ h2 a{
   border: #4CAF50  solid 2px;
   padding: 10px;
 }
+

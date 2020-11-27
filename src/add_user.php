@@ -101,6 +101,7 @@ if (isset($_POST['userid'])){
     if($rows > 0){
         $error = "User ID already existing";
         header('Location: ../public/admin/users.php?error='.$error);
+        exit();
     }else{
         
         if($userType == 'admin'){
@@ -132,16 +133,18 @@ if (isset($_POST['userid'])){
 
                 if ($conn->query($sql) == TRUE && $conn->query($sql1) == TRUE) {
                     header('Location: ../public/admin/users.php');
+                    exit();
                 } else {
                     header('Location: ../public/admin/users.php?error');
+                    exit();
                 }
             }
         }
 
             if ($conn->query($sql) == TRUE) {
-                header('Location: ../public/admin/users.php');
+               header('Location: ../public/admin/users.php');
             } else {
-            header('Location: ../public/admin/register_user.php?error');
+                header('Location: ../public/admin/register_user.php?error');
             }
     }
 

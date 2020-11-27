@@ -1,3 +1,15 @@
+
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +21,10 @@
 <link rel="stylesheet" href="../css/view.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/cat_form.css">
+<link type="text/css" rel="stylesheet" href="../css/buttons.css">
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 		
@@ -37,9 +50,11 @@
 						<input type="text"  name="TID" required>
 						<hr>
 				
-						<button type="submit" class="registerbtn">Delete</button>
+						<button type="submit" class="registerbtn">Add</button>
 					</form>
-					<button type="submit" class="deletebtn">Delete</button>
+					<div class="cancel">
+				<h2 align="center" ><a href="educational.php" >Cancel</a></h2>
+			</div>
 				</div>
 				
 				
@@ -48,3 +63,6 @@
 		
 </body>
 </html>
+
+
+	 <?php } ?>

@@ -1,4 +1,20 @@
 
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }else if($_SESSION['userType'] != 'student'){
+      header('Location: ../common/error.html');
+    }else{
+
+		$userID = $_SESSION['userID'];
+		
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,3 +58,5 @@
 
 </body>
 </html>
+
+    <?php } ?>

@@ -19,15 +19,16 @@ label{
   margin-left: 10px;
   font-size: 18px;
 }
-
-input[type=text], input[type=password], textarea {
+input[type=text], input[type=password], input[type="date"],textarea,input[type="file"],input[type="email"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  border: 1px solid transparent;
+  background: #f1f1f1; 
 }
+
+
 input[type=radio] {
   width: 100%;
   

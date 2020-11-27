@@ -1,3 +1,19 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'officer'){
+      
+      $dutyID = array();
+      $dutyID = $_SESSION['dutyID'];
+
+      if (!in_array("d1", $dutyID)) {
+         header('Location: o_dashboard.php');
+        }else{
+	?>
+
 <!DOCTYPE html>
 <head>
    <?php
@@ -14,39 +30,25 @@
    <script src="../js/nav.js"></script>
 </head>
    <body>
-      <div id="nav"></div>
+      <div id="officeNav"></div>
       <div class="content">
-      <div class="container count">
       <h1>Officers List</h1>
       <?php
             //echo "test";
             
             
-            $sql = "SELECT COUNT(*) FROM user where userType='office'"; 
-            $sql1 = "SELECT * FROM user where isActivated=0 and userType='office' ";
-            $sql2 = "SELECT * FROM user where isActivated=1 and userType='office' ";
+            $sql = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=0"; 
+            $sql3 = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=1";
+            $sql1 = "SELECT * FROM user where isActivated=0 and userType='officer' ";
+            $sql2 = "SELECT * FROM user where isActivated=1 and userType='officer' ";
             
             $result = $conn->query($sql);
+            $result3 = $conn->query($sql3);
             $result1 = $conn->query($sql1);
             $result2 = $conn->query($sql2);
             
-            if ($result->num_rows > 0) {
-            // output data of each row
             
-            while($row = $result->fetch_assoc()) {
-            echo "Officer Count: " . $row["COUNT(*)"]. "<br>";
-            
-            }
-            
-            }else {
-            echo "0 results";
-            }
-            
-            
-            echo "<br>"
-            
-            ?>
-            </div>
+      ?>
             
               <div class="btn-box">
                <button id="button2" onclick="activated()">Added Users</button>
@@ -55,16 +57,21 @@
 
       <br>
       <br>
-      <br>
       <div id="page1" class="page">
                <div class ="card">
+                  <div class="count">
+                     <?php
+                     while($row = $result->fetch_assoc()) {
+                     echo "Officer Count: " . $row["COUNT(isActivated)"]. "<br>";
+                     }?>
+                  </div>
                  <hr>
                   <table>
                      <tr>
                         <th>User ID</th>
                         <th>UserName</th>
                         <th>User Type</th>
-                        <th>Edit Details</th>
+                        <th>Add Details</th>
                      </tr>
                      <?php
                         while($row=mysqli_fetch_assoc($result1)){
@@ -73,7 +80,7 @@
                         <td><?php echo $row['userID'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['userType'] ?></td>
-                        <?php echo "<td><a class='btn editbtn' href = o_addOfficerDetails.php?userID=".$row['userID']." > update </a> </td>"?>
+                        <?php echo "<td><a class='btn editbtn' href = o_addOfficerDetails.php?userID=".$row['userID']." > Add </a> </td>"?>
                      </tr>
                      <?php
                         }
@@ -83,6 +90,12 @@
             </div>
             <div id="page2" class="page">
                <div class ="card">
+               <div class="count">
+                     <?php
+                     while($row = $result3->fetch_assoc()) {
+                     echo "Activated Officer Count: " . $row["COUNT(isActivated)"]. "<br>";
+                     }?>
+                  </div>
                  <hr>
                   <table>
                      <tr>
@@ -98,7 +111,7 @@
                         <td><?php echo $row['userID'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['userType'] ?></td>
-                        <?php echo "<td><a class='btn editbtn' href = o_addOfficerDetails.php?userID=".$row['userID']." > update </a> </td>"?>
+                        <?php echo "<td><a class='btn editbtn' href = officerProfile.php?userID=".$row['userID']." > update </a> </td>"?>
                      </tr>
                      <?php
                         }
@@ -115,7 +128,7 @@
          var button2 = document.getElementById("button2");
          
          let url = window.location.href;
-         if(url == "http://localhost/CL-GEN/public/office/o_officersList.php"){
+         if (url = window.location.href) {
          	page1.style.display = "block";
          	page2.style.display = "none";
          	button1.style.color= "#008080";
@@ -145,4 +158,6 @@
       </script>
    </body>
 </html>
+
+<?php }} ?>
   

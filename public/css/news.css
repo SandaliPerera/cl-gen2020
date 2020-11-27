@@ -122,6 +122,7 @@ p{
 	background-image: url(../../images/bg.png);
 	padding: 5px 0;
 	border-radius: 0px;
+	margin-left: 50%!important;
 }
 #page1 .news .container{
 	width: 75%;
@@ -137,14 +138,6 @@ p{
 	margin:auto;
 }
 
-.banner{
-	background-image: url(../../images/event.jpg);
-	height: 450px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: bottom;
-}
 
 .image{
     width: 100%;
@@ -197,15 +190,15 @@ table{
 	
   }
 
+
 .banner{
-	background-image: url(../../images/event.jpg);
+	background-image: url(../../images/school.jpg);
 	height: 450px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: bottom;
 }
-
 .btn-box{
 	margin-top: 80px!important;
 	margin-bottom: 20px!important;

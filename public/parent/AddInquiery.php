@@ -1,13 +1,13 @@
 
 <?php
-    // session_start();
+    session_start();
 
-    // if(!isset($_SESSION['userType'])){
-    //     $error = "Please Login!";
-    //     header('Location: ../common/loginFile.php?error='.$error);
-    // }elseif($_SESSION['userType'] == 'student'){
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'parent'){
 
-	// 	$userID = $_SESSION['userID'];
+		$userID = $_SESSION['userID'];
 		
 
 ?>
@@ -66,3 +66,5 @@
 </body>
 
 </html>
+
+	<?php } ?>

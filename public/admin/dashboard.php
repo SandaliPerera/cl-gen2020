@@ -1,149 +1,120 @@
-<!DOCTYPE html>
-<html>
-<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard</title>
-<script src="../js/jquery-1.9.1.min.js"></script>
-<script src="../js/nav.js"></script>
-<link type="text/css" rel="stylesheet" href="../css/main.css">
-<link type="text/css" rel="stylesheet" href="../css/dashboard.css">
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../images/font-awesome-4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script src="../js/nav.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/main.css">
+	<link type="text/css" rel="stylesheet" href="../css/dashboard.css">
+	<title>Admin Dashboard</title>
 </head>
 <body>
-	<div id="nav"></div>
-		
-	<div class="container count">
-		<h1>ABC SCHOOL</h1>
-	</div>
-		<div class="content">
-		<h1> USERS</h1>
-		<table>
-		<tr>
+	
+<div id="nav2"></div>
+<div class="content">
+  <div class="welcome">
+    <div class="dash-content">
+        <h2>Welcome to Dashboard</h2>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+    </div>
+  </div>
+
+  <table class="statis one">
+    <tr>
+        <td>
+          <div class="box">
+            <i class="fa fa-users "></i>
+            <div class="info">
+              <h3>4,245</h3> <span>Students</span>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+		</td>     
 		<td>
-		
-		<table class="inner" >
-				<tr>
-					<td >
-					<div class="container">
-			  <img src = "../../images/student.png" width="110" height="100">
-			  <div class="text">
-				<h2><b>Students</b></h2>
-				<p>5000</p>
-				</div>
-			  </div>
-					</td>
-					<td >
-					<div class="container" >
-			  <img src = "../../images/teacher.png" width="110" height="100">
-			  <div class="text">
-				<h2><b>Teachers</b></h2>
-				<p>250</p>
-			  </div>
-			  </div>
-					</td>
-					<td >
-					<div class="container" >
-			  <img src = "../../images/office.png" width="110" height="100">
-			  <div class="text">
-				<h2><b>Office staff</b></h2>
-				<p>100</p>
-				</div>
-			  </div>
-					</td>
-				</tr>
-			</table>
-			</td>
-		</tr>
-		</table>
-			  
-			  
-		<h1> PERFORMANCE</h1>	
-		<table>
-		<tr>
+          <div class="box">
+            <i class="fa fa-users"></i>
+            <div class="info">
+              <h3>64</h3> <span>Teachers</span>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+		  </div>
+		</td>
 		<td>
-		
-		<table class="inner" >
-				<tr>
-					<td >
-					<div class="container">
-			  <img src = "../../images/sport.png" width="110" height="100">
-			  <div class="text">
-				<h2><b>Sports</b></h2>
-				<p>1000</p>
-				</div>
-			  </div>
-					</td>
-					<td >
-					<div class="container" >
-			  <img src = "../../images/society.png" width="110" height="100">
-			  <div class="text">
-				<h2><b>Societies</b></h2>
-				<p>3000</p>
-			  </div>
-			  </div>
-					</td>
-					<td >
-					<div class="container" >
-			  <img src = "../../images/education.png" width="110" height="100">
-			  <div class="text">
-				<h2><b>Educational</b></h2>
-				<p>500</p>
-				</div>
-			  </div>
-					</td>
-				</tr>
-			</table>
-			</td>
-		</tr>
-		</table>
+          <div class="box">
+            <i class="fa fa-users "></i>
+            <div class="info">
+              <h3>25</h3> <span>Office Staff</span>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+		</td>   
+	</tr>
+</table>
+  <div class="charts">
+        <div class="chart-container">
+			<h3>Chart</h3>
+			<hr>
+			<img src="../../images/chart1.png" >
+        </div>
+        <div class="chart-container">
+			<h3>Chart2</h3>
+			<hr>
+			<img src="../../images/chart2.png" >
+    	</div>
+</div>
 
-		
-		<table>
-		<tr>
+
+      <table class="statis two">
+    <tr>
+        <td>
+        <div class="box ">
+              <i class="fa fa-futbol-o yellow"></i>
+              <h3>20 Sports</h3>
+              <p class="lead">Page views</p>
+            </div>
+		</td>     
 		<td>
-		
-		<table class="inner" >
-				<tr>
-					<td >
-					<div class="container adjust">
-			  <div class="text">
-				<h2><b>Current Year Users registered</b></h2>
-				<p>Students : 50%</p>
-				<p>Officers : 20%</p>
-				<p>Teachers : 30%</p>
+    <div class="box ">
+              <i class="fa fa-music red"></i>
+              <h3>20</h3>
+              <p class="lead">Societies</p>
+            </div>
+		</td>
+		<td>
+    <div class="box ">
+              <i class="fa fa-shopping-cart green "></i>
+              <h3>5,154</h3>
+              <p class="lead">Product sales</p>
+            </div>
+    </td>  
+    <td>
+    <div class="box ">
+              <i class="fa fa-handshake-o blue"></i>
+              <h3>5,154</h3>
+              <p class="lead">Transactions</p>
+          </div>
+		</td>  
+	</tr>
+</table>
+  
 
-				</div>
-			  </div>
-					</td>
-					<td >
-					<div class="container adjust" >
-				<div class="text">
-				<h2><b>Students in categories</b></h2>
-				<p>Sports : 50%</p>
-				<p>Societies : 80%</p>
-
-				</div>
-			  </div>
-					</td>
-					<td >
-					<div class="container adjust">
-			  <div class="text">
-				<h2><b>Upcoming Events</b></h2>
-				<p>Talent Show<span>2020/11/05</span></p>
-				<p>Sportsmeet<span>2020/11/05</span></p>
-				<p>Color's Eve<span>2020/11/05</span></p>
-
-				</div>
-			  </div>
-					</td>
-			
-				</tr>
-			</table>
-			</td>
-		</tr>
-		</table>
-		</div>
-		</div>
 </body>
+</html>
 
-</html>	
+     <?php } ?>
+
+

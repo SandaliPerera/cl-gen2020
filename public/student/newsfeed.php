@@ -1,4 +1,20 @@
 
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }else if($_SESSION['userType'] != 'student'){
+		header('Location: ../common/error.html');
+    }else{
+
+		$userID = $_SESSION['userID'];
+		include ('../../src/newsfeed.php');
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,25 +27,7 @@
 <link type="text/css" rel="stylesheet" href="../css/main_stu.css">
 <link type="text/css" rel="stylesheet" href="../css/news.css">
 </head>
-<?php
-require_once '../../config/conn.php';
 
-
-	$count = "SELECT COUNT(*)  FROM newsfeed";
-    $sql = "SELECT * FROM newsfeed ORDER BY newsID DESC";
-
-	$res= mysqli_query($conn,$sql);
-	$res1= mysqli_query($conn,$count);
-
-    if($res){
-    //echo "Sucessfull";
-    }
-    else{
-    echo"failed";	
-    }
-
-
-?>
 
 <div id="nav"></div>
 
@@ -273,6 +271,12 @@ for($i;$i <= $c;$i++){
 		var button2 = document.getElementById("button2");
 		
 		let url = window.location.href;
+		if(url == window.location.href){
+			page1.style.display = "none";
+			page2.style.display = "block";
+			button1.style.color= "#000";
+			button2.style.color= "#008080";
+		}else
 		if(url == "http://localhost/CL-GEN/public/student/newsfeed.php"){
 			page1.style.display = "none";
 			page2.style.display = "block";
@@ -318,3 +322,5 @@ for($i;$i <= $c;$i++){
 		
 </body>
 </html>
+
+	<?php } ?>

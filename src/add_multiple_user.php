@@ -95,7 +95,8 @@ if (isset($_POST['userType']) && isset($_POST['number'])){
 
         if($rows > 0){
             $error = "User ID already existing";
-            header('Location: ../admin/register_user.php?error='.$error);
+            header('Location: ../public/admin/create_multiple_user.php?error='.$error);
+            exit();
         }else{
         
             $sql = "INSERT INTO user(username,password,userID,userType)VALUES ('".$username."','".$password."','".$userID."','".$userType."')";
@@ -112,7 +113,7 @@ if (isset($_POST['userType']) && isset($_POST['number'])){
                 if ($conn->query($sql) == TRUE && $conn->query($sql1) == TRUE) {
                 
                 } else {
-                header('Location: ../admin/create_multiple_user.php?error');
+                header('Location: ../public/admin/create_multiple_user.php?error');
                 }
         
             }
@@ -120,12 +121,12 @@ if (isset($_POST['userType']) && isset($_POST['number'])){
             if ($conn->query($sql) == TRUE) {
                 
             } else {
-            header('Location: ../admin/create_multiple_user.php?error');
+            header('Location: ../public/admin/create_multiple_user.php?error');
             }
         }
     } 
     $conn->close();  
-    header('Location: ../admin/create_multiple_user.php');
+    header('Location: ../public/admin/users.php');
 }
 
 ?>

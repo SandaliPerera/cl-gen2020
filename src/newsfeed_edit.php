@@ -9,7 +9,7 @@ if (isset($_POST['add_news'])){
         $news = $_POST['news'];
         $image = $_FILES['image']['name'];
         $target = "../images/" . basename($image);
-        
+    
         $date = date('Y-m-d');
         $time = date('H:i:s');
 

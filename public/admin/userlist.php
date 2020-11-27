@@ -1,4 +1,16 @@
 
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+		 $userID = $_SESSION['userID'];
+		 include ('../../src/view_users.php');
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,29 +26,10 @@
 </head>
 <body>
 
-<?php
-
-				require_once '../../config/conn.php';
-
-				$sql1 = "SELECT * FROM user WHERE isActivated = 0 AND userType != 'admin'";
-				$sql2 = "SELECT * FROM user WHERE isActivated = 1 AND userType != 'admin'";
-
-				$res1= mysqli_query($conn,$sql1);
-				$res2= mysqli_query($conn,$sql2);
-
-				if($res1){
-				//echo "Sucessfull";
-				}
-				else{
-				echo"failed";	
-				}
-
-?>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 		<h1> User List</h1>
-		<div class="view">
 		
 		
 		
@@ -55,7 +48,7 @@
 			<button id="button2" onclick="activated()">Added Users</button>
 			<button id="button1" onclick="notActivated()">Activated Users</button>
 		</div>
-		
+		<br>
 		<div id="page1" class="page">
 			
 			
@@ -63,8 +56,15 @@
 			  <form>
 					<button type="submit" formaction="register_user.php">Add User</button>
 				</form>
-				<br>
-				<br>
+				<div class="count">
+					<b>
+					<?php
+					while($row = $user_res3->fetch_assoc()) {
+						echo " User Count: " . $row["COUNT(isActivated)"]. "<br>";
+					}?>
+					</b>
+				</div>
+			  
                 
                 
                 <hr>
@@ -77,7 +77,7 @@
                     
                 </tr>
                 <?php
-		while($row=mysqli_fetch_assoc($res1)){
+		while($row=mysqli_fetch_assoc($user_res1)){
 			?>
                 <tr>
                     <td><?php echo $row['userID'] ?></td>
@@ -94,10 +94,15 @@
 		<div id="page2" class="page">
 			
 			  <div class="card">
+			 	<div class="count">
+					 <b>
+					<?php
+					while($row = $user_res4->fetch_assoc()) {
+						echo "Activated User Count: " . $row["COUNT(isActivated)"]. "<br>";
+					}?>
+					</b>
+				</div>
 			
-				<br>
-				<br>
-                
                 
                 <hr>
                 
@@ -109,7 +114,7 @@
                     
                 </tr>
                 <?php
-		while($row=mysqli_fetch_assoc($res2)){
+		while($row=mysqli_fetch_assoc($user_res2)){
 			?>
                 <tr>
                     <td><?php echo $row['userID'] ?></td>
@@ -124,7 +129,6 @@
 				</div>
 		</div>
 				
-		</div>
 		</div>
 
 		<script>
@@ -165,3 +169,5 @@
 		
 </body>
 </html>
+
+	<?php } ?>

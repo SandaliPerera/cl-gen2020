@@ -1,49 +1,54 @@
+<html>
 
-    <html>
-        <head>
-        <title>Login</title>
-        
-        <link rel="stylesheet" href="../css/login.css " type="text/css">
-        <link rel="stylesheet" href="../css/messages.css " type="text/css">
-        <script  src="../js/errors.js"></script>
+<head>
+    <title>Login</title>
 
-        
-        </head>
-        
-        <body>
-        <?php if (isset($_GET['error'])){?>
+    <link rel="stylesheet" href="../css/login.css " type="text/css">
+    <link rel="stylesheet" href="../css/messages.css " type="text/css">
+    <script src="../js/errors.js"></script>
+
+
+</head>
+
+<body>
+    <?php if (isset($_GET['error'])) { ?>
         <div id="error"><?php echo $_GET['error']; ?></div>
-        <?php } ?>
-        
-        <?php if (isset($_GET['message'])){?>
+    <?php } ?>
+
+    <?php if (isset($_GET['message'])) { ?>
         <div id="message"><?php echo $_GET['message']; ?></div>
-        <?php } ?>
+    <?php } ?>
 
-        <div id="msg"></div>
-   
-        <div class="login">
-            <div class="logo"></div>
-            <div class="login-box">
+    <div id="msg"></div>
+
+    <div class="login logiin">
+        <div class="logo "></div>
+        <div class="login-box">
+
+            <form id="login" action="../../src/login.php" method="post" onsubmit="return validate(username.value,password.value)">
+                <p>Username</p>
+                <input type="text" id="username" name="username" placeholder="Enter Username" onblur="validateUsername(username.value)" required>
+                <div class="text" id="uName"></div>
+                <p>Password</p>
+                <input type="text" id="password" name="password" placeholder="Enter Password"  onblur="validatePassword(password.value)" required>
+                <div class="text" id="pwd"></div>
+                <br><br><br>
+                <input type="submit" value="LOGIN" name="login">
+
+            </form>
+
             
-                    <h1>Login </h1>
-                    
-                    
-                    <form id="login" action="../../src/login.php" method="post" onsubmit="return validate(username.value,password.value)">
-                        <p>Username</p>
-                        <input type="text" id="username" name="username" placeholder="Enter Username"  required  >
-                        <p>Password</p>
-                        <input type="text" id="password" name="password" placeholder="Enter Password" required>
-                        <br><br><br>
-                        <input type="submit" value="LOGIN" name="login" >
-                    
-                    </form>
-            
-                    <a href="resetPass.php"><h3>Forgot password?</h3></a>
-                    
+            <div>
+                <h2><a href="front.html" class="cancelbtn">Cancel</a></h2>
             </div>
+            <a href="resetPass.php">
+                <h3>Forgot password?</h3>
+            </a>
+
         </div>
-        </body>
+    </div>
+</body>
 
 
-    
-        </html>
+
+</html>

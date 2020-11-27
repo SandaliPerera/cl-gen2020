@@ -1,3 +1,15 @@
+
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+		 $userID = $_SESSION['userID'];
+		 include ('../../src/view_users.php');
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +21,20 @@
 <link rel="stylesheet" href="../css/view.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/users.css">
+<link type="text/css" rel="stylesheet" href="../css/button.css">
 </head>
 <body>
-	<div id="nav"></div>
+<div id="nav2"></div>
 		
 		<div class="content">
 		
+		
 		<h1>Students User List</h1>
+		<?php if (isset($_GET['error'])){?>
+        <div id="error"><?php echo $_GET['error']; ?></div>
+        <?php } ?>
+		
+	
 		<form class="search" action="register_stu.html">
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>
@@ -30,25 +49,43 @@
 			
 			  <div class="card">
 			  <form>
-					<button type="submit" formaction="register_user.php">Add Student</button>
+					<button class="viewbtn" type="submit" formaction="register_user.php">Add Student</button>
 				</form>
-				<br>
-				<br>
+				<div class="count">
+                     <?php
+                     while($row = $student_result->fetch_assoc()) {
+                     echo "Student Count: " . $row["COUNT(isActivated)"]. "<br>";
+                     }?>
+                  </div>
+				
 				
 				<hr>
 				<table>
 					<tr>
-						<th>Student number</th>
-						<th>Student name</th>
-						<th>Click to edit</th>
-						
+						<th>Admission Number</th>
+						<th>User name</th>
+						<th>Status</th>
+						<th>Update Profile</th>
+						<th>Delete Profile</th>
 					</tr>
-					<tr>
-						<td>AAA</td>
-						<td>BBB</td>
-						<td><a class='btn editbtn' href = SProfile.html > update </a> </td>
-						
-					</tr>
+				
+					<?php
+                        while($row=mysqli_fetch_assoc($student_result2)){
+                        ?>
+                     <tr>
+						<td><?php echo $row['userID'] ?></td>
+						<td><?php echo $row['username'] ?></td>
+						<td><?php if($row['isActivated'] == 1){
+							echo "Activated";
+						}else{
+							echo "Not Activated";
+						} ?></td>
+						<td><a class='btn editbtn' href = SProfile.php > Update </a> </td>
+						<td><a class='btn dltbtn' href = # > Delete </a> </td>
+                     </tr>
+                     <?php
+                        }
+                        ?>
 				</table>
 				</div>
 				
@@ -56,3 +93,5 @@
 		
 </body>
 </html>
+
+					<?php } ?>

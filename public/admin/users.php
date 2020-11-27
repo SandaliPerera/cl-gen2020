@@ -1,3 +1,13 @@
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && ($_SESSION['userType'] != 'admin')){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,19 +23,18 @@
 
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 		
 		<h1>ADD USERS</h1>
 			
 		<div class="view">
-			<br>
-			<hr>
-			<br>
-			<div class="card">
-			
-				  <a href="register_user.php">
+
+			<table class="usertable">
+        <tr>
+          <td class="usertd">
+		  <a href="register_user.php">
 				  <div class="container user">
 
 				<br>
@@ -36,7 +45,9 @@
 				
 				  </div>
 				  </a>
-				<a href="create_multiple_user.php">
+      </td>
+      <td class="usertd">
+	  <a href="create_multiple_user.php">
 				  <div class="container user">
 	
 				<br>
@@ -45,11 +56,9 @@
 				
 				  </div>
 				  </a>
-
-	
-			</div>
-			<br>
-			<hr>
+  </td>
+</table>
+			
 			</div>	
 			
 		</div>
@@ -57,3 +66,5 @@
 </body>
 		
 </html>
+
+	 <?php } ?>

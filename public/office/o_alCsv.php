@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'officer'){
+      
+      $dutyID = array();
+      $dutyID = $_SESSION['dutyID'];
+
+      if (in_array("d2", $dutyID)) {
+	?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,3 +64,5 @@
 		
 </body>
 </html>
+
+      <?php }} ?>

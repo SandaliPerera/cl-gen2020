@@ -18,11 +18,13 @@ if (isset($_POST['regbtn'])) {
     $adCity = $_POST['stuAdCity'];
     $adDistrict = $_POST['stuAdDistrict'];
     $religion = $_POST['stuReligion'];
-    $enteredDate = $_POST['stuEnteredDate'];
+    $enteredDate = date("Y-m-d");
     $enteredGrade = $_POST['stuEnteredGrade'];
-    $email = $_POST['stuEmail'];
-    $contactNo = $_POST['stuContactNo'];
+    $email = $_POST['email'];
+    $contactNo = $_POST['contactNo'];
     $gender = $_POST['stuGender'];
+    $nic = $_POST['nic'];
+    $photo = $_POST['stuPhoto'];
 
     $pID = $_POST['pID'];
     $pName = $_POST['parentName'];
@@ -31,8 +33,8 @@ if (isset($_POST['regbtn'])) {
     $pContact = $_POST['Pcontact'];
     $pEmail = $_POST['pEmail'];
 
-$sql = "INSERT INTO student (admissionNo, fName, mName, lName, dob, adStreet, adCity, adDistrict, religion, enteredDate, enteredGrade, email, contactNo, gender) VALUES
- ('$admissionNo', '$fName', '$mName', '$lName', '$dob', '$adStreet', '$adCity', '$adDistrict', '$religion', '$enteredDate', '$enteredGrade', '$email', '$contactNo', '$gender')";
+$sql = "INSERT INTO student (admissionNo, fName, mName, lName, dob, adStreet, adCity, adDistrict, religion, enteredDate, enteredGrade, email, contactNo, gender, stuNic, stuPhoto) VALUES
+ ('$admissionNo', '$fName', '$mName', '$lName', '$dob', '$adStreet', '$adCity', '$adDistrict', '$religion', '$enteredDate', '$enteredGrade', '$email', '$contactNo', '$gender', '$nic', '$photo')";
 
  $sql1 = "INSERT INTO parent (parentID, name,  nic, occupation, contactNo, admissionNo, email) VALUES
  ('$pID', '$pName', '$pNIC', '$pOcc', '$pContact', '$admissionNo', '$pEmail')";
@@ -48,9 +50,14 @@ if ($conn->query($sql) === TRUE && $conn->query($sql1) === TRUE && $conn->query(
 	header('Location: ../public/office/o_studentsList.php');
 
 
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+    }else{
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+   /* else{
+        $error="Invalid Email or NIC";
+        header('Location: ../public/common/loginFile.php?error='.$error);
+    }*/
+
 }
 $conn->close();
 

@@ -1,3 +1,14 @@
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,23 +34,28 @@
 				<div class="container">
 					<h2><b>SPORTS</b></h2>
 					
-					<form action="" method="POST">
+					<form action="../../src/A_addsports.php" method="POST">
 					
 						<hr>
-
-						<label for="name"><b>Name</b></label>
-						<input type="text" name="id" required>
+						<!-- <label for="name"><b>Sport ID</b></label>
+						<input type="text" name="Spid" required> -->
 						
-						<label for="name"><b>Category ID</b></label>
-						<input type="text"  name="name" required>
+						<label for="name"><b>Sport</b></label>
+						<input type="text"  name="Sname" required>
 
 						<label for="TID"><b>Teacher in charge ID</b></label>
 						<input type="text"  name="TID" required>
+						
+						<label for="TID"><b>Number of Students</b></label>
+						<input type="text"  name="NOS" required>
+						
 						<hr>
 					
-						<button type="submit" class="registerbtn">Delete</button>
+						<button type="submit" class="registerbtn" name="regbtn">Add</button>
 					</form>
-					<button type="submit" class="deletebtn">Delete</button>
+					<div class="cancel">
+				<h2 align="center" ><a href="sports.php" >Cancel</a></h2>
+			</div>
 				</div>
 				
 			</div>
@@ -47,3 +63,5 @@
 		
 </body>
 </html>
+
+	 <?php } ?>

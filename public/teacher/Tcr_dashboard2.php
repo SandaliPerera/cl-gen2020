@@ -1,79 +1,127 @@
-
 <?php
-    session_start();
+     session_start();
 
-    if(!isset($_SESSION['userType'])){
-        $error = "Please Login!";
-        header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'teacher'){
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'TcrinCharge')){
 
-        $userID = $_SESSION['userID'];
+         $userID = $_SESSION['userID'];
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Dashboard 2</title>
-	<script src="../js/jquery-1.9.1.min.js"></script>
-	<script src="../js/nav.js"></script>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/nav.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/main.css">
-	<link type="text/css" rel="stylesheet" href="../css/register2.css">
-	<link type="text/css" rel="stylesheet" href="../css/teacher.css">
+    <link type="text/css" rel="stylesheet" href="../css/dashboard.css">
+    <link type="text/css" rel="stylesheet" href="../css/button.css">
+    <link type="text/css" rel="stylesheet" href="../css/category.css">
 </head>
-<body name = top>
-<body>
+
+<body name=top>
+
+    <body>
+        <div id="nav"></div>
+        <div class="content">
+            <h1>TEACHER INCHARGE OF EXTRA-CURRICULAR ACTIVITIES</h1>
+            <br>
+            <hr>
+            <table>
+                <tr>
+                    <td>
+                        <a href="Tcr_achievement.php">
+                            <div class="container">
+
+                                <br>
+                                <br>
+                                <h2><b>Cricket</b></h2>
+
+                                <img src="../../images/11.jpg" width="110" height="100">
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="Tcr_achievement.php">
+                            <div class="container">
+
+                                <br>
+                                <br>
+                                <h2><b>Volley ball</b></h2>
+
+                                <img src="../../images/13.jpg" width="110" height="100">
+                            </div>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="Tcr_Achievement.php">
+                            <div class="container">
+
+                                <br>
+                                <br>
+                                <h2><b>Tamil society</b></h2>
+
+                                <img src="../../images/12.png" width="110" height="100">
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
 
 
-<div id="nav"></div>
-		
-	
-		<div class="content">
-			<h2>TEACHER INCHARGE OF EXTRA-CURRICULAR ACTIVITIES</h2>
-				<div class="card">
-				
-		<div class="l-container">
-			  <img src = "../../images/11.jpg" width="100" height="100">
-				<h3><b><a href="Tcr_achievement.php">Cricket</a></b></h3>
-		</div>
-			 
-			 
-		<div class="l-container">
-			<img src = "../../images/13.jpg" width="110" height="100">
-				<h3><b><a href="Tcr_achievement.php">Volley ball</a></b></h3>
-				
-		</div>
-		</div>
-			
-		</br>
-		<h2>     </h2>	
-		<div class="card">
-			<div class="r-container">
-			  <img src = "../../images/12.png" width="110" height="100">
-				<h3><b><a href="Tcr_achievement.php">Tamil Society</a></b></h3>
-			</div>
-			
-		<div class="r-container">
-			  <img src = "../../images/9.jpg" width="110" height="100">
-				<h3><b><a href="Tcr_achievement.php">Oriental Music Society</a></b></h3>
-		</div>
-		</div>
-	
-		</br>
-		<h2>     </h2>	
-		
-		<div class="card">
-			<div class="r-container">
-			  <img src = "../../images/5.jpg" width="110" height="100">
-				<h3><b><a href="Tcr_profile2.php">Profile</a></b></h3>
-		</div>
-		
-		<div class="r-container">
-			  <img src = "../../images/6.jpg" width="110" height="100">
-				<h3><b><a href="newsfeed.php">News Feed</a></b></h3>
-		</div>
-		</div>
-	</div>
-</body>
-</html>	
+            <table>
+                <tr>
+                    <td>
+                        <a href="Tcr_Achievement.php">
+                            <div class="container">
 
-<?php } ?>
+                                <br>
+                                <br>
+                                <h2><b>Music society</b></h2>
+
+                                <img src="../../images/9.jpg" width="110" height="100">
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="Tcr_profile.php">
+                            <div class="container">
+
+                                <br>
+                                <br>
+                                <h2><b>Profile</b></h2>
+
+                                <img src="../../images/office.png" width="110" height="100">
+                            </div>
+                        </a>
+                    </td>
+
+                    <td>
+                        <a href="newsfeed2.php">
+                            <div class="container">
+
+                                <br>
+                                <br>
+                                <h2><b>News Feed</b></h2>
+
+                                <img src="../../images/6.jpg" width="110" height="100">
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </body>
+
+</html>
+
+
+<?php 
+	 }
+?>

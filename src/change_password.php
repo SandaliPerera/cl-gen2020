@@ -1,58 +1,81 @@
 <?php
 
-if (isset($_POST['change_password'])){
-    
-    require_once '../config/conn.php';
+if (isset($_POST['change_password'])) {
+    if (!isset($_POST['token'])) {
+        $error = "Invalid Entry";
+        header('Location: ../public/common/resetPass.php?error=' . $error);
+        exit();
+    } else {
 
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirm_password'];
-    $token = $_POST['token'];
+        require_once '../config/conn.php';
 
-    $sql ="SELECT * FROM tokens WHERE token ='$token'";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
+        $password = $_POST['password'];
+        $confirmPassword = $_POST['confirm_password'];
+        $token = $_POST['token'];
 
-    $userID = $row['userID'];
-    $email = $row['email'];
+        $sql = "SELECT * FROM tokens WHERE token ='$token'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
 
-    if(mysqli_fetch_assoc($result) == FALSE){
-        $error = "Invalid change of password, Re-enter details to send another email";
-        header('Location: ../public/common/resetPass.php?error='.$error);
-    }else{
-        $sql ="SELECT * FROM user WHERE userID ='$userID'";
-        $result1 = mysqli_query($conn,$sql);
-        $row1 = mysqli_fetch_assoc($result1);
+        $userID = $row['userID'];
+        $email = $row['email'];
 
-        $userid = $row1['userID'];
+        if (mysqli_fetch_array($result) === false) {
+            $error = "Invalid change of password, Re-enter details to send another email";
+            header('Location: ../public/common/resetPass.php?error=' . $error);
+            exit();
+        } else {
+            $sql = "SELECT * FROM user WHERE userID ='$userID'";
+            $result1 = mysqli_query($conn, $sql);
+            $row1 = mysqli_fetch_assoc($result1);
 
-        if($userID != $userid){
-            $error = "Invalid change of password ";
-            header('Location: ../public/common/password_change.php?error='.$error);
-        }else{
+            $userid = $row1['userID'];
 
-            $pass = md5($password);
-            $confirmPass = md5($confirmPassword);
+            if ($userID != $userid) {
+                $error = "Password Change Failed";
+                header('Location: ../public/common/password_change.php?error=' . $error);
+                exit();
+            } else {
 
-            $query = "UPDATE user SET password = '$pass' WHERE userID = '$userid'";
-            $resultInsert = mysqli_query($conn,$query);
+                $pass = md5($password);
+                $confirmPass = md5($confirmPassword);
 
-            $query1 = "DELETE FROM tokens WHERE userID = '$userid'";
-            $resultInsert = mysqli_query($conn,$query1);
+                $query = "UPDATE user SET password = '$pass' WHERE userID = '$userid'";
+                $resultInsert = mysqli_query($conn, $query);
 
-            if($resultInsert == TRUE){
-                $message = "Password Updated. Login to Continue";
-                header('Location: ../public/common/loginFile.php?message='.$message);
-            }else{
-                $error = "Invalid change of password";
-                header('Location: ../public/common/password_change.php?error='.$error);
+                $query1 = "DELETE FROM tokens WHERE userID = '$userid'";
+                $resultInsert = mysqli_query($conn, $query1);
+
+                if ($resultInsert == TRUE) {
+
+                    $body = "
+                    Your Password for CL-GEN was Updated.
+                    
+                    Thank You.";
+
+
+                    $to = $email;
+                    $from = "clgen2020@gmail.com";
+                    $subject = "CL-GEN : Password Updated";
+                    $message = $body;
+                    $header = "From: {$from}";
+
+                    $sendResult = mail($to, $subject, $message, $header);
+
+                    if ($sendResult) {
+                        $message = "Password Updated. Login to Continue";
+                        header('Location: ../public/common/loginFile.php?message=' . $message);
+                        exit();
+                    } else {
+                        $error = "Password Updated Couldn't Send the email";
+                        header('Location: ../public/common/resetPass.php?error=' . $error);
+                    }
+                } else {
+                    $error = "Invalid change of password";
+                   header('Location: ../public/common/password_change.php?error=' . $error);
+                    exit();
+                }
             }
-
         }
-
     }
-
 }
-
-
-
-?>

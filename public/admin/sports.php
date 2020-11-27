@@ -1,3 +1,17 @@
+
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+		 $userID = $_SESSION['userID'];
+		 include ('../../src/view_sports.php');
+?> 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +25,7 @@
 <link type="text/css" rel="stylesheet" href="../css/category.css">
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 		
@@ -36,42 +50,43 @@
 			  <div class="card">
 				<h2><b>SPORT A</b></h2>
 				<hr>
+
 				<table>
-					<tr>
+        
+
+      
+        <tr>
 						<th>Sport ID</th>
 						<th>Sport </th>
 						<th>Teacher In Charge ID</th>
 						<th>Number of Students </th>
-						
-					</tr>
-					<tr>
-						<td>AAA</td>
-						<td>BBB</td><td>BBB</td>
-						<td>BBB</td>
-						
-					</tr>
-					<tr>
-						<td>AAA</td>
-						<td>BBB</td><td>BBB</td>
-						<td>BBB</td>
-						
-					</tr>
-					<tr>
-						<td>AAA</td>
-						<td>BBB</td><td>BBB</td>
-						<td>BBB</td>
-						
-					</tr>
-					<tr>
-						<td>AAA</td>
-						<td>BBB</td><td>BBB</td>
-						<td>BBB</td>
-						
-					</tr>
-				</table>
-				</div>
+            
+        </tr>
+
+        <?php
+				while($row=mysqli_fetch_assoc($result)){
+
+			?>
+      
+      <tr>
+        <td><?php echo $row['sportID'] ?></td>
+				<td><?php echo $row['sportName'] ?></td>
+				<td><?php echo $row['tcrID'] ?></td>
+        <td><?php echo $row['numstu'] ?></td>
 				
-		</div>
-		
+        </tr>
+        
+       
+       
+       
+        <?php
+    }
+    
+  
+    ?>
+
+ 
 </body>
 </html>
+
+<?php } ?>

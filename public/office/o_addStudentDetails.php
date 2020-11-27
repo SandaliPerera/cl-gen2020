@@ -1,3 +1,16 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'officer'){
+      
+      $dutyID = array();
+      $dutyID = $_SESSION['dutyID'];
+
+      if (in_array("d1", $dutyID)) {
+	?>
 <!DOCTYPE html>
 
 <head>
@@ -6,11 +19,14 @@
 <link rel="stylesheet" href="../css/register.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/register.css">
+<link type="text/css" rel="stylesheet" href="../css/messages.css">
+
 <script src="../js/jquery-1.9.1.min.js"></script>
         <script src="../js/nav.js"></script>
+        <script src="../js/errors.js"></script>
 </head>
 <body>
-<div id="nav"></div>
+<div id="officeNav"></div>
 <?php
 
 				require_once '../../config/conn.php';
@@ -32,9 +48,10 @@
 				}
 
 ?>
+
     <div class="content">
         <div class="container">
-            <form action="../../src/o_addStudentDetails.php" method="POST">
+            <form action="../../src/o_addStudentDetailsa.php" method="POST" onsubmit="return validateStudent()">
                 <h1>Add Student Details</h1>
                 <hr>
 
@@ -45,18 +62,18 @@
 				<input type="text" placeholder="Enter First Name" name="stufName" required>
 
                 <label for="stumName"><b>Middle Name</b></label>
-				<input type="text" placeholder="Enter Middle Name" name="stumName" required>
+				<input type="text" placeholder="Enter Middle Name" name="stumName"   required>
 
                 <label for="stulName"><b>Last Name</b></label>
-				<input type="text" placeholder="Enter Last Name" name="stulName" required>
+				<input type="text" placeholder="Enter Last Name" name="stulName"  required>
 
                 <label for="stuDob"><b>Date of Birth</b></label> <br>
-                <input type="date" placeholder="Enter Date of Birth" name="stuDob" required>
+                <input type="date" placeholder="Enter Date of Birth" name="stuDob" id="date" onblur="checkDate(date.value)" required>
                 
                 <br>
 
 				<label for="stuAdStreet"><b>Residential Addresss - Street</b></label>
-                <input type="text" placeholder="Enter Number and street" name="stuAdStreet" required>
+                <input type="text" placeholder="Enter Number and street" name="stuAdStreet"  required>
                 
                 <label for="stuAdCity"><b>Residential Addresss - City</b></label>
                 <input type="text" placeholder="Enter City" name="stuAdCity" required>
@@ -67,52 +84,59 @@
                 <label for="stuReligion"><b>Religion</b></label>
                 <input type="text" placeholder="Enter current address" name="stuReligion" required>
                 
-                <label for="stuEnteredDate"><b>Date Entered</b></label>
-				<input type="date" placeholder="Enter Date Entered" name="stuEnteredDate" required>
+               
 
 				<label for="stuEnteredGrade"><b>Entered Grade</b></label>
 				<input type="text" placeholder="Enter Grade Entered" name="stuEnteredGrade" required>
                 
-                <label for="stuEmail"><b>Email</b></label>
-				<input type="text" placeholder="Enter Email" name="stuEmail" required>
+                <label for="email"><b>Email</b></label>
+				<input type="email" placeholder="Enter Email" name="email" id="email" onblur="validateEmail(email.value)" required>
 
-				<label for="stuContactNo"><b>Contact Number</b></label>
-                <input type="text" placeholder="Enter Contact Number" name="stuContactNo" required>
-
+				<label for="contactNo"><b>Contact Number</b></label>
+                <input type="text" placeholder="Enter Contact Number" name="contactNo" id="contactNo"  onblur="contact(contactNo.value)" required>
+                <br>
                 <label><b>Gender:</b></label>
-			    <label> <input type="radio" name="stuGender" value="male"> Male</label>
-			    <label> <input type="radio" name="stuGender" value="female"> Female</label>
-                <label><input type="radio" name="stuGender" value="other"> Other</label>
+			    <label> <input type="radio" name="stuGender" value="male" required> Male</label>
+			    <label> <input type="radio" name="stuGender" value="female" required> Female</label>
+                <label><input type="radio" name="stuGender" value="other" required> Other</label>
+                <br></br>
                 <br>
-                <br>
-                <br>
-                <hr>
-                <h2>Parent's Details</h1>
-
-				<label for="pID"><b>User ID</b></label>
-				<input type="text" placeholder="Enter ID" value = "<?php echo $pID; ?>" name="pID" >
-				
-				<label for="parentName"><b> Name</b></label>
-				<input type="text" placeholder="Enter  Name" name="parentName" >
-
-                <label for="pNIC"><b>NIC</b></label>
-				<input type="text" placeholder="Enter NIC" name="pNIC" >
-
-                <label for="occ"><b>Occupation</b></label>
-				<input type="text" placeholder="Enter Occupation" name="occ" >
-
-                <label for="Pcontact"><b>Contact Number</b></label> <br>
-                <input type="text" placeholder="Enter Contact Number" name="Pcontact" >
-
-                <label for="pEmail"><b>Email</b></label> <br>
-                <input type="text" placeholder="Enter Email" name="pEmail" >
-
-				<br>
-				</br><br>
                 </br>
                 
+                <label for="nic"><b>NIC </b></label>
+                <input type="text" placeholder="Add NIC Number" id="nic" name="nic" onblur="NIC(nic.value)" >
+                <div id="noNIC" class="text"></div>
+
+                <label for="stuPhoto"><b>Add Your Photo</b></label>
+                <input type="file" placeholder="Add Your Photo" name="stuPhoto">
+
+                <br>
+                </br>
+
                 <hr>
-			   
+                <h2>Parent's / Guardian's Details</h1>
+
+				<label for="pID"><b>User ID</b></label>
+				<input type="text" placeholder="Enter ID" value = "<?php echo $pID; ?>" name="pID" required>
+				
+				<label for="parentName"><b> Name</b></label>
+				<input type="text" placeholder="Enter  Name" name="parentName" required>
+
+                <label for="pNIC"><b>NIC</b></label>
+				<input type="text" placeholder="Enter NIC" name="pNIC" id="pNIC" onblur="NICp(pNIC.value)" required>
+
+                <label for="occ"><b>Occupation</b></label>
+				<input type="text" placeholder="Enter Occupation" name="occ" required>
+
+                <label for="Pcontact"><b>Contact Number</b></label> <br>
+                <input type="text" placeholder="Enter Contact Number" name="Pcontact" id="Pcontact" onblur="contactP(Pcontact.value)" required>
+
+                <label for="pEmail"><b>Email</b></label> <br>
+                <input type="email" placeholder="Enter Email" name="pEmail" id="pEmail" onblur="validateEmailP(pEmail.value)" required>
+
+                <hr>
+                </br>
+                <div id="msg"></div>
 				<button type="submit" class="registerbtn" name="regbtn" >Save</button>
 
             </form>
@@ -125,3 +149,6 @@
 		
 </body>
 </html>
+
+
+            <?php }} ?>

@@ -1,6 +1,18 @@
 
-<!DOCTYPE html>
+<?php
+    session_start();
 
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'parent'){
+
+		$userID = $_SESSION['userID'];
+		
+
+?>
+
+<!DOCTYPE html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Student Profile</title>
@@ -622,16 +634,7 @@
 		var button4 = document.getElementById("button4");
 
 		let url = window.location.href;
-		if(url == "http://localhost/CL-GEN/public/parent/SProfile.php"){
-			page1.style.display = "block";
-			page2.style.display = "none";
-			page3.style.display = "none";
-			page4.style.display = "none";
-			button1.style.color= "#000";
-			button2.style.color= "#008080";
-			button3.style.color= "#008080";
-			button4.style.color= "#008080";
-		}else if(url == "http://localhost/CL-GEN/html/admin/newsfeedphp?loggedin"){
+		if(url == window.location.href){
 			page1.style.display = "block";
 			page2.style.display = "none";
 			page3.style.display = "none";
@@ -701,3 +704,4 @@
 </body>
 </html>
 
+	<?php } ?>

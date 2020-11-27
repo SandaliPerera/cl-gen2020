@@ -1,14 +1,13 @@
 <?php
-    session_start();
+     session_start();
 
-    if(!isset($_SESSION['userType'])){
-        $error = "Please Login!";
-        header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'teacher'){
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
 
-        $userID = $_SESSION['userID'];
+         $userID = $_SESSION['userID'];
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,10 +28,20 @@
 
 
 <div id="nav1"></div>	
-		<div class="content">
+<div class="content">
 			<h2>CALCULATE THE POSITION</h2>
 				<div class="card">
-					<hr>
+                    <hr>
+                    
+
+                    
+                    <form class="search" action="Tcr_position.php">
+                <button type="submit" >Calculate Avarage</button>
+                <br>
+                <hr>
+                <button type="submit" >Calculate Position</button>
+
+                </form>
                         <table>
                             <tr>
 
@@ -46,14 +55,8 @@
                                 <td>ST200001</td>
                                 <td>Medani</td>
                                 <td>800</td>
-                                <td><form class="search" action="Tcr_position.php">
-                                    <button type="submit" align="center">Calculate</button>
-									</form>
-									<td><form class="search" action="Tcr_position.php">
-                                    <button type="submit" align="center">Calculate</button>
-									</form>
-								</td>
-                                
+                                <td>88.7%</td>
+                                <td>3</td>
 
                             </td>
                                 
@@ -61,14 +64,9 @@
                             <tr><td>ST200002</td>
                                 <td>Hansika</td>
                                 <td>900</td>
-                                <td><form class="search" action="Tcr_position.php">
-                                    <button type="submit" align="center">Calculate</button>
-									</form>
-									<td><form class="search" action="Tcr_position.php">
-                                    <button type="submit" align="center">Calculate</button>
-									</form>
+                                <td>87.1%</td>
+                                <td>6</td>
                                 
-								</td>
                                 
                             </tr>
                         </table>
@@ -82,5 +80,6 @@
 
                         </body>
         </html>
-
-        <?php } ?>
+<?php 
+     }
+?>

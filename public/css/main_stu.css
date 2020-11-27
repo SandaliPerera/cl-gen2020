@@ -31,17 +31,20 @@ button{
 	cursor: pointer;
 }
 .navbar ul{
-    display: inline-flex;
+    display: inline;
 	margin: 0px 50px 5px 10px;
-	float: left;
 	width: 100%;
 }
+.navbar ul .icon{
+	float: left!important;
 
+}
 .navbar ul li{
     list-style: none;
     margin: 10px;
     color: #b2b1b1;
-    cursor: pointer;
+	cursor: pointer;
+	float: right;
 }
 .wrap img{
 	display:inline-flex;
@@ -127,12 +130,13 @@ button{
     right: 20px;
     position: absolute;
     text-decoration: none;
-    color: #d8d8d8;
+    color: #ffffff;
     border: 2px solid transparent;
     border-radius: 15px;
     background-origin: border-box;
 	background-clip: content-box,border-box;
 	font-size: 20px;
+	margin-right: 5px;
 }
 .logout-btn span{
     display: block;
@@ -140,6 +144,25 @@ button{
 	cursor: pointer;
 }
 
+.navbar input[type="submit"]
+{
+	float: right!important;
+   	border: none;
+	outline: none;
+    height: 35px;
+	width : 100px;
+	font-weight: 500;
+    background: transparent;
+    color: rgb(193, 187, 187);
+    font-size: 20px;
+	margin-left: auto;
+    margin-right: 30px;
+	display:block;
+	cursor: pointer;
+	position: relative;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
 .logout-btn span a:link{
     text-decoration: none;
     color: #d8d8d8;
@@ -325,7 +348,7 @@ ul{
 
 
 .news{
-	margin: 10px 150px!important;
+	margin: 10px 27%!important;
 	padding: 2px 35px;
 	
 }
@@ -345,11 +368,15 @@ ul{
 }
 
 .image{
-    width:100%;
+    width:90%!important;
     height: 200px;
 }
 
 .image img{
     width:auto;
     height: 100%;
+}
+
+.modal{
+	width:100%;
 }

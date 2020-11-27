@@ -1,3 +1,15 @@
+
+<?php
+     session_start();
+
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+         $error = "Please Login!";
+         header('Location: ../common/loginFile.php?error='.$error);
+     }else if(($_SESSION['userType'] == 'admin')){
+
+         $userID = $_SESSION['userID'];
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +23,7 @@
 <link type="text/css" rel="stylesheet" href="../css/category.css">
 </head>
 <body>
-	<div id="nav"></div>
+	<div id="nav2"></div>
 		
 		<div class="content">
 		
@@ -103,3 +115,5 @@
 		
 </body>
 </html>
+
+	 <?php } ?>

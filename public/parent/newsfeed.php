@@ -1,4 +1,17 @@
 
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+        $error = "Please Login!";
+        header('Location: ../common/loginFile.php?error='.$error);
+    }elseif($_SESSION['userType'] == 'parent'){
+
+		$userID = $_SESSION['userID'];
+		
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -265,6 +278,12 @@ for($i;$i <= $c;$i++){
 		var button2 = document.getElementById("button2");
 		
 		let url = window.location.href;
+		if(url == window.location.href){
+			page1.style.display = "none";
+			page2.style.display = "block";
+			button1.style.color= "#000";
+			button2.style.color= "#008080";
+		}else
 		if(url == "http://localhost/CL-GEN/public/parent/newsfeed.php"){
 			page1.style.display = "none";
 			page2.style.display = "block";
@@ -310,3 +329,5 @@ for($i;$i <= $c;$i++){
 		
 </body>
 </html>
+
+	<?php } ?>

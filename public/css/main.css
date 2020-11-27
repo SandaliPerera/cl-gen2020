@@ -13,10 +13,10 @@ html body{
 
 .navbar{
 	padding: 0;
-	background:#01213c;
+	background:#24344b;
 	text-align:center;
 	width: 100%;
-	height:60px;
+	height:50px;
 	position: fixed;
 	z-index: 10;
 	box-shadow:0 2px 0px 0px #9da0a4;
@@ -32,17 +32,28 @@ html body{
 	border-bottom:solid 1px #60666b;
 }
 
+.menu .portal{
+	font-size: 17px!important;
+	color: #9da6ae!important;
+	margin-top: 2px!important;
+	margin-bottom: 15px!important;
+	margin-right: -10px;
+	display:inline-flex;
+	font-weight: bold;
+	margin: 0px 10px 5px 45px;
+}
 
 .wrap{
 	z-index: 100;
 	position: fixed;
 	width:195px;
 	height: 100%;
-	background:#01213c;
+	background:#24344b;
 	/* background:#404040 ; */
 	padding: 0px;
 	font-size:15px;
 	box-shadow:0 10px 5px 0 #60666b;
+	overflow-y: scroll;
 
 }
 
@@ -58,23 +69,31 @@ html body{
 	overflow:hidden;
 	cursor: pointer;
 	display:block;
-	margin-bottom: 10px;
-	color: #cfd7b8;	
+	margin-bottom: 20px;
+	color: #ffffff;	
+	font-size: 14px;
+	background:#24344b;
 }
 .wrap ul li a{
-	color: #bdb8d7;
+	color: #ffffff;
 	display: block;
 	text-decoration: none;
 
 }
 
 .wrap ul li:hover a{
-	color: rgb(241, 237, 230);	
+	color: #ffffff;	
 }
 
 .wrap ul ul li:hover{
-	background: #01213c;	
+	background: #24344b;	
 }
+
+.wrap ul  li:hover{
+	background: #24344b;	
+	color: rgb(204, 204, 250);
+}
+
 .wrap ul ul li:hover a{
 	color: #fff;
 }
@@ -90,7 +109,11 @@ html body{
 	margin-bottom: 10px;
 	padding: 3px 10px 3px 0px;
 	border-bottom: 1px solid #bdb8d7;
-	color: #fff;
+	color: #bdb8d7;
+}
+
+.wrap ul ul li a{
+	color: #bdb8d7;
 }
 /* .wrap ul li:focus ul{
 	display:block;
@@ -101,7 +124,7 @@ html body{
     right: 20px;
     position: absolute;
     text-decoration: none;
-    color: #d8d8d8;
+    color: #ffffff;
     border: 2px solid transparent;
     border-radius: 15px;
     background-origin: border-box;
@@ -139,6 +162,7 @@ html body{
 	cursor: pointer;
 	position: relative;
 	margin-bottom: 5px;
+	margin-top: -5px;
 }
 .wrap input[type="submit"]:hover
 {
@@ -205,9 +229,9 @@ a{
 
 
   .drop{
-	background-color: #01213c;
+	background-color: #24344b;
 	border: none;
-	color: #bdb8d7;
+	color: #ffffff;
 	text-align: left;
 	text-decoration: none;
 	display: inline-block;
@@ -218,7 +242,7 @@ a{
 }
 
 .drop:hover{
-	background-color: #01213c;
+	background-color: #24344b;
 	color: rgb(241, 237, 230);
 }
 
@@ -281,7 +305,7 @@ form{
   }
   
   .radio input:checked ~ .checkmark {
-	background-color: #01213c;
+	background-color: #24344b;
   }
   
   .checkmark:after {
@@ -302,3 +326,49 @@ form{
 	  border-radius: 30%;
 	  background: white;
   }
+
+  .stu{
+	  margin-left: -120px!important;
+  }
+
+  .count{
+	color: rgb(0, 27, 74);
+    font-size: 17px;
+    padding: 5px;
+    margin: 5px 5px 15px 5px;
+
+    height: 30px;
+    margin: 5px auto;
+    text-align: center;
+    width: 96%;
+    color: white;
+    background-color: rgba(8, 89, 159, 0.455);
+    text-align: center;
+    line-height: 30px;
+  }
+
+  /* width */
+.wrap::-webkit-scrollbar {
+	width: 8px;
+  }
+  
+  
+  /* Track */
+  .wrap::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  
+  /* Handle */
+  .wrap::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  
+  /* Handle on hover */
+  .wrap::-webkit-scrollbar-thumb:hover {
+	background: rgb(255, 255, 255);
+  }
+
+
+  /* .csv{
+	  margin-left: 500px!important;
+  } */
