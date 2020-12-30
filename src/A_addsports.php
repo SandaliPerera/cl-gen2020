@@ -1,4 +1,3 @@
-
 <?php
 include ('../public/admin/add_sport.php');
 //require_once('cl_gen.php');
@@ -9,15 +8,51 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 */
+
+
+    $sql = "SELECT * from csports";
+    $result = mysqli_query($conn,$sql);
+    $maxID = 0;
+
+    while($row=mysqli_fetch_array($result)){
+
+        $lastId = $row['SportID'];
+        $charID = substr($lastId,2);
+        $intID = intval($charID);
+
+        if($intID > $maxID){
+            $maxID = $intID;
+        }
+
+    }
+
+    if(mysqli_num_rows($result) == 0){
+            $date = date("y");
+            $prefix = "SP";
+            $sportID = $prefix . $date . "00001" ;
+    }else{
+
+            if(substr($maxID,0,2) != date("y")){
+                $date = date("y");
+                $prefix = "SP";
+                $sportID = $prefix . $date . "00001";
+            }else{
+                $prefix = "SP";
+                $sportID = $prefix . ($maxID+1) ;
+            }
+
+
+    echo $sportID;
+    }
+
 if (isset($_POST['regbtn'])) {
 
     //$sportID = $_POST['Spid'];
     $sportName = $_POST['Sname'];
     $tcrID = $_POST['TID'];
-    $numStu = $_POST['NOS'];
 
-$sql = "INSERT INTO csports (SportName, tcrID, numStu) VALUES
- ('$sportName', '$tcrID', '$numStu');";
+$sql = "INSERT INTO csports (SportID, SportName, tcrID) VALUES
+ ('$sportID','$sportName', '$tcrID');";
 
 if ($conn->query($sql) === TRUE) {
     echo '<script language="javascript">';

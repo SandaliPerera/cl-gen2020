@@ -7,7 +7,7 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
-if (isset($_POST['regbtn'])) {
+if (isset($_POST['regbtn1'])) {
         
     $admissionNo = $_POST['stuID'];
     $fName = $_POST['stufName'];
@@ -24,41 +24,43 @@ if (isset($_POST['regbtn'])) {
     $contactNo = $_POST['contactNo'];
     $gender = $_POST['stuGender'];
     $nic = $_POST['nic'];
-    $photo = $_POST['stuPhoto'];
+    $stuPhoto = $_FILES['stuPhoto']['name'];
+    $target = "../images/" . basename($stuPhoto);
 
-    $pID = $_POST['pID'];
-    $pName = $_POST['parentName'];
-    $pNIC = $_POST['pNIC'];
-    $pOcc = $_POST['occ'];
-    $pContact = $_POST['Pcontact'];
-    $pEmail = $_POST['pEmail'];
 
 $sql = "INSERT INTO student (admissionNo, fName, mName, lName, dob, adStreet, adCity, adDistrict, religion, enteredDate, enteredGrade, email, contactNo, gender, stuNic, stuPhoto) VALUES
- ('$admissionNo', '$fName', '$mName', '$lName', '$dob', '$adStreet', '$adCity', '$adDistrict', '$religion', '$enteredDate', '$enteredGrade', '$email', '$contactNo', '$gender', '$nic', '$photo')";
+ ('$admissionNo', '$fName', '$mName', '$lName', '$dob', '$adStreet', '$adCity', '$adDistrict', '$religion', '$enteredDate', '$enteredGrade', '$email', '$contactNo', '$gender', '$nic', '$stuPhoto')";
 
- $sql1 = "INSERT INTO parent (parentID, name,  nic, occupation, contactNo, admissionNo, email) VALUES
- ('$pID', '$pName', '$pNIC', '$pOcc', '$pContact', '$admissionNo', '$pEmail')";
 
  $update_query1 = "UPDATE user SET isActivated = '1' WHERE userID = '$admissionNo'";
- $update_query2 = "UPDATE user SET isActivated = '1' WHERE userID = '$pID'";
  
 
-if ($conn->query($sql) === TRUE && $conn->query($sql1) === TRUE && $conn->query($update_query1) && $conn->query($update_query2) ) {
-    echo '<script language="javascript">';
-    echo 'alert("Details Added");';
-    echo '</script>';
-	header('Location: ../public/office/o_studentsList.php');
+if ($conn->query($sql) === TRUE &&  $conn->query($update_query1)){
+    if (move_uploaded_file($_FILES['stuPhoto']['tmp_name'], $target)) {
+        $message = "Image uploaded successfully";
+        header('Location: ../public/office/o_addStudentDetails.php?message='.$message);
+    }else{
+        header('Location: ../public/office/o_addStudentDetails.php');
+    }
+
+    header('Location: ../public/office/o_addParentDetails.php?userID='.$admissionNo);
 
 
     }else{
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+        $error = "Cannot add record";
+               header('Location: ../public/office/o_addStudentDetails.php?error='.$error);
+   }
    /* else{
         $error="Invalid Email or NIC";
         header('Location: ../public/common/loginFile.php?error='.$error);
     }*/
 
+}else{
+    $error = "Cannot add the record";
+    header('Location: ../public/office/o_addStudentDetails.php?error='.$error);
 }
+
 $conn->close();
 
 ?>
+

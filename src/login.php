@@ -32,7 +32,7 @@ if (isset($_POST['login'])){
                     $_SESSION['userID'] = $row['userID'];
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['userType'] = $row['userType'];
-                    header('Location: ../public/student/SProfile.php');
+                    header('Location: ../public/student/newsfeed.php');
 
                 }else if($row['userType'] == "parent"){
                     $_SESSION['userID'] = $row['userID'];

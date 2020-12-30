@@ -16,7 +16,7 @@ if (isset($_POST['regbtn'])) {
     $dob = $_POST['dob'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
-    $address = $_POST['address'];
+    $address = $_POST['stuAddress'];
     $contactNo = $_POST['contactNo'];
 
     $checked_arr = $_POST['checkbox'];

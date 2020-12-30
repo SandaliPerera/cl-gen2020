@@ -103,12 +103,12 @@ if (isset($_POST['userType']) && isset($_POST['number'])){
 
             if($userType == "student"){
                 $intID = substr($userID,2);
-                $userid = "PR" . $intID;
+                $useridP = "PR" . $intID;
                 $userName = "PR" . substr($intID,0,2) . "/" . substr($intID,2);
-                $password = $userid;
+                $password = md5($useridP);
                 $usertype = "parent";
 
-                $sql1 = "INSERT INTO user(username,password,userID,userType)VALUES ('".$userName."','".$password."','".$userid."','".$usertype."')";
+                $sql1 = "INSERT INTO user(username,password,userID,userType)VALUES ('".$userName."','".$password."','".$useridP."','".$usertype."')";
 
                 if ($conn->query($sql) == TRUE && $conn->query($sql1) == TRUE) {
                 

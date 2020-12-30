@@ -32,13 +32,16 @@ else{
 
 $student_sql = "SELECT COUNT(isActivated) FROM user where userType='student' ";  
 $student_sql2 = "SELECT * FROM user where userType='student' ";
+$student_sql3 = "SELECT * FROM student  ";
 
 $student_result = $conn->query($student_sql);
 $student_result2 = $conn->query($student_sql2);
+$student_result3 = $conn->query($student_sql3);
 
-if(!$staff_result || !$staff_result2){
-    $error="Invalid Username or Password";
+if(!$student_result || !$student_result2 || $student_result3 ){
+    $error="Invalid UserID";
 }
+
 else{
     	
 }
