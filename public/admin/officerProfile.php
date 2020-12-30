@@ -9,28 +9,26 @@
 		}
 		else{
 
-		 $userID = $_SESSION['userID'];
-		 
+         $userID = $_SESSION['userID'];
 ?> 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student Profile</title>
-<script src="../js/jquery-1.9.1.min.js"></script>
-<script src="../js/nav.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile</title>
 <link rel="stylesheet" href="../css/register2.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/tabs.css">
 <link type="text/css" rel="stylesheet" href="../css/profile4.css">
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/nav.js"></script>
 </head>
-
 <body>
             <?php
             require_once '../../config/conn.php';
             $userID = $_GET['userID'];
-            $sql = "SELECT * FROM teacher where teacherID='$userID' ";
+            $sql = "SELECT * FROM office where officerID='$userID' ";
             $result = $conn->query($sql);
 
 
@@ -137,6 +135,6 @@
                 </div>
             </div>
         </body>
-	</html>
-
-	 <?php } ?>
+    </html>
+    
+    <?php } ?>

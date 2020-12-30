@@ -1,11 +1,13 @@
-
 <?php
      session_start();
 
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
-     }else if(($_SESSION['userType'] == 'admin')){
+	 }else if($_SESSION['userType'] != 'admin'){
+			header('Location: ../common/error.html');
+		}
+		else{
 
          $userID = $_SESSION['userID'];
 ?> 
@@ -35,6 +37,7 @@
 
 				<label for="userType" ><b>User ID</b></label>
 				<br>
+				<br>
 				<label class="radio"> <input type="radio" name="userType" value="student" onclick = "getData('student')" required> Student
 				<span class="checkmark"></span></label>
 				<label class="radio"> <input type="radio" name="userType" value="teacher" onclick = "getData('teacher')" required> Teacher
@@ -52,12 +55,13 @@
 				<input type="text" id="number"  name="number" required >
 				<hr>
 			   
-				<button type="submit" class="registerbtn" name="addUser" id="addUser" >Create Account</button>
+				<!-- <button type="submit" class="registerbtn" name="addUser" id="addUser" >Create Account</button> -->
+				<div>
+						<button type="submit" class="registerbtn" name="addUser" id="addUser">Save</button>
+						<a href="users.php" class="cancel-btn">Cancel</a>
+					</div>
 			</form>
-              <hr>
-                <div class = "cancel">
-                <h2><a href="users.php" >Cancel</a></h2>
-                </div>
+            
 			  <hr>
 			</div>
 		</div>

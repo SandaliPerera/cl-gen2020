@@ -1,14 +1,17 @@
-
 <?php
      session_start();
 
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
-     }else if(($_SESSION['userType'] == 'admin')){
+	 }else if($_SESSION['userType'] != 'admin'){
+			header('Location: ../common/error.html');
+		}
+		else{
 
          $userID = $_SESSION['userID'];
 ?> 
+
 
 <!DOCTYPE html>
 <head>
@@ -21,6 +24,7 @@
    <link type="text/css" rel="stylesheet" href="../css/main.css">
    <link type="text/css" rel="stylesheet" href="../css/tabs.css">
    <link type="text/css" rel="stylesheet" href="../css/users.css">
+   <link type="text/css" rel="stylesheet" href="../css/messages.css">
    <script src="../js/jquery-1.9.1.min.js"></script>
    <script src="../js/pop.js"></script>
    <script src="../js/nav.js"></script>
@@ -55,6 +59,9 @@
       <br>
       <div id="page1" class="page">
                <div class ="card">
+               <?php if (isset($_GET['error'])) { ?>
+        <div id="error"><?php echo $_GET['error']; ?></div>
+    <?php } ?>
                   <div class="count">
                      <?php
                      while($row = $result->fetch_assoc()) {
@@ -107,7 +114,7 @@
                         <td><?php echo $row['userID'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['userType'] ?></td>
-                        <?php echo "<td><a class='btn editbtn' href = o_addOfficerDetails.php?userID=".$row['userID']." > update </a> </td>"?>
+                        <?php echo "<td><a class='btn editbtn' href = officerProfile.php?userID=".$row['userID']." > update </a> </td>"?>
                      </tr>
                      <?php
                         }
@@ -124,7 +131,7 @@
          var button2 = document.getElementById("button2");
          
          let url = window.location.href;
-         if(url == "http://localhost/CL-GEN/public/admin/officerList.php"){
+         if(url == window.location.href){
          	page1.style.display = "block";
          	page2.style.display = "none";
          	button1.style.color= "#008080";

@@ -1,14 +1,17 @@
-
 <?php
      session_start();
 
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
-     }else if(($_SESSION['userType'] == 'admin')){
+	 }else if($_SESSION['userType'] != 'admin'){
+			header('Location: ../common/error.html');
+		}
+		else{
 
 		 $userID = $_SESSION['userID'];
 		 include ('../../src/view_users.php');
+		 
 ?> 
 <!DOCTYPE html>
 <html>
@@ -21,77 +24,145 @@
 <link rel="stylesheet" href="../css/view.css " type="text/css">
 <link type="text/css" rel="stylesheet" href="../css/main.css">
 <link type="text/css" rel="stylesheet" href="../css/users.css">
-<link type="text/css" rel="stylesheet" href="../css/button.css">
+<link type="text/css" rel="stylesheet" href="../css/tabs.css">
+<!-- <link type="tex<<t/css" rel="stylesheet" href="../css/button.css"> -->
 </head>
 <body>
 <div id="nav2"></div>
 		
-		<div class="content">
-		
-		
-		<h1>Students User List</h1>
-		<?php if (isset($_GET['error'])){?>
-        <div id="error"><?php echo $_GET['error']; ?></div>
-        <?php } ?>
-		
-	
-		<form class="search" action="register_stu.html">
+<div class="content">
+    
+	<h1>Students List</h1>
+	<form class="search" action="register_stu.html">
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>
 		</form>
+	<?php
+		//echo "test";
 		
 		
-		<br>
-		<br>
-		<br>
+		$sql = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=0"; 
+		$sql3 = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=1";
+		$sql1 = "SELECT * FROM user where isActivated=0 and userType='student' ";
+		$sql2 = "SELECT * FROM student  ";
 		
+		$result = $conn->query($sql);
+		$result3 = $conn->query($sql3);
+		$result1 = $conn->query($sql1);
+		$result2 = $conn->query($sql2);
+		
+	  
+		?>
 
-			
-			  <div class="card">
-			  <form>
+	<div class="btn-box">
+		<button id="button2" onclick="activated()">Added Users</button>
+		<button id="button1" onclick="notActivated()">Activated Users</button>
+	</div>
+
+	<br>
+	<br>
+	<div id="page1" class="page">
+		<div class="card">
+		<form>
 					<button class="viewbtn" type="submit" formaction="register_user.php">Add Student</button>
 				</form>
-				<div class="count">
-                     <?php
-                     while($row = $student_result->fetch_assoc()) {
-                     echo "Student Count: " . $row["COUNT(isActivated)"]. "<br>";
-                     }?>
-                  </div>
-				
-				
-				<hr>
-				<table>
-					<tr>
-						<th>Admission Number</th>
-						<th>User name</th>
-						<th>Status</th>
-						<th>Update Profile</th>
-						<th>Delete Profile</th>
-					</tr>
-				
-					<?php
-                        while($row=mysqli_fetch_assoc($student_result2)){
-                        ?>
-                     <tr>
-						<td><?php echo $row['userID'] ?></td>
-						<td><?php echo $row['username'] ?></td>
-						<td><?php if($row['isActivated'] == 1){
-							echo "Activated";
-						}else{
-							echo "Not Activated";
-						} ?></td>
-						<td><a class='btn editbtn' href = SProfile.php > Update </a> </td>
-						<td><a class='btn dltbtn' href = # > Delete </a> </td>
-                     </tr>
-                     <?php
-                        }
-                        ?>
-				</table>
-				</div>
-				
+		<?php if (isset($_GET['error'])) { ?>
+	<div id="error"><?php echo $_GET['error']; ?></div>
+<?php } ?>
+			<div class="count">
+				<?php
+				 while($row = $result->fetch_assoc()) {
+				 echo "Student Count: " . $row["COUNT(isActivated)"]. "<br>";
+				 }?>
+			</div>
+			<hr>
+			<table>
+				<tr>
+					<th>User ID</th>
+					<th>UserName</th>
+					<th>Add Details</th>
+				</tr>
+				<?php
+					while($row=mysqli_fetch_assoc($result1)){
+					?>
+				<tr>
+					<td><?php echo $row['userID'] ?></td>
+					<td><?php echo $row['username'] ?></td>
+					
+					<?php echo "<td><a class='btn editbtn' href = o_addStudentDetails.php?userID=".$row['userID']." > Add </a> </td>"?>
+				</tr>
+				<?php
+					}
+					?>
+			</table>
 		</div>
-		
+	</div>
+	<div id="page2" class="page">
+		<div class="card">
+			<div class="count">
+				<?php
+				 while($row = $result3->fetch_assoc()) {
+				 echo "Activated Student Count: " . $row["COUNT(isActivated)"]. "<br>";
+				 }?>
+			</div>
+			<hr>
+			<table>
+				<tr>
+					<th>User ID</th>
+					<th>Name</th>
+					<th>Edit Details</th>
+					<th>Deactivate Account</th>
+				</tr>
+				<?php
+					while($row=mysqli_fetch_assoc($result2)){
+					?>
+				<tr>
+					<td><?php echo $row['admissionNo'] ?></td>
+					<td><?php $name = $row['fName'] ." ". $row['mName'] ." ". $row['lName'] ; echo $name; ?></td>
+					<?php echo "<td><a class='btn editbtn' href = SProfile.php?userID=".$row['admissionNo']." > update </a> </td>"?>
+					<?php echo "<td><a class='btn dltbtn' href = # > Deactivate </a> </td>";?>
+				</tr>
+				<?php
+					}
+					?>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<script>
+var page1 = document.getElementById("page1");
+var page2 = document.getElementById("page2");
+var button1 = document.getElementById("button1");
+var button2 = document.getElementById("button2");
+
+let url = window.location.href;
+if (url == window.location.href) {
+	page1.style.display = "block";
+	page2.style.display = "none";
+	button1.style.color = "#008080";
+	button2.style.color = "#000";
+
+}
+
+function activated() {
+	page1.style.display = "block";
+	page2.style.display = "none";
+	button1.style.color = "#008080";
+	button2.style.color = "#000";
+
+}
+
+function notActivated() {
+	page1.style.display = "none";
+	page2.style.display = "block";
+	button1.style.color = "#000";
+	button2.style.color = "#008080";
+}
+</script>
 </body>
+
 </html>
 
-					<?php } ?>
+<?php }
+ ?>

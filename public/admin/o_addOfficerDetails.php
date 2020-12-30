@@ -12,6 +12,8 @@
          $userID = $_SESSION['userID'];
 ?> 
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +24,8 @@
 	<script src="../js/pop.js"></script>
 	<script src="../js/nav.js"></script>
 	<script src="../js/errors.js"></script>
-	<link type="text/css" rel="stylesheet" href="../css/messages.css">
 	<link type="text/css" rel="stylesheet" href="../css/main.css">
+	<link type="text/css" rel="stylesheet" href="../css/messages.css">
 	<link type="text/css" rel="stylesheet" href="../css/register.css">
 </head>
 <body>
@@ -32,7 +34,7 @@
     
     <div class="content">
         <div class="container">
-            <form action="../../src/o_addOfficerDetails.php" method="POST" onsubmit="return validateRegistration()">
+            <form action="../../src/addOfficerDetails.php" method="POST" onsubmit="return validateRegistration()">
                 <h1>Add Officer Details</h1>
                 <hr>
 
@@ -109,7 +111,8 @@
 
     	</div>
 
+		
 	</body>
 </html>
 
-	 <?php } ?>
+	  <?php } ?>

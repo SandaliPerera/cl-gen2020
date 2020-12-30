@@ -1,14 +1,17 @@
-
 <?php
      session_start();
 
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
-     }else if(($_SESSION['userType'] == 'admin')){
+	 }else if($_SESSION['userType'] != 'admin'){
+			header('Location: ../common/error.html');
+		}
+		else{
 
 		 $userID = $_SESSION['userID'];
 		 include ('../../src/view_users.php');
+		 
 ?> 
 
 <!DOCTYPE html>
@@ -28,8 +31,8 @@
 
 	<div id="nav2"></div>
 		
-		<div class="content">
-		<h1> User List</h1>
+		<div class="content" style="margin-top: -60px;">
+		<h1 style="font-size: 40px;"> User List</h1>
 		
 		
 		
@@ -39,8 +42,7 @@
 		</form>
 		<br>
 		<br>
-		<br>
-		<hr>
+		
 		
 		<div class="btn-box">
 

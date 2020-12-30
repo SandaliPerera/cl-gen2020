@@ -1,13 +1,20 @@
 <?php
      session_start();
 
-     if(!isset($_SESSION['userType']) && ($_SESSION['userType'] != 'admin')){
+     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
-     }else if(($_SESSION['userType'] == 'admin')){
+	 }else if($_SESSION['userType'] != 'admin'){
+			header('Location: ../common/error.html');
+		}
+		else{
 
-         $userID = $_SESSION['userID'];
+		 $userID = $_SESSION['userID'];
+		 
 ?> 
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,13 +28,14 @@
 <link type="text/css" rel="stylesheet" href="../css/users.css">
 
 
+
 </head>
 <body>
 	<div id="nav2"></div>
 		
 		<div class="content">
-		
-		<h1>ADD USERS</h1>
+	
+		<h1 style="color: #6a7480;">ADD USERS</h1>
 			
 		<div class="view">
 
