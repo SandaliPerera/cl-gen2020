@@ -139,6 +139,34 @@ input[type=text]:focus{
     margin-top: -20px;
 	display:block;
 }
+
+.log {
+    text-align: center;
+    box-shadow: 0 8px 5px 0 rgb(172, 172, 172); 
+    width: 80%;
+    height: auto;
+    background-color:#fdfcfc;
+    margin: auto;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 15px;
+  }
+.log input[type="submit"]
+{
+    border: 1px solid #fff;
+	outline: none;
+    height: 40px;
+	width : 250px;
+    background: #565e64;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 15px;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    display:block;
+    cursor: pointer;
+}
 .login input[type="submit"]:hover
 {
     cursor: pointer;

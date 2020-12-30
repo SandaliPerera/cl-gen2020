@@ -207,7 +207,6 @@ button{
 .container {
   padding: 5px 16px 5px 5px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
- 
   background-color: white;
   margin-left:28px;
   
@@ -276,6 +275,8 @@ ul{
 	right: 25px;
 	font-size: 36px;
 	margin-left: 50px;
+	/* background-color: #bdb8d7; */
+	color: #bdb8d7;
   }
 
   .burger-btn{

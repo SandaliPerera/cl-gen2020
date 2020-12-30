@@ -10,7 +10,8 @@
   
 }
 hr{
-	border: .5px solid rgb(177, 212, 221);
+  border: .5px solid rgb(177, 212, 221);
+  margin-left: -45px;
 }
 
 
@@ -49,9 +50,10 @@ img{
 }
 
  .count{
-	 margin-top: 15px;
+   margin-top: 15px;
+   
 	 padding: 1px;
-	width: 99.6%;
+	width: 99.7%;
 	box-shadow:0 .5px 0px 0px #9da0a4!important;
 }
 

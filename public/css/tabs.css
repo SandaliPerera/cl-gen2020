@@ -98,7 +98,7 @@ p{
 .card {
 	padding: 10px!important;
 	overflow: auto;
-	border-radius: 0px;
+	/* border-radius: 0px; */
   }
 
 .image{

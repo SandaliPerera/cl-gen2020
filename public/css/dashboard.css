@@ -2,7 +2,6 @@
 body {background-color: #2a2b3d}
 .content {
   position: relative;
-  transition: .3s;
 }
 .margin {
   margin-left: 0 !important;

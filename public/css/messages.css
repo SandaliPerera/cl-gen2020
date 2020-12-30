@@ -75,6 +75,19 @@
   line-height: 25px;
   display:none;
 }
+#msg1{
+  font-size: 18px;
+  padding: 5px;
+  height: 30px;
+  margin: 5px auto;
+  text-align: center;
+  width: 96%;
+  color: white;
+  background-color: #e60000;
+  text-align: center;
+  line-height: 25px;
+  display:none;
+}
 
 .text{
   font-size: 10px;

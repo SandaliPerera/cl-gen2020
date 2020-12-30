@@ -36,6 +36,16 @@ input[type=text], input[type=password], input[type="date"],textarea,input[type="
   border: 1px solid transparent;
   background: #f1f1f1; 
 }
+
+select{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 1px solid transparent;
+  background: #f1f1f1;
+}
+
 input[type=text]:focus{
  
   border: 1px solid green;
@@ -114,3 +124,61 @@ h2 a{
   padding: 10px;
 }
 
+.registerback {
+  background-color: #868585;
+  color: white;
+  padding: 10px 11px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  font-size: medium;
+}
+.registerback:hover {
+  opacity: 70%;
+  padding: 11px 11px;
+}
+.registerback:focus {
+  outline:none;
+}
+.cancel-btn {
+  background-color: #f11a1a;
+  color: white;
+  padding: 10px 11px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  font-size: medium;
+}
+.cancel-btn:hover {
+  opacity: 70%;
+  padding: 11px 11px;
+}
+
+.cancel-btn:focus {
+  outline:none;
+}
+
+.registerbtn {
+  background-color: #33c437;
+  color: white;
+  padding: 10px 11px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+  font-size: medium;
+}
+
+.registerbtn:hover {
+  opacity: 70%;
+  padding: 11px 11px;
+}
+
+.registerbtn:focus {
+  outline:none;
+}
