@@ -29,7 +29,7 @@
     <div id="officeNav"></div>
 
     <div class="content">
-        <div class="container">
+        <div class="container" style="margin-left:250px;">
             <form action="../php/register.php" method="POST">
                 <h1>Add Grade 5 Scholarship Exam Results</h1>
                 <hr>
@@ -43,18 +43,13 @@
                 <label for="examName"><b>Exam Name</b></label>
                 <input type="text" value="Grade 5 Scholarship Exam - 2016" name="examName" readonly>
 
+                <label for="myFile"><b>Enter CSV File</b></label>
+                <input type="file" id="myFile" name="filename" class="nextpgbtn" required></br>
 
-                <br>
+                <button type="submit" class="registerbtn">Save</button>
+                <a href="o_viewSchol.php" class="cancel-btn">Cancel</a>
 
-                <p>Click on the "Choose File" button to upload a CSV file :</p>
 
-                <form>
-
-                    <input type="file" id="myFile" name="filename" class="nextpgbtn" required></br>
-
-                    <hr>
-
-                    <button type="submit" class="registerbtn">Save</button>
 
                 </form>
 

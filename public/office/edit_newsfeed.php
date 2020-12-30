@@ -23,8 +23,9 @@
     <script src="../js/nav.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/view.css">
-    <link type="text/css" rel="stylesheet" href="../css/register.css">
+
     <link type="text/css" rel="stylesheet" href="../css/messages.css">
+    <link type="text/css" rel="stylesheet" href="../css/register.css">
 </head>
 
 <body>
@@ -38,15 +39,16 @@
         <?php if (isset($_GET['error'])){?>
         <div id="error"><?php echo $_GET['error']; ?></div>
         <?php } ?>
-        <h1>Add News</h1>
 
 
         <div class="container">
 
-
+            <h1 style="color:#6a7480;">Add News</h1>
 
             <form action="../../src/newsfeed_edit.php" method="POST" enctype="multipart/form-data">
                 <hr>
+
+
 
                 <label for="title"><b>Title</b></label>
                 <input type="text" name="title" placeholder="Title" required>
@@ -63,11 +65,13 @@
                 <br>
 
                 <button type="submit" class="registerbtn" id="add_news" name="add_news">Submit</button>
-                <hr>
-            </form>
-
-
+                <a href="news_list.php" class="cancel-btn">Cancel</a>
         </div>
+        <hr>
+        </form>
+
+
+    </div>
 
 
     </div>

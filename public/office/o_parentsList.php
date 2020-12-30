@@ -80,7 +80,6 @@
                         <td><?php echo $row['userID'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['userType'] ?></td>
-                       
                     </tr>
                     <?php
                         }
@@ -128,7 +127,7 @@
     var button2 = document.getElementById("button2");
 
     let url = window.location.href;
-    if (url = window.location.href) {
+    if (url == "http://localhost/CL-GEN/public/office/o_parentsList.php") {
         page1.style.display = "block";
         page2.style.display = "none";
         button1.style.color = "#008080";

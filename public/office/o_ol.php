@@ -29,8 +29,8 @@
 <body>
     <div id="officeNav"></div>
     <div class="content">
-
-        <h1>G.C.E. O/L Examination Results - 2016</h1>
+        <br>
+        <h1 style="color:#6a7480;">G.C.E. O/L Examination Results - 2016</h1>
         <form class="search" action="of_addStudentDetails.html">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Search</button>

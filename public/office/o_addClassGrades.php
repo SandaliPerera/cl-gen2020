@@ -11,9 +11,10 @@
 
       if (in_array("d6", $dutyID)) {
 	?>
-	
+
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <?php
@@ -34,8 +35,8 @@ include_once '../../config/conn.php';
     <div id="officeNav"></div>
 
     <div class="content">
-
-        <h1>Add Classes</h1>
+        <br>
+        <h1 style="color:#6a7480;">Classes</h1>
         <form class="search" action="register_stu.html">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Search</button>
@@ -61,6 +62,32 @@ include_once '../../config/conn.php';
                 <tr>
                     <td>20G1</td>
                     <td>Grade 1</td>
+                    <td>
+                        <form><button class="btn editbtn" type="submit" formaction="o_addClasses.php">Add
+                                Classes</button></form>
+                    </td>
+                    <td>
+                        <form><button class="btn editbtn" type="submit" formaction="o_classes.php">View Classes</button>
+                        </form>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>20G2</td>
+                    <td>Grade 2</td>
+                    <td>
+                        <form><button class="btn editbtn" type="submit" formaction="o_addClasses.php">Add
+                                Classes</button></form>
+                    </td>
+                    <td>
+                        <form><button class="btn editbtn" type="submit" formaction="o_classes.php">View Classes</button>
+                        </form>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>20G3</td>
+                    <td>Grade 3</td>
                     <td>
                         <form><button class="btn editbtn" type="submit" formaction="o_addClasses.php">Add
                                 Classes</button></form>

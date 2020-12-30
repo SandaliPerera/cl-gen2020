@@ -33,7 +33,7 @@
     <div id="officeNav"></div>
     <div class="content">
 
-        <h1>Teachers List</h1>
+        <h1 style="margin-top:20px;">Teachers List</h1>
         <?php
             //echo "test";
             
@@ -127,7 +127,7 @@
     var button2 = document.getElementById("button2");
 
     let url = window.location.href;
-    if (url = window.location.href) {
+    if (url == window.location.href) {
         page1.style.display = "block";
         page2.style.display = "none";
         button1.style.color = "#008080";

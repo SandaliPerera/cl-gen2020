@@ -35,9 +35,9 @@ include_once '../../config/conn.php';
     <div id="officeNav"></div>
 
     <div class="content">
-
-        <h1>G.C.E A/L Examination Results</h1>
-        <form class="search" >
+        <br>
+        <h1 style="color: #6a7480;">G.C.E A/L Examination Results</h1>
+        <form class="search">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Search</button>
         </form>
@@ -48,7 +48,7 @@ include_once '../../config/conn.php';
 
         <div class="card">
             <form>
-                <button type="submit" formaction="o_addAl.php">Add Year</button>
+                <button type="submit" formaction="o_addAl.php">Add Exam</button>
             </form>
             <br>
             <br>

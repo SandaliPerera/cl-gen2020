@@ -29,7 +29,7 @@
     <div id="officeNav"></div>
 
     <div class="content">
-        <div class="container ">
+    <div class="container" style="margin-left:250px;">
             <form action="../php/register.php" method="POST">
                 <h1>Add G.C.E. O/L Examination Results</h1>
                 <hr>
@@ -44,18 +44,12 @@
                 <input type="text" value="G.C.E. O/L Examination - 2016" name="olexamName" readonly>
 
 
-                <br>
+                <label for="myFile"><b>Enter CSV File</b></label>
+                <input type="file" id="myFile" name="filename" class="nextpgbtn" required></br>
 
-                <p>Click on the "Choose File" button to upload a CSV file :</p>
-
-                <form>
-
-                    <input type="file" id="myFile" name="filename" class="nextpgbtn" required></br>
-
-                    <hr>
 
                     <button type="submit" class="registerbtn">Save</button>
-
+                <a href="o_viewOl.php" class="cancel-btn">Cancel</a>
                 </form>
 
         </div>

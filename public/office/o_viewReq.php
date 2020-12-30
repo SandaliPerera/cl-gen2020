@@ -32,7 +32,7 @@
     </div>
     <div class="content">
 
-        <h1>Requests List</h1>
+        <h1 style="color:#6a7480;">Requests List</h1>
         <form class="search" action="of_addStudentDetails.html">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Search</button>
@@ -69,19 +69,17 @@
                         <div id="character-form" class="model">
                             <div class="modal-content">
                                 <span class="close1">&times;</span>
-                                <h2>Character Certificate Request Form</h2>
+                                <h2>Request Form</h2>
                                 <form>
                                     <hr>
                                     <label for="userID"><b>Student Admission Number</b></label>
                                     <input type="text" value="ST2000001" name="id">
 
                                     <label for="reason"><b>Reason for request</b></label>
-                                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                                    <textarea id="w3review" name="w3review" rows="4" cols="50">March. Districts of Colombo, Gampaha and Kalutara - which have been identified as high risk areas - were given an eight-hour break on 24 March. Since then, Kandy and Jaffna Districts have been added to the high risk area list. And, last week, the authorities identified the Ratnapura and Pelmadulla areas as high risk as well. Authorities are working hard to control the situation, but the curfew will remain in place, at least for the time being. Until this year, nothing prevented Avurudu celebrations and festivities from going ahead - floods, droughts, other pandemics, disasters, tsunami, a 30-year war, and the list goes on.</textarea>
                                     <br>
-                                    <label for="TID"><b>Teacher in charge ID</b></label>
-                                    <input type="text" name="TID" required>
 
-                                    <button type="submit" class="registerbtn">Request</button>
+                                    <button type="submit" class="registerbtn">Back</button>
                                     <hr>
                                 </form>
                             </div>

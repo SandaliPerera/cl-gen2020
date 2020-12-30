@@ -18,15 +18,17 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
     <link rel="stylesheet" href="../../images/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-
-
+    
+    <div>
+        <button onclick="goBack()" class="backbtn" style="background-color: #1e8dd6;padding:1px;">Back</button>
+    </div>
 
     <div class="navbar">
 
         <ul>
             <li>
                 <form name="logout" action="../../src/logout.php" method="POST">
-                    <input type="submit" value="LOGOUT" name="logout" style="font-family: 'Playfair Display', serif;">
+                <input type="submit" value="LOGOUT" name="logout" style="font-family: 'Playfair Display', serif;">
                 </form>
             </li>
         </ul>

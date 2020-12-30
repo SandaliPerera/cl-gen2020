@@ -53,11 +53,11 @@ if (isset($_GET['newsID'])){
     <div id="officeNav"></div>
 
     <div class="content">
-        <div class="card">
             <h1>Add News</h1>
 
 
-            <div class="container">
+            <div class="container" style="margin-left:25%!important;
+  width: 50% !important;">
                 <br>
 
 
@@ -92,11 +92,12 @@ if (isset($_GET['newsID'])){
                         <input type="file" name="image" id="image" />
                     </div>
                     <button type="submit" class="registerbtn" id="add_news" name="add_news">Update</button>
+                    <a href="news_list.php" class="cancel-btn">Cancel</a>
                     <hr>
                 </form>
             </div>
 
-        </div>
+    
 
 
     </div>

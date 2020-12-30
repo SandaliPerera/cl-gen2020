@@ -10,7 +10,7 @@
       $dutyID = $_SESSION['dutyID'];
 
       if (in_array("d5", $dutyID)) {
-    ?>
+?>
 
 <!DOCTYPE html>
 <html>

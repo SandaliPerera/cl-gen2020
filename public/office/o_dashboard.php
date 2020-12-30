@@ -19,7 +19,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
     <script src="../js/nav.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/dashboard.css">
-    <title>Admin Dashboard</title>
+    <title>Officer Dashboard</title>
   </head>
 
   <body>
@@ -64,7 +64,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
           </td>
         </tr>
       </table>
-
+ 
 
 
       <table class="statis two">
@@ -72,8 +72,8 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
           <td>
             <div class="box ">
               <i class="fa fa-futbol-o"></i>
-              <h3>20 Sports</h3>
-              <p class="lead">Page views</p>
+              <h3>20 </h3>
+              <p class="lead">Sports</p>
             </div>
           </td>
           <td>
@@ -85,16 +85,16 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
           </td>
           <td>
             <div class="box ">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-user"></i>
               <h3>5,154</h3>
-              <p class="lead">Product sales</p>
+              <p class="lead">Users</p>
             </div>
           </td>
           <td>
             <div class="box ">
-              <i class="fa fa-handshake-o"></i>
+              <i class="fa fa-trophy"></i>
               <h3>5,154</h3>
-              <p class="lead">Transactions</p>
+              <p class="lead">Achievements</p>
             </div>
           </td>
         </tr>

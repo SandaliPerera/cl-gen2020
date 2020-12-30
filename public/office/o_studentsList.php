@@ -25,6 +25,7 @@
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/tabs.css">
     <link type="text/css" rel="stylesheet" href="../css/users.css">
+    <link type="text/css" rel="stylesheet" href="../css/messages.css">
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script src="../js/pop.js"></script>
     <script src="../js/nav.js"></script>
@@ -33,7 +34,7 @@
 <body>
     <div id="officeNav"></div>
     <div class="content">
-
+    
         <h1>Students List</h1>
         <?php
             //echo "test";
@@ -61,6 +62,9 @@
         <br>
         <div id="page1" class="page">
             <div class="card">
+            <?php if (isset($_GET['error'])) { ?>
+        <div id="error"><?php echo $_GET['error']; ?></div>
+    <?php } ?>
                 <div class="count">
                     <?php
                      while($row = $result->fetch_assoc()) {
@@ -128,7 +132,7 @@
     var button2 = document.getElementById("button2");
 
     let url = window.location.href;
-    if (url = window.location.href) {
+    if (url == window.location.href) {
         page1.style.display = "block";
         page2.style.display = "none";
         button1.style.color = "#008080";

@@ -35,8 +35,8 @@ include_once '../../config/conn.php';
     <div id="officeNav"></div>
 
     <div class="content">
-
-        <h1>Add Year</h1>
+        <br>
+        <h1 style="color:#6a7480;">Years</h1>
         <form class="search" action="register_stu.html">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Search</button>

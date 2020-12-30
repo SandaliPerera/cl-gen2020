@@ -128,7 +128,7 @@
          var button2 = document.getElementById("button2");
          
          let url = window.location.href;
-         if (url = window.location.href) {
+         if(url == window.location.href){
          	page1.style.display = "block";
          	page2.style.display = "none";
          	button1.style.color= "#008080";

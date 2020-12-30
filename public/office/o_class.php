@@ -37,7 +37,8 @@ include_once '../../config/conn.php';
     <div id="officeNav"></div>
 
     <div class="content">
-        <h1>Class 1A</h1>
+        <br>
+        <h1 style="color:#6a7480;">Class 1A</h1>
 
 
         <div class="l-part">

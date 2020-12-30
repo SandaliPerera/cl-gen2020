@@ -30,16 +30,16 @@
 <body>
     <div id="officeNav"></div>
     <div class="content">
-        <h2>Leaving Certificates</h2>
+        <h1>Leaving Certificates</h1>
 
-        <div class="btn-box">
+        <div class="btn-box" style="margin-top:10px!important;">
             <button id="button1" onclick="requests()">Requests</button>
             <button id="button2" onclick="issues()">Issues</button>
             <button id="button3" onclick="accepted()">Accepted</button>
         </div>
 
         <div id="page1" class="page">
-            <div class="container">
+            <div class="container" style="margin-left:4%;width:95%;">
                 <h2>Requests</h2>
                 <br>
                 <div class="card">
@@ -83,7 +83,8 @@
                                 </div>
                             </td>
                             <td>
-                                <button class="btn editbtn" >Generate Leaving Certificate</button>
+                            <button class="btn editbtn" value="Open Window" onclick="openWinLeaving()"
+                                    type="button">Generate Leaving Certificate</button>
                                 
                             </td>
                             <td><button class="btn dltbtn" type="button">Reject</button></td>
@@ -96,7 +97,7 @@
         <!--Page1 end-->
         <!--Page 2-->
         <div id="page2" class="page">
-            <div class="container">
+            <div class="container" style="margin-left:4%;width:95%;">
                 <h2>Issues</h2>
                 <br>
                 <div class="card">
@@ -151,7 +152,7 @@
         <!--Page2 End-->
         <!--Page3-->
         <div id="page3" class="page">
-            <div class="container">
+            <div class="container" style="margin-left:4%;width:95%;">
                 <h2>Accepted</h2>
                 <br>
                 <div class="card">
@@ -187,7 +188,7 @@
     var button3 = document.getElementById("button3");
 
     let url = window.location.href;
-    if (url = window.location.href) {
+    if (url == "http://localhost/CL-GEN/public/office/o_reqLc.php") {
         page1.style.display = "block";
         page2.style.display = "none";
         page3.style.display = "none";

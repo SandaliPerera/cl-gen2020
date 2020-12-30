@@ -16,7 +16,7 @@
 <html>
 
 <head>
-    <title>Add O/L Results</title>
+    <title>Add Classes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="../css/pop.css">
     <script src="../js/jquery-1.9.1.min.js"></script>
@@ -32,6 +32,7 @@
 
 
     <div class="content">
+        <br>
         <div class="container">
             <form action="../../src/o_addOl.php" method="POST">
                 <h1>Add Classes</h1>
@@ -49,6 +50,7 @@
                 <hr>
 
                 <button type="submit" class="registerbtn" name="savebtn">Save</button>
+                <a href="o_addClassGrades.php" class="cancel-btn">Cancel</a>
 
             </form>
 

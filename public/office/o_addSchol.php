@@ -4,12 +4,17 @@
     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
         $error = "Please Login!";
         header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'officer'){
-      
+    }
+    else if($_SESSION['userType'] != 'officer'){
+        header('Location: ../common/error.html');
+    }
+    else{      
       $dutyID = array();
       $dutyID = $_SESSION['dutyID'];
 
-      if (in_array("d2", $dutyID)) {
+      if (!in_array("d2", $dutyID)) {
+         header('Location: o_dashboard.php');
+        }
 	?>
 
 <!DOCTYPE html>
@@ -27,15 +32,11 @@
 
 <body>
     <div id="officeNav"></div>
-
     <div class="content">
         <div class="container">
             <form action="../../src/o_addschol.php" method="POST">
                 <h1>Add Grade 5 Scholarship Exam Results</h1>
                 <hr>
-
-                <label for="examID"><b>Exam ID</b></label>
-                <input type="text" placeholder="Enter Exam ID" name="examID" required>
 
                 <label for="scholExamYear"><b>Enter Exam Year</b></label>
                 <input type="text" placeholder="Enter Exam Year" name="scholExamYear" required>
@@ -43,14 +44,10 @@
                 <label for="examName"><b>Exam Name</b></label>
                 <input type="text" placeholder="Enter Exam Name" name="examName" required>
 
-                <br>
-
+                <button type="submit" class="registerbtn"name="savebtn" >Save</button>
+                <a href="o_viewSchol.php" class="cancel-btn">Cancel</a>
                 <hr>
-
-                <button type="submit" class="registerbtn">Save</button>
-
             </form>
-
         </div>
 
     </div>
@@ -60,4 +57,4 @@
 
 </html>
 
-<?php }} ?>
+<?php } ?>
