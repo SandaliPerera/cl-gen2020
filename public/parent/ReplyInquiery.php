@@ -5,12 +5,15 @@
     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
         $error = "Please Login!";
         header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'parent'){
+    }elseif($_SESSION['userType'] != 'parent'){
+		header('Location: ../common/error.html');
+    }else{
 
 		$userID = $_SESSION['userID'];
 		
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -31,14 +34,13 @@
 			<h1>Inquiery List</h1>
 			
 		
-			<div class="card">
-				<form>
+		
+			  <div class="card stu" style="padding-top:10px;">
+			  <form>
 					<button type="submit" formaction="AddInquiery.php">Add Inquiery</button>
 				</form>
 				<br>
 				<br>
-			</div>
-			  <div class="card stu">
 				<hr>
 				<table>
 					<tr>
@@ -49,8 +51,8 @@
 						
 					</tr>
 					<tr>
-						<td>ABC</td>
-						<td>Perera</td>
+						<td>First inquiry</td>
+						<td>Sandali Perera</td>
 						<td>02/03/2020</td>
 						<td>
                          <button type="submit" class="search"><a href=AddInquiery.php>Reply</a></button>
@@ -58,8 +60,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>ABC</td>
-						<td>Perera</td>
+						<td>Second inquiry</td>
+						<td>Dilhani Gamhatha</td>
 						<td>02/03/2020</td>
 						<td>
                          <button type="submit" class="search"><a href=AddInquiery.php>Reply</a></button>
@@ -67,8 +69,8 @@
 						</td>
 					</tr>
 					<tr>
-						<td>ABC</td>
-						<td>Perera</td>
+						<td>Third inquiry</td>
+						<td>Medhani Perera</td>
 						<td>02/03/2020</td>
 						<td>
                          <button type="submit" class="search"><a href=AddInquiery.php>Reply</a></button>

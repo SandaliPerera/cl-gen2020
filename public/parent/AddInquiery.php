@@ -5,12 +5,16 @@
     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
         $error = "Please Login!";
         header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'parent'){
+    }elseif($_SESSION['userType'] != 'parent'){
+		header('Location: ../common/error.html');
+    }else{
 
 		$userID = $_SESSION['userID'];
 		
 
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +41,8 @@
 <div class= content>
 	
 		<h1>INQUIERY FORM</h1>
-			<div class="container stu">
+			<div class="container " style="padding: 10px 20px;">
+				<br>
                                     <button type="submit"><a href="ReplyInquiery.php">Reply Inquieries</a></button>
 				<hr>
 				<form action="../../src/add_inquiry.php" method="POST">

@@ -1,17 +1,19 @@
 
-
 <?php
     session_start();
 
     if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
         $error = "Please Login!";
         header('Location: ../common/loginFile.php?error='.$error);
-    }elseif($_SESSION['userType'] == 'parent'){
+    }elseif($_SESSION['userType'] != 'parent'){
+		header('Location: ../common/error.html');
+    }else{
 
 		$userID = $_SESSION['userID'];
 		
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -49,7 +51,7 @@
     <div id="character-form" class="model">
     
 
-      <div class="modal-content">
+    <div class="modal-content" style="margin-left: 120px;">
         <span class="close1">&times;</span>
         <h2>Character Certificate Request Form</h2>
         <form>
@@ -87,7 +89,7 @@
       <div id="leaving-form" class="model">
       
 
-        <div class="modal-content">
+      <div class="modal-content" style="margin-left: 120px;">
           <span class="close2">&times;</span>
           <h2>Leaving Request Form</h2>
         <form>
