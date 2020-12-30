@@ -47,7 +47,7 @@ Under the S2519 bill, prisoners in New Jersey can get their sentences reduced by
 
 Velez said the law requires prisons to release inmates regardless of whether they tested positive for coronavirus. Eleven Covid-19 positive individuals will receive “personalized transportation plans” in which they will be “medically isolated,” Velez said in an email</p>
 					
-        <button class="view-btn"><a href="front.html">Back</a></button>		
+        <button class="view-btn"><a href="../../index.html">Back</a></button>		
         
 					
 	

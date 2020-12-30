@@ -1,3 +1,10 @@
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
+ 	
+?>
 <html>
 
 <head>
@@ -30,7 +37,7 @@
                 <input type="text" id="username" name="username" placeholder="Enter Username" onblur="validateUsername(username.value)" required>
                 <div class="text" id="uName"></div>
                 <p>Password</p>
-                <input type="text" id="password" name="password" placeholder="Enter Password"  onblur="validatePassword(password.value)" required>
+                <input type="password" id="password" name="password" placeholder="Enter Password"  onblur="validatePassword(password.value)" required>
                 <div class="text" id="pwd"></div>
                 <br><br><br>
                 <input type="submit" value="LOGIN" name="login">
@@ -39,7 +46,7 @@
 
             
             <div>
-                <h2><a href="front.html" class="cancelbtn">Cancel</a></h2>
+                <h2><a href="../../index.html" class="cancelbtn">Cancel</a></h2>
             </div>
             <a href="resetPass.php">
                 <h3>Forgot password?</h3>
@@ -52,3 +59,9 @@
 
 
 </html>
+
+    <?php
+}else{	
+        header('Location: ../common/loginAgain.php');
+
+} ?>

@@ -41,3 +41,13 @@ function openNav() {
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 }
+
+function openWinCharacter() {
+	window.open("../js/character c.pdf");
+  }
+function openWinLeaving(){
+	window.open("../js/leaving c.pdf");
+}
+function goBack() {
+	window.history.back();
+}

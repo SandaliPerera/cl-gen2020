@@ -50,7 +50,7 @@
     <div id="character-form" class="model">
     
 
-      <div class="modal-content">
+      <div class="modal-content" style="margin-left: 120px;">
         <span class="close1">&times;</span>
         <h2>Character Certificate Request Form</h2>
         <form>
@@ -88,7 +88,7 @@
       <div id="leaving-form" class="model">
       
 
-        <div class="modal-content">
+      <div class="modal-content" style="margin-left: 120px;">
           <span class="close2">&times;</span>
           <h2>Leaving Request Form</h2>
         <form>

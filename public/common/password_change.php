@@ -26,10 +26,10 @@
 
         <form id="login" action="../../src/change_password.php" method="post" onsubmit="return CheckPassword(password.value,confirm_password.value)">
             <p>Password</p>
-            <input type="text" id="password" name="password" placeholder="Enter Password" onblur="validatePassword(password.value)" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" onblur="validatePassword(password.value)" required>
             <div class="text" id="pwd"></div>
             <p>Confirm Password</p>
-            <input type="text" id="confirm_password" name="confirm_password" placeholder="Enter Confirm Password" onblur="validateConPassword(confirm_password.value)" required>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter Confirm Password" onblur="validateConPassword(confirm_password.value)" required>
             <div class="text" id="psd"></div>
             <input type='hidden' name='token' value=<?php if (isset($_GET['token'])) {
                                                         echo $_GET['token'];
