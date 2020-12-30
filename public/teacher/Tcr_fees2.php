@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
 
          $userID = $_SESSION['userID'];
@@ -32,7 +34,7 @@
 
         <div class="container">
             <div class="content">
-                <h2>Last Payment History</h2>
+                <h2 style="color: #6a7480;">Last Payment History</h2>
                 <div class="card">
                     <hr>
                     <table>
@@ -64,7 +66,7 @@
                     </table>
                 </div>
 
-                <h2>Due Payment</h2>
+                <h2 style="color: #6a7480;">Due Payment</h2>
                 <div class="card">
 
 
@@ -94,7 +96,7 @@
                     </table>
                 </div>
                 <form action="/action_page.php">
-                    <h2>Add Payment</h2>
+                    <h2 style="color: #6a7480;">Add Payment</h2>
 
                     <div class="card">
                         <hr>
@@ -114,7 +116,7 @@
                             <a href="#"><button type="submit" class="searchbtn" formaction="Tcr_fees3.php">add</button>
 
                                 <h1> </h1>
-                                <h2 align="center"><a href="Tcr_dashboard1.php">Cancel</a></h2>
+                                <h2 align="center"><a href="Tcr_fees1.php">Cancel</a></h2>
 
                         </div>
 

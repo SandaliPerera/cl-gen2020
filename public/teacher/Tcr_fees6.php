@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'both')){
 
          $userID = $_SESSION['userID'];
@@ -27,7 +29,7 @@
         <div id="nav3"></div>
 
         <div class="content">
-            <div class="container">
+            <div class="container" style="margin-left: 120px; width:75%;">
                 <form action="../php/register.php" method="POST">
                     <h1>PAYMENT SUCESSFULL!</h1>
                     <hr>
@@ -40,7 +42,7 @@
                         <button type="submit" class="searchbtn" formaction="Tcr_fees5.php">Search</button>
                 </form>
                 <hr>
-                <h2 align="center"><a href="../admin/main_admin.php">Cancel</a></h2>
+                <h2 align="center"><a href="Tcr_fees5.php">Cancel</a></h2>
                 <hr>
             </div>
         </div>

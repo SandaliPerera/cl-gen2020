@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'both')){
 
          $userID = $_SESSION['userID'];
@@ -20,12 +22,13 @@
     <link rel="stylesheet" href="../css/view.css " type="text/css">
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/inquiry.css">
+    <link type="text/css" rel="stylesheet" href="../css/register2.css">
 </head>
 
 <body>
     <div id="nav3"></div>
     <div class="content">
-        <h1>Reply Inquieries</h1>
+        <h1 style="color: #6a7480;">Reply Inquieries</h1>
         <div class="card">
             <form>
                 <button type="submit" formaction="Tcr_AddInquiery3.php">Add Inquiery</button>
@@ -50,11 +53,16 @@
                     <td>
                         <form class="search" action="">
                             <button type="submit" formaction="Tcr_Reply3.php" align="center">Reply</button>
+                           
+                           
                         </form>
+                       
                     </td>
                 </tr>
             </table>
+           
         </div>
+      
     </div>
 
 </body>

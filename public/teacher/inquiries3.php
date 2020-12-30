@@ -4,10 +4,14 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'both')){
 
          $userID = $_SESSION['userID'];
 ?> 
+
+
 
 <!DOCTYPE html>
 <html>

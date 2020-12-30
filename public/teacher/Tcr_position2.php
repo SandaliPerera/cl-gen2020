@@ -5,6 +5,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'both')){
 
          $userID = $_SESSION['userID'];
@@ -31,7 +33,7 @@
 
 <div id="nav3"></div>	
 <div class="content">
-			<h2>CALCULATE THE POSITION</h2>
+			<h2 style="color: #6a7480;">CALCULATE THE POSITION</h2>
 				<div class="card">
                     <hr>
                     

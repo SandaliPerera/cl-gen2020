@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'TcrinCharge')){
 
          $userID = $_SESSION['userID'];
@@ -27,12 +29,12 @@
     <body>
         <div id="nav"></div>
         <div class="content">
-            <h1>TEACHER INCHARGE OF EXTRA-CURRICULAR ACTIVITIES</h1>
+            <h1 style="color: #6a7480;">TEACHER INCHARGE </h1>
             <br>
             <hr>
-            <table>
+            <table  style="width:90%;margin-left:2%">
                 <tr>
-                    <td>
+                <td style="width:28%">
                         <a href="Tcr_achievement.php">
                             <div class="container">
 
@@ -44,7 +46,7 @@
                             </div>
                         </a>
                     </td>
-                    <td>
+                    <td style="width:28%">
                         <a href="Tcr_achievement.php">
                             <div class="container">
 
@@ -57,7 +59,7 @@
                         </a>
                     </td>
 
-                    <td>
+                    <td style="width:28%">
                         <a href="Tcr_Achievement.php">
                             <div class="container">
 
@@ -73,9 +75,9 @@
             </table>
 
 
-            <table>
+            <table  style="width:90%;margin-left:2%">
                 <tr>
-                    <td>
+                <td style="width:28%">
                         <a href="Tcr_Achievement.php">
                             <div class="container">
 
@@ -87,7 +89,7 @@
                             </div>
                         </a>
                     </td>
-                    <td>
+                    <td style="width:28%">
                         <a href="Tcr_profile.php">
                             <div class="container">
 
@@ -100,7 +102,7 @@
                         </a>
                     </td>
 
-                    <td>
+                    <td style="width:28%">
                         <a href="newsfeed2.php">
                             <div class="container">
 

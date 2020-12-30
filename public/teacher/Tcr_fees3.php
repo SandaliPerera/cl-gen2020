@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
 
          $userID = $_SESSION['userID'];
@@ -41,7 +43,7 @@
                         <button type="submit" class="searchbtn" formaction="Tcr_fees2.php">Search</button>
                 </form>
                 <hr>
-                <h2 align="center"><a href="../admin/main_admin.php">Cancel</a></h2>
+                <h2 align="center"><a href="Tcr_fees2.php">Cancel</a></h2>
                 <hr>
             </div>
         </div>

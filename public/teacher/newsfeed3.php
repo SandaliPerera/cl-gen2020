@@ -28,7 +28,7 @@
 <link type="text/css" rel="stylesheet" href="../css/news.css">
 </head>
 
-
+<body>
 <div id="nav3"></div>
 
 
@@ -89,7 +89,7 @@ for($i;$i <= $c;$i++){
                                     </tr>
 									<tr>
                                 <td>
-								<form method="POST" action="news.php">
+								<form method="POST" action="news3.php">
 									<input type="hidden" name="newsID" value="<?php echo $row['newsID']; ?>" />
 									<button class="view-btn" style="width:100px;" type="submit"  id="view_news" name="view_news"><b>View More</b></button>
 								</form>
@@ -138,7 +138,7 @@ for($i;$i <= $c;$i++){
 					
 						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
 					
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+						<button class="view-btn"><span><a href= "notification3.php"><b>View Message</b></a></span></button>
 				
 				</td>
 			</tr>
@@ -148,7 +148,7 @@ for($i;$i <= $c;$i++){
 					
 						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
 					
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+						<button class="view-btn"><span><a href= "notification3.php"><b>View Message</b></a></span></button>
 				
 				</td>
 			</tr>
@@ -158,7 +158,7 @@ for($i;$i <= $c;$i++){
 					
 						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
 					
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+						<button class="view-btn"><span><a href= "notification3.php"><b>View Message</b></a></span></button>
 				
 				</td>
 			</tr>
@@ -168,7 +168,7 @@ for($i;$i <= $c;$i++){
 					
 						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
 					
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+						<button class="view-btn"><span><a href= "notification3.php"><b>View Message</b></a></span></button>
 				
 				</td>
 			</tr>
@@ -178,7 +178,7 @@ for($i;$i <= $c;$i++){
 					
 						<p>From October 31 through December 31, we invite you to Do Something for CancerCare: Tell your family and friends about CancerCare over your Zoom turkey dinners. Bake holiday cookies.</p>
 					
-						<button class="view-btn"><span><a href= "notification.php"><b>View Message</b></a></span></button>
+						<button class="view-btn"><span><a href= "notification3.php"><b>View Message</b></a></span></button>
 				</td>
 			</tr>
 
@@ -264,7 +264,7 @@ for($i;$i <= $c;$i++){
 		var button2 = document.getElementById("button2");
 		
 		let url = window.location.href;
-		if(url == "http://localhost/CL-GEN/public/teacher/newsfeed3.php"){
+		if(url ==  window.location.href){
 			page1.style.display = "none";
 			page2.style.display = "block";
 			button1.style.color= "#008080";

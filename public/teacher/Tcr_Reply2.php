@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'TcrinCharge')){
 
          $userID = $_SESSION['userID'];
@@ -16,10 +18,11 @@
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script src="../js/nav.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/register.css">
     <link type="text/css" rel="stylesheet" href="../css/register2.css">
     <link type="text/css" rel="stylesheet" href="../css/view.css">
+    <link type="text/css" rel="stylesheet" href="../css/register.css">
     <link type="text/css" rel="stylesheet" href="../css/messages.css">
-    <link type="text/css" rel="stylesheet" href="../css/button.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,11 +35,12 @@
 
 <div class= content>
 	
-		<h1>INQUIERY FORM</h1>
+	
 			<div class="container">
-                                    <button type="submit" class="editbtn"><a href="ReplyInquiery.php">Reply Inquieries</a></button>
+                                    
 				<hr>
-				<form action="../../src/add_inquiry.php" method="POST">
+                <form action="../../src/add_inquiry.php" method="POST">
+                <h1 style="color: #6a7480;">REPLY FORM</h1>
 
 
 					<label for="title"><b> Inquiry Title</b></label>
@@ -51,7 +55,8 @@
 					<label for="msge"><b> Message </b></label>
 					<textarea id="msge" name="msge" placeholder="Write something.." style="height:200px" required></textarea>
 
-					<button type="submit" class="registerbtn" id="add_inq" name="add_inq">Submit</button>
+                    <button type="submit" class="registerbtn"formaction="Tcr_Reply2.php">Save</button>
+                <a href="Tcr_ReplyInquiery2.php" class="cancel-btn">Cancel</a>
 					<hr>
 					
 					

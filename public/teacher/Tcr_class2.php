@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'both')){
 
          $userID = $_SESSION['userID'];
@@ -27,7 +29,7 @@
     <div id="nav3"></div>
 
     <div class="content">
-        <h2>Class A</h2>
+        <h2 style="color: #6a7480;">Class A</h2>
         <form class="search" action="Tcr_marks2.php">
             <button type="submit">View Marks</button>
         </form>
@@ -56,8 +58,8 @@
                     <th>View Profile</th>
                 </tr>
                 <tr>
-                    <td>AAA</td>
-                    <td>BBB</td>
+                <td>ST2000001</td>
+                    <td>Sandali Perera</td>
                     <td>
                         <form class="search" action="Sprofile2.php">
                             <button type="submit">View</button>
@@ -65,8 +67,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>AAA</td>
-                    <td>BBB</td>
+                <td>ST2000001</td>
+                    <td>Sandali Perera</td>
                     <td>
                         <form class="search" action="SProfile2.php">
                             <button type="submit">View</button>
@@ -80,5 +82,4 @@
 
 </html>
 <?php 
-     }
-?>
+}?>

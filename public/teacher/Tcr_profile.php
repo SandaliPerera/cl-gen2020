@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'TcrinCharge')){
 
          $userID = $_SESSION['userID'];
@@ -75,21 +77,21 @@
                                                 <div class="form-group ">
                                                     <label class="label" for="adNo">NIC</label>
                                                     <input type="text" id="adNo" class="inputs"
-                                                        placeholder="Admission Number" value="966601744v">
+                                                        placeholder="Admission Number" value="966601744V">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group ">
                                                     <label class="label" for="input-username">ID</label>
                                                     <input type="text" id="Edate" class="inputs"
-                                                        placeholder="Entered Date" value="TC2000001">
+                                                        placeholder="Entered Date" value="TC20/00001">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label class="label" for="input-username">Date of Birth</label>
                                                     <input type="text" id="Egrade" class="inputs"
-                                                        placeholder="Entered Grade" value="96.06.08">
+                                                        placeholder="Entered Grade" value="1996.06.08">
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +135,7 @@
                                                 <div class="form-group ">
                                                     <label class="label" for="adNo">Email</label>
                                                     <input type="text" id="email" class="inputs" placeholder="Email"
-                                                        value="ST2000001">
+                                                        value="hansikamedani@gmail.com">
                                                 </div>
                                             </div>
 

@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
 
          $userID = $_SESSION['userID'];
@@ -27,13 +29,13 @@
 <body>
     <div id="nav1"></div>
     <div class="content">
-        <h1>CLASS TEACHER</h1>
+        <h1 style="color: #6a7480;">CLASS TEACHER</h1>
         <br>
         <hr>
-        <table>
+        <table  style="width:90%;margin-left:2%">
             <tr>
-                <td>
-                    <a href="Tcr_grades.php">
+            <td style="width:28%">
+                    <a href="Tcr_class.php">
                         <div class="container">
 
                             <br>
@@ -44,7 +46,7 @@
                         </div>
                     </a>
                 </td>
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_position.php">
                         <div class="container">
 
@@ -57,7 +59,7 @@
                     </a>
                 </td>
 
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_AddInquiery.php">
                         <div class="container">
 
@@ -73,9 +75,9 @@
         </table>
 
 
-        <table>
+        <table style="width:90%;margin-left:2%">
             <tr>
-                <td>
+            <td style="width:28%">
                     <a href="Tcr_fees1.php">
                         <div class="container">
 
@@ -87,7 +89,7 @@
                         </div>
                     </a>
                 </td>
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_profile2.php">
                         <div class="container">
 
@@ -100,7 +102,7 @@
                     </a>
                 </td>
 
-                <td>
+                <td style="width:28%">
                     <a href="newsfeed.php">
                         <div class="container">
 

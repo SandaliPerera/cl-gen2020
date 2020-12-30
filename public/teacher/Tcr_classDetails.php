@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
 
          $userID = $_SESSION['userID'];
@@ -27,7 +29,7 @@
 
     <div id="nav1"></div>
     <div class="content">
-        <h2>Class A</h2>
+        <h2 style="color: #6a7480;">Class A</h2>
         <div class=l-part>
             <label for="name"><b>Class Name</b></label>
             <input type="text" placeholder="12-A" name="id" required>
@@ -49,8 +51,8 @@
                     <th>View Profile</th>
                 </tr>
                 <tr>
-                    <td>AAA</td>
-                    <td>BBB</td>
+                    <td>ST2000001</td>
+                    <td>Dilhani Gamhatha</td>
                     <td>
                         <form class="search" action="Sprofile.php">
                             <button type="submit">View</button>
@@ -59,8 +61,8 @@
 
                 </tr>
                 <tr>
-                    <td>AAA</td>
-                    <td>BBB</td>
+                    <td>ST2000001</td>
+                    <td>Sandali Perera</td>
                     <td>
                         <form class="search" action="SProfile.php">
                             <button type="submit">View</button>

@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'TcrinCharge')){
 
          $userID = $_SESSION['userID'];
@@ -73,7 +75,7 @@
 
                 </form>
                 <hr>
-                <h2 align="center"><a href="Tcr_dashboard2.php">Cancel</a></h2>
+                <a href="Tcr_dashboard2.php" class="cancel-btn">Cancel</a>
                 <hr>
             </div>
         </div>

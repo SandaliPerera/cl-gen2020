@@ -4,7 +4,9 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
-     }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
+     }else if(($_SESSION['userType'] == 'teacher')){
 
          $userID = $_SESSION['userID'];
 ?> 
@@ -84,7 +86,7 @@
                                         <div class="form-group ">
                                             <label class="label" for="adNo">Admission Number</label>
                                             <input type="text" id="adNo" class="inputs" placeholder="Admission Number"
-                                                value="ST2000001">
+                                                value="18020275">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -135,14 +137,14 @@
                                         <div class="form-group ">
                                             <label class="label" for="ContactNumber">Contact Number</label>
                                             <input type="text" id="ContactNumber" class="inputs"
-                                                placeholder="Contact Number" value="01123456987">
+                                                placeholder="Contact Number" value="0112456987">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group ">
                                             <label class="label" for="adNo">Email</label>
                                             <input type="text" id="email" class="inputs" placeholder="Email"
-                                                value="ST2000001">
+                                                value="hansikamedani@gmail.com">
                                         </div>
                                     </div>
 
@@ -161,7 +163,7 @@
                                         <div class="form-group">
                                             <label class="label" for="input-address">Middle name</label>
                                             <input id="input-address" class="inputs" placeholder="Home Address"
-                                                value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                                                value="Bld " type="text">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -595,7 +597,7 @@
                                         <div class="form-group ">
                                             <label class="label" for="adNo">Occupation</label>
                                             <input type="text" id="adNo" class="inputs" placeholder="Admission Number"
-                                                value="ST2000001">
+                                                value="Doctor">
                                         </div>
                                     </div>
                                 </div>
@@ -604,14 +606,14 @@
                                         <div class="form-group ">
                                             <label class="label" for="adNo">Contact Number</label>
                                             <input type="text" id="adNo" class="inputs" placeholder="Contact Number"
-                                                value="ST2000001">
+                                                value="0773480639">
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group ">
                                             <label class="label" for="adNo">Email</label>
                                             <input type="text" id="email" class="inputs" placeholder="Email"
-                                                value="ST2000001">
+                                                value="hansikamedani@gmail.com">
                                         </div>
                                     </div>
                                 </div>
@@ -688,17 +690,7 @@
         var button4 = document.getElementById("button4");
 
         let url = window.location.href;
-        if(url == window.location.href){
-			page1.style.display = "block";
-			page2.style.display = "none";
-			page3.style.display = "none";
-			page4.style.display = "none";
-			button1.style.color= "#000";
-			button2.style.color= "#008080";
-			button3.style.color= "#008080";
-			button4.style.color= "#008080";
-		}else
-        if (url == "http://localhost/CL-GEN/public/admin/SProfile.php") {
+        if (url == window.location.href) {
             page1.style.display = "block";
             page2.style.display = "none";
             page3.style.display = "none";

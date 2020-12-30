@@ -4,6 +4,8 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'classTcr')){
 
          $userID = $_SESSION['userID'];
@@ -88,6 +90,8 @@
 
             <form class="search" action="Tcr_position.php">
                 <button type="submit" formaction="Tcr_position.php">Calculate the position and average</button>
+                <br>
+                <button type="submit" formaction="Tcr_class.php">Cancel</button>
             </form>
 
     </body>

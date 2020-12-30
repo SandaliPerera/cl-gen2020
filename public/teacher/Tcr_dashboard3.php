@@ -4,10 +4,15 @@
      if(!isset($_SESSION['userType']) && !isset($_SESSION['userID'])){
          $error = "Please Login!";
          header('Location: ../common/loginFile.php?error='.$error);
+        }else if($_SESSION['userType'] != 'teacher'){
+            header('Location: ../common/error.html');
      }else if(($_SESSION['userType'] == 'teacher') && ($_SESSION['teacherType'] == 'both')){
 
          $userID = $_SESSION['userID'];
-?>
+   
+         ?>
+     
+
 <!DOCTYPE html>
 <html>
 
@@ -27,10 +32,10 @@
     <div id="nav3"></div>
     <div class="content">
         <hr>
-        <table>
+        <table  style="width:90%;margin-left:2%">
             <tr>
-                <td>
-                    <a href="Tcr_grades3.php">
+            <td style="width:28%">
+                    <a href="Tcr_class2.php">
                         <div class="container">
 
                             <br>
@@ -41,7 +46,7 @@
                         </div>
                     </a>
                 </td>
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_position2.php">
                         <div class="container">
 
@@ -54,7 +59,7 @@
                     </a>
                 </td>
 
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_AddInquiery3.php">
                         <div class="container">
 
@@ -70,9 +75,9 @@
         </table>
 
 
-        <table>
+        <table  style="width:90%;margin-left:2%">
             <tr>
-                <td>
+            <td style="width:28%">
                     <a href="Tcr_fees4.php">
                         <div class="container">
 
@@ -84,7 +89,7 @@
                         </div>
                     </a>
                 </td>
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_achievement2.php">
                         <div class="container">
 
@@ -97,7 +102,7 @@
                     </a>
                 </td>
 
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_achievement2.php">
                         <div class="container">
 
@@ -114,9 +119,9 @@
             </tr>
         </table>
 
-        <table>
+        <table  style="width:90%;margin-left:2%">
             <tr>
-                <td>
+            <td style="width:28%">
                     <a href="Tcr_achievement2.php">
                         <div class="container">
 
@@ -128,7 +133,7 @@
                         </div>
                     </a>
                 </td>
-                <td>
+                <td style="width:28%">
                     <a href="Tcr_profile3.php">
                         <div class="container">
 
@@ -141,7 +146,7 @@
                     </a>
                 </td>
                 </td>
-                <td>
+                <td style="width:28%">
                     <a href="newsfeed3.php">
                         <div class="container">
 
