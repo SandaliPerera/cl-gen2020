@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="../css/register.css " type="text/css">
 
     <link type="text/css" rel="stylesheet" href="../css/news.css">
-    <link type="text/css" rel="stylesheet" href="../css/profile.css">
+   
     <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <!-- <link type="text/css" rel="stylesheet" href="../css/buttons.css"> -->
+    <link type="text/css" rel="stylesheet" href="../css/profile.css">
 </head>
 
 <body>
@@ -41,7 +43,7 @@
 
     <div class="content">
 
-
+  
         <div class="feed" style="margin-left:-50px;">
             <div class="btn-box">
 
@@ -49,13 +51,16 @@
                 <button id="button2" onclick="EXAMS()">Exam Resuts</button>
                 <button id="button3" onclick="ACHIEVEMENTS()">Achievements</button>
                 <button id="button4" onclick="PARENT()">Guardian</button>
+                
             </div>
 
+            <form action="../../src/updateStudentDetails.php" onsubmit="return validateStudent()" method="POST" enctype="multipart/form-data">
+            <button type="submit" class="registerbttn" style="margin-left: 5px;" name="regbtn1">Save</button>
             <!-- General Page 1 -->
             <div id="page1" class="page">
                 <div class="container">
 
-
+               
                     <h2><b>User Information</b></h2>
                     <?php
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -63,7 +68,7 @@
 
                     <hr>
                     <div class="card">
-                        <form>
+                    <!-- <form action="../../src/updateStudentDetails.php" onsubmit="return validateStudent()" method="POST" enctype="multipart/form-data"> -->
                             <div class="photo">
                                 <img src="../../images/student.png" width="160px" height="160px">
 
@@ -196,9 +201,6 @@
                         </div>
                     </div>
 
-
-
-                    </form>
 
                 </div>
                 <?php } ?>
@@ -415,7 +417,7 @@
                             <h2><b>Achievements</b></h2>
                             <hr>
                             <div class="card">
-                                <form>
+                               
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group ">
@@ -461,12 +463,11 @@
                                     </div>
                             </div>
                         </div>
-                        </form>
+                      
                     </div>
                 </div>
 
 
-                <div class="container">
                     <h2><b>CLUBS AND SOCIETY CATEGORY</b></h2>
                     <div class="first">
                         <div class="row">
@@ -524,8 +525,7 @@
                         <hr>
                         <div class="card">
 
-                            <form>
-
+                          
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group ">
@@ -566,8 +566,8 @@
                                     </div>
                                 </div>
                         </div>
-                    </div>
-                    </form>
+                    
+              
                 </div>
             </div>
 
@@ -589,7 +589,7 @@
                 <hr>
                 <div class="card">
 
-                    <form>
+                   
                         <div class="first">
                             <div class="row">
                                 <div class="col">
@@ -633,7 +633,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                
 
                 </div>
                 <br>
@@ -641,7 +641,7 @@
                 <hr>
                 <div class="card">
 
-                    <form>
+                  
                         <div class="first">
                             <div class="row">
                                 <div class="col">
