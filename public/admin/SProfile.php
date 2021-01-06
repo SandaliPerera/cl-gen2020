@@ -10,7 +10,7 @@
 		else{
 
 		 $userID = $_SESSION['userID'];
-?> 
+?>
 
 <!DOCTYPE html>
 
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../css/register.css " type="text/css">
 
     <link type="text/css" rel="stylesheet" href="../css/news.css">
-   
+
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <!-- <link type="text/css" rel="stylesheet" href="../css/buttons.css"> -->
     <link type="text/css" rel="stylesheet" href="../css/profile.css">
@@ -30,10 +30,12 @@
 
 <body>
     <?php
-            require_once '../../config/conn.php';   
+            require_once '../../config/conn.php';
             $userID = $_GET['userID'];
             $sql = "SELECT * FROM student where admissionNo='$userID' ";
+            $sql1 = "SELECT * FROM achievement where stuID='$userID' ";
             $result = $conn->query($sql);
+            $result1 = $conn->query($sql1);
 
 
             ?>
@@ -43,7 +45,7 @@
 
     <div class="content">
 
-  
+
         <div class="feed" style="margin-left:-50px;">
             <div class="btn-box">
 
@@ -51,7 +53,7 @@
                 <button id="button2" onclick="EXAMS()">Exam Resuts</button>
                 <button id="button3" onclick="ACHIEVEMENTS()">Achievements</button>
                 <button id="button4" onclick="PARENT()">Guardian</button>
-                
+
             </div>
 
             <form action="../../src/updateStudentDetails.php" onsubmit="return validateStudent()" method="POST" enctype="multipart/form-data">
@@ -60,7 +62,7 @@
             <div id="page1" class="page">
                 <div class="container">
 
-               
+
                     <h2><b>User Information</b></h2>
                     <?php
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -151,7 +153,7 @@
                                         </div>
                                     </div>
                                 </div>
-                         
+
 
 
                     </div>
@@ -359,6 +361,10 @@
         </div>
         <div id="page3" class="page">
             <div class="container">
+            <?php
+                            while ($row1 = mysqli_fetch_assoc($result1)) {
+                                if($row1['Ctype'] == 1){
+                    ?>
 
                 <h2><b>SPORT CATEGORY</b></h2>
                 <div class="first">
@@ -368,210 +374,74 @@
                                 <div class="col">
                                     <div class="form-group ">
 
-                                        <input type="text" id="fname" class="inputs" placeholder="First name"
-                                            value="Karate">
+                                        <input type="text" id="category" class="inputs"
+                                        value="<?php echo $row1['category'] ?>">
+                                        <h2><b>Achievements</b></h2>
+                                        <!-- <div class="row"> -->
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <input type="text" id="adNo" class="inputs"
+                                                value="<?php echo "Obtained " . $row1['position']." place in".$row1['achievementName'] ?>">
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
 
-                                        <input type="text" id="mname" class="inputs" placeholder="Middle name"
-                                            value="Foot ball">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-
-                                        <input type="text" id="lname" class="inputs" placeholder="Last name"
-                                            value="Cricket">
-                                    </div>
                                 </div>
                             </div>
                             <br>
 
+                            <hr>
+
+                        </div>
+
+                    </div>
+
+                    <h2><b>CLUBS AND SOCIETY CATEGORY</b></h2>
+                    <?php
+                    }else if($row1['Ctype'] == 2){
+                        ?>
+                <div class="first">
+                    <div class="first">
+                        <div class="first">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group ">
 
-                                        <input type="text" id="fname" class="inputs" placeholder="First name"
-                                            value="Volleyball">
+                                        <input type="text" id="category" class="inputs"
+                                        value="<?php echo $row1['category'] ?>">
+                                        <h2><b>Achievements</b></h2>
+                                        <!-- <div class="row"> -->
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <input type="text" id="adNo" class="inputs"
+                                                value="<?php echo "Obtained " . $row1['position']." place in".$row1['achievementName'] ?>">
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
 
-                                        <input type="text" id="mname" class="inputs" placeholder="Middle name"
-                                            value="Netball">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-
-                                        <input type="text" id="lname" class="inputs" placeholder="Last name"
-                                            value="Sumo">
-                                    </div>
                                 </div>
                             </div>
+                            <br>
+                                    <?php } ?>
 
-
-                            <h2><b>Achievements</b></h2>
                             <hr>
-                            <div class="card">
-                               
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group ">
-                                                <label class="label" for="adNo">ID-01</label>
-                                                <input type="text" id="adNo" class="inputs"
-                                                    placeholder="Admission Number"
-                                                    value="Obtained first place in all island foot ball competition.">
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group ">
-                                                <label class="label" for="adNo">ID-02</label>
-                                                <input type="text" id="adNo" class="inputs"
-                                                    placeholder="Admission Number"
-                                                    value="Obtained first place in all island cricket competition.">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group ">
-                                                <label class="label" for="adNo">ID-03</label>
-                                                <input type="text" id="adNo" class="inputs"
-                                                    placeholder="Admission Number"
-                                                    value="Obtained first place in all island sumo competition.">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="form-group ">
-                                                <label class="label" for="adNo">ID-04</label>
-                                                <input type="text" id="adNo" class="inputs"
-                                                    placeholder="Admission Number"
-                                                    value="Obtained first place in all island sumo competition.">
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
                         </div>
-                      
+
                     </div>
                 </div>
 
 
-                    <h2><b>CLUBS AND SOCIETY CATEGORY</b></h2>
-                    <div class="first">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group ">
-
-                                    <input type="text" id="fname" class="inputs" placeholder="First name"
-                                        value="Music society">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-
-                                    <input type="text" id="mname" class="inputs" placeholder="Middle name"
-                                        value="Girl Guide">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group ">
-
-                                    <input type="text" id="lname" class="inputs" placeholder="Last name" value="Drama">
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group ">
-
-                                    <input type="text" id="fname" class="inputs" placeholder="First name"
-                                        value="Sinhala Literature society">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-
-                                    <input type="text" id="mname" class="inputs" placeholder="Middle name"
-                                        value="Scrabble">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group ">
-
-                                    <input type="text" id="lname" class="inputs" placeholder="Last name"
-                                        value="Science">
-                                </div>
-                            </div>
-                        </div>
+             
 
 
-
-
-                        <h2><b>Achievements</b></h2>
-                        <hr>
-                        <div class="card">
-
-                          
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group ">
-                                            <label class="label" for="adNo">ID-01</label>
-                                            <input type="text" id="adNo" class="inputs" placeholder="Admission Number"
-                                                value="Obtained first place in all island balley dance competition.">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group ">
-                                            <label class="label" for="adNo">ID-02</label>
-                                            <input type="text" id="adNo" class="inputs" placeholder="Admission Number"
-                                                value="Obtained first place in all island wild life competition.">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group ">
-                                            <label class="label" for="adNo">ID-03</label>
-                                            <input type="text" id="adNo" class="inputs" placeholder="Admission Number"
-                                                value="Obtained first place in all island media competition.">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group ">
-                                            <label class="label" for="adNo">ID-04</label>
-                                            <input type="text" id="adNo" class="inputs" placeholder="Admission Number"
-                                                value="Obtained first place in all island music competition.">
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    
-              
-                </div>
-            </div>
-
-
+                                <?php
+                            }
+                            ?>
         </div>
 
         <!-- /Education Page 2 -->
@@ -589,7 +459,7 @@
                 <hr>
                 <div class="card">
 
-                   
+
                         <div class="first">
                             <div class="row">
                                 <div class="col">
@@ -633,7 +503,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
 
                 </div>
                 <br>
@@ -641,7 +511,7 @@
                 <hr>
                 <div class="card">
 
-                  
+
                         <div class="first">
                             <div class="row">
                                 <div class="col">

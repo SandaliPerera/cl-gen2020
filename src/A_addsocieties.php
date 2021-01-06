@@ -27,16 +27,16 @@ while($row=mysqli_fetch_array($result)){
 
 if(mysqli_num_rows($result) == 0){
         $date = date("y");
-        $prefix = "S0";
+        $prefix = "SO";
         $societyID = $prefix . $date . "00001" ;
 }else{
 
         if(substr($maxID,0,2) != date("y")){
             $date = date("y");
-            $prefix = "S0";
+            $prefix = "SO";
             $societyID = $prefix . $date . "00001";
         }else{
-            $prefix = "S0";
+            $prefix = "SO";
             $societyID = $prefix . ($maxID+1) ;
         }
 
