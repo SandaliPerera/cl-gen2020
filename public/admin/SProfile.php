@@ -33,7 +33,7 @@
             require_once '../../config/conn.php';
             $userID = $_GET['userID'];
             $sql = "SELECT * FROM student where admissionNo='$userID' ";
-            $sql1 = "SELECT * FROM achievement where stuID='$userID' ";
+            $sql1 = "SELECT * FROM achievement where stuID='$userID' ORDER BY Ctype";
             $result = $conn->query($sql);
             $result1 = $conn->query($sql1);
 
@@ -361,15 +361,15 @@
         </div>
         <div id="page3" class="page">
             <div class="container">
+            <h2><b>SPORT CATEGORY</b></h2>
             <?php
                             while ($row1 = mysqli_fetch_assoc($result1)) {
                                 if($row1['Ctype'] == 1){
                     ?>
 
-                <h2><b>SPORT CATEGORY</b></h2>
+               
                 <div class="first">
                     <div class="first">
-                        <div class="first">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group ">
@@ -388,7 +388,7 @@
                                     </div>
                                 </div>
 
-                                </div>
+                                
                             </div>
                             <br>
 
@@ -396,15 +396,13 @@
 
                         </div>
 
-                    </div>
+      
 
                     <h2><b>CLUBS AND SOCIETY CATEGORY</b></h2>
                     <?php
                     }else if($row1['Ctype'] == 2){
                         ?>
                 <div class="first">
-                    <div class="first">
-                        <div class="first">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group ">
@@ -430,9 +428,7 @@
 
                             <hr>
 
-                        </div>
-
-                    </div>
+                      
                 </div>
 
 
@@ -442,6 +438,7 @@
                                 <?php
                             }
                             ?>
+        </div>
         </div>
 
         <!-- /Education Page 2 -->
