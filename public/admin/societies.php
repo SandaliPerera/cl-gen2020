@@ -18,7 +18,7 @@
 	<head>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Sports</title>
+		<title>Societies</title>
 		<script src="../js/jquery-1.9.1.min.js"></script>
 		<script src="../js/nav.js"></script>
 		<link rel="stylesheet" href="../css/view.css " type="text/css">
@@ -70,7 +70,7 @@
 							<td><?php echo $row['societyName'] ?></td>
 							<td><?php echo $row['tcrID'] ?></td>
 							<?php
-							echo "<td><a class='btn editbtn' href = officerProfile.php?userID=".$row['societyID']." > Update </a> </td>";
+							echo "<td><a class='btn editbtn' href = updateSociety.php?societyID=".$row['societyID']." > Update </a> </td>";
 						 ?>
 							<?php 
 							echo "<td><a class='btn dltbtn' href = # > Deactivate </a> </td>";
