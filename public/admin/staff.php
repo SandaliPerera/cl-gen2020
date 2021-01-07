@@ -45,7 +45,6 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
 		<button id="button2" onclick="activated()">Added Users</button>
 		<button id="button1" onclick="notActivated()">Activated Users</button>
 	</div>
-
 	<br>
 	<br>
 	<div id="page1" class="page">

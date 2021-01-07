@@ -12,13 +12,13 @@
       if (!in_array("d1", $dutyID)) {
          header('Location: o_dashboard.php');
         }else{
+         include_once '../../config/conn.php';
+         include_once '../../src/view_users.php';
 	?>
 
 <!DOCTYPE html>
 <head>
-   <?php
-      include_once '../../config/conn.php';
-      ?>
+ 
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Grade Scholarship Results</title>
    <link rel="stylesheet" href="../css/view.css " type="text/css">
@@ -33,22 +33,7 @@
       <div id="officeNav"></div>
       <div class="content">
       <h1>Officers List</h1>
-      <?php
-            //echo "test";
-            
-            
-            $sql = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=0"; 
-            $sql3 = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=1";
-            $sql1 = "SELECT * FROM user where isActivated=0 and userType='officer' ";
-            $sql2 = "SELECT * FROM user where isActivated=1 and userType='officer' ";
-            
-            $result = $conn->query($sql);
-            $result3 = $conn->query($sql3);
-            $result1 = $conn->query($sql1);
-            $result2 = $conn->query($sql2);
-            
-            
-      ?>
+
             
               <div class="btn-box">
                <button id="button2" onclick="activated()">Added Users</button>
@@ -61,7 +46,7 @@
                <div class ="card">
                   <div class="count">
                      <?php
-                     while($row = $result->fetch_assoc()) {
+                     while($row = $staff_result->fetch_assoc()) {
                      echo "Officer Count: " . $row["COUNT(isActivated)"]. "<br>";
                      }?>
                   </div>
@@ -74,7 +59,7 @@
                         <th>Add Details</th>
                      </tr>
                      <?php
-                        while($row=mysqli_fetch_assoc($result1)){
+                        while($row=mysqli_fetch_assoc($staff_result1)){
                         ?>
                      <tr>
                         <td><?php echo $row['userID'] ?></td>
@@ -92,7 +77,7 @@
                <div class ="card">
                <div class="count">
                      <?php
-                     while($row = $result3->fetch_assoc()) {
+                     while($row = $staff_result3->fetch_assoc()) {
                      echo "Activated Officer Count: " . $row["COUNT(isActivated)"]. "<br>";
                      }?>
                   </div>
@@ -105,7 +90,7 @@
                         <th>Edit Details</th>
                      </tr>
                      <?php
-                        while($row=mysqli_fetch_assoc($result2)){
+                        while($row=mysqli_fetch_assoc($staff_result4)){
                         ?>
                      <tr>
                         <td><?php echo $row['userID'] ?></td>

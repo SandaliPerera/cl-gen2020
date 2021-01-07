@@ -10,15 +10,14 @@
       $dutyID = $_SESSION['dutyID'];
 
       if (in_array("d1", $dutyID)) {
-
+        include ('../../src/view_users.php');
+        include_once '../../config/conn.php';
     ?>
 
 <!DOCTYPE html>
 
 <head>
-    <?php
-      include_once '../../config/conn.php';
-      ?>
+   
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Students User List</title>
     <link rel="stylesheet" href="../css/view.css " type="text/css">
@@ -36,22 +35,7 @@
     <div class="content">
     
         <h1>Students List</h1>
-        <?php
-            //echo "test";
-            
-            
-            $sql = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=0"; 
-            $sql3 = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=1";
-            $sql1 = "SELECT * FROM user where isActivated=0 and userType='student' ";
-            $sql2 = "SELECT * FROM user where isActivated=1 and userType='student' ";
-            
-            $result = $conn->query($sql);
-            $result3 = $conn->query($sql3);
-            $result1 = $conn->query($sql1);
-            $result2 = $conn->query($sql2);
-            
-          
-            ?>
+
 
         <div class="btn-box">
             <button id="button2" onclick="activated()">Added Users</button>
@@ -67,7 +51,7 @@
     <?php } ?>
                 <div class="count">
                     <?php
-                     while($row = $result->fetch_assoc()) {
+                     while($row = $student_result->fetch_assoc()) {
                      echo "Student Count: " . $row["COUNT(isActivated)"]. "<br>";
                      }?>
                 </div>
@@ -79,7 +63,7 @@
                         <th>Add Details</th>
                     </tr>
                     <?php
-                        while($row=mysqli_fetch_assoc($result1)){
+                        while($row=mysqli_fetch_assoc($student_result2)){
                         ?>
                     <tr>
                         <td><?php echo $row['userID'] ?></td>
@@ -96,7 +80,7 @@
             <div class="card">
                 <div class="count">
                     <?php
-                     while($row = $result3->fetch_assoc()) {
+                     while($row = $student_result1->fetch_assoc()) {
                      echo "Activated Student Count: " . $row["COUNT(isActivated)"]. "<br>";
                      }?>
                 </div>
@@ -109,7 +93,7 @@
                         <th>Edit Details</th>
                     </tr>
                     <?php
-                        while($row=mysqli_fetch_assoc($result2)){
+                        while($row=mysqli_fetch_assoc($student_result4)){
                         ?>
                     <tr>
                         <td><?php echo $row['userID'] ?></td>
