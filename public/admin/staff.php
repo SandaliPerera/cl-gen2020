@@ -39,22 +39,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>
 		</form>
-	<?php
-		//echo "test";
-		
-		
-		$sql = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=0"; 
-		$sql3 = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=1";
-		$sql1 = "SELECT * FROM user where isActivated=0 and userType='officer' ";
-		$sql2 = "SELECT * FROM office  ";
-		
-		$result = $conn->query($sql);
-		$result3 = $conn->query($sql3);
-		$result1 = $conn->query($sql1);
-		$result2 = $conn->query($sql2);
-		
-	  
-		?>
+
 
 	<div class="btn-box">
 		<button id="button2" onclick="activated()">Added Users</button>
@@ -73,7 +58,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
 <?php } ?>
 			<div class="count">
 				<?php
-				 while($row = $result->fetch_assoc()) {
+				 while($row = $staff_result->fetch_assoc()) {
 				 echo "Student Count: " . $row["COUNT(isActivated)"]. "<br>";
 				 }?>
 			</div>
@@ -85,7 +70,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
 					<th>Add Details</th>
 				</tr>
 				<?php
-					while($row=mysqli_fetch_assoc($result1)){
+					while($row=mysqli_fetch_assoc($staff_result1)){
 					?>
 				<tr>
 					<td><?php echo $row['userID'] ?></td>
@@ -103,7 +88,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
 		<div class="card">
 			<div class="count">
 				<?php
-				 while($row = $result3->fetch_assoc()) {
+				 while($row = $staff_result3->fetch_assoc()) {
 				 echo "Activated Student Count: " . $row["COUNT(isActivated)"]. "<br>";
 				 }?>
 			</div>
@@ -116,7 +101,7 @@ if (!isset($_SESSION['userType']) && !isset($_SESSION['userID'])) {
 					<th>Deactivate Account</th>
 				</tr>
 				<?php
-					while($row=mysqli_fetch_assoc($result2)){
+					while($row=mysqli_fetch_assoc($staff_result2)){
 					?>
 				<tr>
 					<td><?php echo $row['officerID'] ?></td>

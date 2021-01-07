@@ -3,18 +3,11 @@
 
 require_once(realpath(dirname(__FILE__) . '/../config/conn.php'));
 
-$staff_sql = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=0"; 
-$staff_sql3 = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=1";
-$staff_sql1 = "SELECT * FROM user where isActivated=0 and userType='officer' ";
-$staff_sql2 = "SELECT * FROM office  ";
-
+$staff_sql = "SELECT COUNT(isActivated) FROM user where userType='officer' AND isActivated=1";
 
 $staff_result = $conn->query($staff_sql);
-$staff_result2 = $conn->query($staff_sql2);
-$staff_result1 = $conn->query($staff_sql1);
-$staff_result3 = $conn->query($staff_sql3);
 
-if(!$staff_result || !$staff_result2){
+if(!$staff_result){
     $error = "Cannot Retrieve Data";
 }
 else{
@@ -23,35 +16,21 @@ else{
 
 
 
-$teacher_sql = "SELECT COUNT(isActivated) FROM user where userType='teacher' AND isActivated=0"; 
-$teacher_sql3 = "SELECT COUNT(isActivated) FROM user where userType='teacher' AND isActivated=1";
-$teacher_sql1 = "SELECT * FROM user where isActivated=0 and userType='teacher' ";
-$teacher_sql2 = "SELECT * FROM teacher  ";
-		
+$teacher_sql = "SELECT COUNT(isActivated) FROM user where userType='teacher' AND isActivated=1"; 
 $teacher_result = $conn->query($teacher_sql);
-$teacher_result3 = $conn->query($teacher_sql3);
-$teacher_result1 = $conn->query($teacher_sql1);
-$teacher_result2 = $conn->query($teacher_sql2);
             
 
-if(!$staff_result || !$staff_result2){
+if(!$staff_result){
     $error = "Cannot Retrieve Data";
 }
 else{
     	
 }
 
-$student_sql = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=0"; 
-$student_sql1 = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=1"; 
-$student_sql2 = "SELECT * FROM user where userType='student' ";
-$student_sql3 = "SELECT * FROM student  ";
-
+$student_sql = "SELECT COUNT(isActivated) FROM user where userType='student' AND isActivated=1"; 
 $student_result = $conn->query($student_sql);
-$student_result1 = $conn->query($student_sql1);
-$student_result2 = $conn->query($student_sql2);
-$student_result3 = $conn->query($student_sql3);
 
-if(!$student_result || !$student_result2 || $student_result3 ){
+if(!$student_result  ){
     $error="Invalid UserID";
 }
 
@@ -69,7 +48,7 @@ $parent_result3 = $conn->query($parent_sql3);
 $parent_result1 = $conn->query($parent_sql1);
 $parent_result2 = $conn->query($parent_sql2);
 
-if(!$staff_result || !$staff_result2){
+if(!$parent_result ){
     $error = "Cannot Retrieve Data";
 }
 else{
@@ -95,5 +74,41 @@ if(!$user_res1 || !$user_res2 || !$user_res3 || !$user_res4){
 else{
     	
 }
+
+$sport_sql = "SELECT COUNT(SportID) FROM csports"; 
+$sport_result = $conn->query($sport_sql);
+
+if(!$sport_result  ){
+    $error="Invalid UserID";
+}
+
+else{
+    	
+}
+
+$society_sql = "SELECT COUNT(SocietyID) FROM csocieties"; 
+$society_result = $conn->query($society_sql);
+
+if(!$society_result  ){
+    $error="Invalid UserID";
+}
+
+else{
+    	
+}
+
+$achievement_sql = "SELECT COUNT(achievementID) FROM achievement"; 
+$achievement_result = $conn->query($achievement_sql);
+
+if(!$achievement_result  ){
+    $error="Invalid UserID";
+}
+
+else{
+    	
+}
+
+
+
 ?>
 

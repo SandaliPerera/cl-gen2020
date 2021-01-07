@@ -33,9 +33,7 @@
 		
 		<div class="content" style="margin-top: -60px;">
 		<h1 style="font-size: 40px;"> User List</h1>
-		
-		
-		
+
 		<form class="search" action="register_stu.html">
 		<input type="text" placeholder="Search.." name="search">
 		<button type="submit">Search</button>

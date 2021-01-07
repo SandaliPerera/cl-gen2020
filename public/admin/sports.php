@@ -12,8 +12,6 @@
 		 $userID = $_SESSION['userID'];
 		 include('../../src/view_sports.php');
 ?> 
-
-
 <!DOCTYPE html>
 <html>
 <head>
